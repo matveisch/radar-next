@@ -1,4 +1,4 @@
-import { motion, MotionConfig } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import chain from "../../images/chain.svg";
 import connection from "../../images/connection.svg";
@@ -11,21 +11,21 @@ import social from "../../images/social.svg";
 import sound from "../../images/sound.svg";
 import stat from "../../images/stat.svg";
 import telegram from "../../images/telegram.svg";
+import MotionDiv from "../../ui/motion-div/MotionDiv";
 import style from "./Radar.module.scss";
 
+export interface motionDivProps {
+  source: string;
+  id: string;
+  coordinates: {
+    x: string;
+    y: string;
+  };
+  duration: number;
+  delay?: number;
+}
+
 export default function Radar() {
-  interface motionDivProps {
-    source: string;
-    id: string;
-
-    coordinates: {
-      x: string;
-      y: string;
-    };
-    duration: number;
-    delay?: number;
-  }
-
   const iconsArr: Array<motionDivProps> = [
     {
       source: sound,
@@ -89,31 +89,6 @@ export default function Radar() {
       delay: 2,
     },
   ];
-
-  function MotionDiv({
-    source,
-    id,
-    coordinates,
-    duration,
-    delay,
-  }: motionDivProps) {
-    return (
-      <motion.div
-        animate={coordinates}
-        transition={{
-          ease: "linear",
-          duration: duration,
-          repeat: Infinity,
-          repeatDelay: 0,
-          delay: delay,
-        }}
-        id={id}
-        className={style.imageWrapper}
-      >
-        <Image src={source} alt="" />
-      </motion.div>
-    );
-  }
 
   return (
     <div id={style.crop}>
