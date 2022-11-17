@@ -1,0 +1,45 @@
+@import "../../styles/variables.module";
+
+#statsParent {
+  padding: 20px $stats-padding;
+
+  background-color: $main-green;
+  position: relative;
+  width: calc(100vw - calc($stats-padding * 2));
+  left: calc(-50vw + 50%);
+
+  #statsWrapper {
+    background-color: $main-green;
+  }
+
+  #statsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 20px;
+    margin: auto;
+    max-width: 1400px;
+
+    .flexBox {
+      min-width: 210px;
+      flex-basis: 25%;
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+
+      @include lg {
+        flex-basis: 40%;
+      }
+      @include md {
+        flex-basis: 100%;
+      }
+
+      .statText {
+        margin-right: 10px;
+        display: inline;
+      }
+    }
+  }
+}
