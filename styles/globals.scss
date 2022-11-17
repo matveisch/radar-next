@@ -1,0 +1,86 @@
+body {
+  background-color: #232932;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.H1,
+.H2,
+.H3,
+.H4,
+.paragraph,
+.link,
+.light-paragraph,
+.light-link {
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+}
+
+.H1 {
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: 0.045em;
+}
+
+.H2 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -0.005em;
+}
+
+.H3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0.045em;
+}
+
+.H4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.035em;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.045em;
+}
+
+.light-paragraph {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.light-link {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0;
+}

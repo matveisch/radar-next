@@ -1,0 +1,40 @@
+@import "../../styles/variables.module";
+
+.navbarButton {
+  position: relative;
+  padding: 10px 0px;
+  opacity: 0.6;
+
+  background-color: unset;
+  color: $off-white;
+  border-radius: 49px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $main-green;
+    height: 3px;
+    width: 0px;
+    left: 50%;
+    bottom: -8px;
+    transition: 0.3s;
+    border-radius: 3px;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 1;
+    // border-bottom: 2px solid $main-green;
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}

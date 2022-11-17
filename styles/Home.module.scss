@@ -1,0 +1,14 @@
+@import "variables.module";
+.MainWrapper {
+  width: 100vw;
+  overflow: hidden;
+
+  .App {
+    display: flex;
+    align-items: center;
+    background-color: $black;
+    width: 100vw;
+    // max-width: 1400px;
+    margin: auto;
+  }
+}
