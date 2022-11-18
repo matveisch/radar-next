@@ -1,0 +1,53 @@
+@import "../../styles/variables.module";
+
+#rtwBtnBackground {
+  margin-top: 180px;
+  position: relative;
+  height: 450px;
+  width: 100vw;
+  background-color: $main-green;
+
+  #rtwBtnContainer {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    background: radial-gradient(
+      25.8% 50% at 50% 50%,
+      rgba(35, 41, 50, 0.8) 0%,
+      rgba(105, 254, 139, 0) 100%
+    );
+    opacity: 0.8;
+    img {
+      filter: $main-green-filter;
+
+      position: absolute;
+      margin: auto;
+      top: 0%;
+      bottom: 0%;
+      left: 0%;
+      right: 0%;
+      height: 32px;
+    }
+  }
+
+  #rtwBtn {
+    cursor: pointer;
+    position: absolute;
+    color: $main-green;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 30px 100px;
+
+    background-color: $black;
+    border-radius: 100px;
+    text-align: center;
+    border: 0;
+
+    #rtwBtnText {
+      color: $main-green;
+    }
+  }
+}
