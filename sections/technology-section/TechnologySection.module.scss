@@ -27,6 +27,7 @@
       #techCardsWrapper {
         display: grid;
         grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-template-rows: repeat(2, 158px);
         grid-gap: 30px;
       }
     }

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import CarouselSection from "../sections/carousel-section/CarouselSection";
 import RadarSection from "../sections/radar-section/RadarSection";
 import ServicesSection from "../sections/services-section/ServicesSection";
 import TechnologySection from "../sections/technology-section/TechnologySection";
@@ -16,6 +17,7 @@ export default function Home() {
         <RadarSection />
         <ServicesSection />
         <TechnologySection />
+        <CarouselSection />
       </section>
     </div>
   );
