@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Head from "next/head";
 import Navbar from "./navbar/Navbar";
+import Footer from "./footer/Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -26,6 +26,7 @@ export default function Layout({ children }: Props) {
         />
       </header>
       <main>{children}</main>
+      <Footer />
     </div>
   );
 }

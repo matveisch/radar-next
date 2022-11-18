@@ -1,0 +1,87 @@
+@import "../../styles/variables.module";
+
+#footerMainWrapper {
+  padding: 0 $page-padding;
+  margin: 100px 0px;
+  display: flex;
+
+  #footerLeftContainer {
+    flex-basis: 50%;
+
+    #footerLogo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 45px;
+
+      h1 {
+        text-transform: uppercase;
+        color: $off-white;
+        margin-left: 16px;
+      }
+    }
+
+    #footerContact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: $off-white;
+
+      a {
+        opacity: 0.6;
+        display: inline;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      #footerSocialIcons {
+        display: flex;
+        gap: 10px;
+
+        a {
+          img {
+            height: 20px;
+            filter: $off-white-filter;
+
+            &:hover {
+              filter: $main-green-filter;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #footerRightContainer {
+    flex-basis: 50%;
+
+    #footerMenu {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 45px;
+      a {
+        font-size: 20px;
+      }
+    }
+    #footerSubmenu {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      a {
+        color: $off-white;
+        opacity: 0.6;
+        font-size: 12px;
+        transition: 0.3s;
+        &:visited {
+          color: $off-white;
+        }
+        &:hover {
+          color: $main-green;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
