@@ -5,8 +5,11 @@ import RadarSection from "../sections/radar-section/RadarSection";
 import ServicesSection from "../sections/services-section/ServicesSection";
 import TechnologySection from "../sections/technology-section/TechnologySection";
 import styles from "../styles/Home.module.scss";
+import { motion, useScroll } from "framer-motion";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+
   return (
     <div className={styles.MainWrapper}>
       <Head>
@@ -15,6 +18,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className={styles.App}>
+        <motion.div
+          className={styles.progressBar}
+          style={{ scaleX: scrollYProgress }}
+        />
         <RadarSection />
         <ServicesSection />
         <TechnologySection />
