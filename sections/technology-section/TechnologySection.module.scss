@@ -1,0 +1,49 @@
+@import "../../styles/variables.module";
+
+#mainContainer {
+  margin-top: 180px;
+  width: calc(100vw - calc($page-padding * 2));
+
+  #flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    #leftContainer {
+      z-index: 1;
+      width: 50%;
+
+      #techTitle {
+        color: $off-white;
+        margin-bottom: 60px;
+      }
+
+      #techParagraph {
+        margin-bottom: 60px;
+        color: $off-white;
+      }
+
+      #techCardsWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        grid-gap: 30px;
+      }
+    }
+    #rightContainer {
+      z-index: 0;
+      width: 50%;
+      // position: relative;
+      right: 0;
+
+      #techRadarGif {
+        width: 200%;
+        height: auto;
+        max-width: 1100px;
+        // width: 100%;
+        position: relative;
+        right: 25%;
+      }
+    }
+  }
+}

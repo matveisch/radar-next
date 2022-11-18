@@ -1,6 +1,7 @@
 import Head from "next/head";
 import RadarSection from "../sections/radar-section/RadarSection";
 import ServicesSection from "../sections/services-section/ServicesSection";
+import TechnologySection from "../sections/technology-section/TechnologySection";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <section className={styles.App}>
         <RadarSection />
         <ServicesSection />
+        <TechnologySection />
       </section>
     </div>
   );
