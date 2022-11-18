@@ -18,11 +18,13 @@ export default function Layout({ children }: Props) {
 
   return (
     <div onClick={handleClickOutside}>
-      <Navbar
-        setShowOptions={setShowOptions}
-        showOptions={showOptions}
-        wrapperRef={wrapperRef}
-      />
+      <header>
+        <Navbar
+          setShowOptions={setShowOptions}
+          showOptions={showOptions}
+          wrapperRef={wrapperRef}
+        />
+      </header>
       <main>{children}</main>
     </div>
   );

@@ -1,0 +1,88 @@
+@import "../../styles/variables.module";
+
+#icon {
+  filter: $main-green-filter;
+  margin-bottom: 15px;
+}
+
+#cardParent {
+  height: 255px;
+  position: relative;
+  background-color: $off-black;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
+  transition: 0.3s;
+
+  #title {
+    color: $main-green;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    li {
+      margin-bottom: 5px;
+      color: $main-green;
+
+      span {
+        color: $off-white;
+      }
+    }
+    @for $j from 3 through 10 {
+      #listItem#{$j} {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+      }
+    }
+  }
+  #learnMoreParent {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    right: 20px;
+    align-items: flex-end;
+    text-align: right;
+    transition: 0.3s;
+
+    #learnMore {
+      margin-left: auto;
+      color: $main-green;
+      margin-right: 8px;
+    }
+  }
+
+  &:hover {
+    scale: 1.06;
+    box-shadow: 3px 3px 32px rgba(0, 239, 56, 0.194);
+
+    #title {
+      margin-left: 70px;
+      margin-top: -60px;
+    }
+    ul {
+      @for $i from 3 through 10 {
+        #listItem#{$i} {
+          margin-bottom: 5px;
+          color: $main-green;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    #learnMoreParent {
+      margin-top: 70px;
+      margin-right: 20px;
+      scale: 1.2;
+    }
+  }
+}
