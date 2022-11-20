@@ -1,0 +1,56 @@
+@import "../../styles/variables.module";
+
+.formContainer {
+  margin-top: 102px;
+  width: 441px;
+
+  .singleInput {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      background: $black;
+      border-radius: 3px;
+      color: $off-white;
+      border: none;
+      padding: 9px 7px;
+      border-bottom: 1.5px solid $off-white;
+    }
+  }
+
+  .contactForm {
+    background: $off-black;
+    box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
+    border-radius: 16px;
+    padding: 67px 33px 34px;
+
+    display: flex;
+    flex-direction: column;
+
+    .buttonContainer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .emailButton {
+      color: $main-green;
+      background-color: unset;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .sendButton {
+      border: 2px solid #69fe8b;
+      border-radius: 16px;
+      background-color: unset;
+      color: $main-green;
+      padding: 16px 0;
+    }
+
+    .contactWithin {
+      color: $off-white;
+    }
+  }
+}
