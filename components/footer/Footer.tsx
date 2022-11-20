@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavbarButton from "../../ui/navbar-button/NavbarButton";
 import useServicesList from "../../data/servicesList";
 import Sublink from "../../ui/sublink/Sublink";
@@ -8,9 +8,11 @@ import styles from "./Footer.module.scss";
 import logo from "../../images/logo.png";
 import telegram from "images/filled-telegram.svg";
 import whatsapp from "images/whatsapp.svg";
+import { cardIdContextType, idContext } from "../Layout";
 
 export default function Footer() {
   const servicesList = useServicesList();
+  const { setCardId } = useContext(idContext) as cardIdContextType;
 
   return (
     <div id={styles.footerMainWrapper}>
@@ -41,7 +43,14 @@ export default function Footer() {
         </div>
         <div id={styles.footerSubmenu}>
           {servicesList.map((item) => {
-            return <Sublink key={item.id} to="/services" title={item.name} />;
+            return (
+              <Sublink
+                key={item.id}
+                to="/services"
+                title={item.name}
+                onClick={() => setCardId(item.id)}
+              />
+            );
           })}
         </div>
       </div>

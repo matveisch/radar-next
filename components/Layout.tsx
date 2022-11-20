@@ -44,8 +44,8 @@ export default function Layout({ children }: Props) {
           />
         </header>
         <main>{children}</main>
+        <Footer />
       </idContext.Provider>
-      <Footer />
     </div>
   );
 }
