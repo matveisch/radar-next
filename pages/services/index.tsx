@@ -21,7 +21,6 @@ const Services = () => {
   useEffect(() => {
     //Сразу открываем выбранную услугу
     const checkedServiceIndex = cardId;
-    console.log(cardId);
     if (cardId !== null) {
       setIsOpen(false);
       checkedServiceIndex &&
@@ -109,6 +108,7 @@ const Services = () => {
       <motion.div
         animate={{ opacity: isOpen ? 0 : 1 }}
         style={{ visibility: isOpen ? "hidden" : "visible" }}
+        className={styles.paragraphs}
       >
         <p style={{ color: "white", fontSize: "60px" }} className="paragraph">
           {checkedService.name}
