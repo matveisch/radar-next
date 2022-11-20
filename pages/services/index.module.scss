@@ -1,0 +1,61 @@
+@import "../../styles/variables.module";
+#servicesMainWrapper {
+  padding: 0 $page-padding;
+  height: calc(100vh - 300px);
+
+  #servicesBtnGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(230px, 20%), 1fr));
+    grid-gap: 30px;
+    column-gap: 30px;
+
+    .checkedServiceBtn {
+      div {
+        transition: 0.5;
+        background-color: $main-green;
+      }
+      h4 {
+        color: $black;
+      }
+    }
+    
+    .servicesBtn {
+      cursor: pointer;
+    }
+
+    #contactCard {
+      background-color: $off-black;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(1262px) {
+        grid-column: span 2;
+      }
+
+      #contactCardBtn {
+        display: block;
+        text-align: center;
+        border: none;
+        color: $off-white;
+        background-color: $black;
+        border-radius: 16px;
+        padding: 20px 40px;
+        //  position: relative;
+        &:hover {
+          box-shadow: 0 0 32px 0px rgba(105, 254, 139, 0.15);
+        }
+      }
+      #title {
+        //  position: relative;
+        font-size: 47px;
+        margin-top: 20px;
+        color: $off-white;
+        line-height: 50px;
+        z-index: 1;
+        pointer-events: none;
+      }
+    }
+  }
+}
