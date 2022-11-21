@@ -38,6 +38,7 @@ const ServicesBtn: React.FC<Props> = (props: Props) => {
       <motion.div
         animate={{
           height: props.isOpen ? "210px" : "55px",
+          width: props.isOpen ? "210px" : "55px",
           x: hovered && props.isOpen ? 20 : 0,
           scale: hovered && props.isOpen ? 1.2 : 1,
           rotate: hovered ? -10 : !props.isOpen ? 0 : -20,

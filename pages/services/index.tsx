@@ -16,10 +16,10 @@ const Services = () => {
 
   const { cardId } = useContext(idContext) as cardIdContextType;
 
-  //Проверяем если при открытии страницы услуг был
-  //передан индекс услуги чтобы открыть конкретную
+  //Check if when opening the services page there was
+  //service index passed to open a specific
   useEffect(() => {
-    //Сразу открываем выбранную услугу
+    //Immediately open the selected service
     const checkedServiceIndex = cardId;
     if (cardId !== null) {
       setIsOpen(false);
@@ -30,28 +30,28 @@ const Services = () => {
     }
   }, [cardId]);
 
-  //Обновляет нижнюю координату Contact кнопочки => высоту grid элемента
-  //Позволяет определить когда юзер долистал до конца кнопочек
+  //Updates the bottom coordinate of the Contact button => the height of the grid element
+  //Allows to determine when the user scrolled to the end of the buttons
   useEffect(() => {
     setGridBottomEdgePos(
       contactBtn.current != null ? contactBtn.current.offsetTop + 210 : 0
     );
   });
 
-  //Скролл до упора вверх раскрывает кнопочки
-  //Скролл ниже чем кнопочки закрывает кнопочки
+  //Scroll all the way up reveals the buttons
+  //Scroll lower than the buttons closes the buttons
   const handleWheel = (e: any) => {
     //Если уперлись вверх - открываем:
     if (e.deltaY < 0 && e.view.pageYOffset == 0) {
       setIsOpen(true);
 
-      //Или если пролистали до конца кнопочек - закрываем:
+      //Or if you scrolled to the end of the buttons => close:
     } else if (e.view.pageYOffset + e.view.innerHeight >= gridBottomEdgePos) {
       setIsOpen(false);
     }
   };
 
-  //Открывает секцию на котрую нажали
+  //Opens the clicked section
   const handleClick = (index: number) => {
     setCheckedService(servicesArr[index]);
     setIsOpen(false);
@@ -110,10 +110,10 @@ const Services = () => {
         style={{ visibility: isOpen ? "hidden" : "visible" }}
         className={styles.paragraphs}
       >
-        <p style={{ color: "white", fontSize: "60px" }} className="paragraph">
+        <p style={{ color: "white", fontSize: "60px" }}>
           {checkedService.name}
         </p>
-        <p style={{ color: "white", fontSize: "60px" }} className="paragraph">
+        <p style={{ color: "white", fontSize: "60px" }}>
           {checkedService.content}
         </p>
       </motion.div>

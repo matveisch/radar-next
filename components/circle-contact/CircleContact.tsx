@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./CircleContact.module.scss";
-import telegram from "../../images/filled-telegram.svg";
+import telegram from "../../images/telegram-filled.svg";
 import whatsapp from "../../images/whatsapp.svg";
 import Image from "next/image";
 

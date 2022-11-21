@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from "./Footer.module.scss";
 
 import logo from "../../images/logo.png";
-import telegram from "images/filled-telegram.svg";
+import telegram from "images/telegram-filled.svg";
 import whatsapp from "images/whatsapp.svg";
 import { cardIdContextType, idContext } from "../Layout";
 
