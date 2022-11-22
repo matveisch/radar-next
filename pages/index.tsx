@@ -4,6 +4,7 @@ import CarouselSection from "../sections/carousel-section/CarouselSection";
 import RadarSection from "../sections/radar-section/RadarSection";
 import ServicesSection from "../sections/services-section/ServicesSection";
 import TechnologySection from "../sections/technology-section/TechnologySection";
+import AwarenessSection from "../sections/awareness-section/AwarenessSection";
 import styles from "../styles/Home.module.scss";
 import { motion, useScroll } from "framer-motion";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <RadarSection />
         <ServicesSection />
         <TechnologySection />
+        <AwarenessSection />
         <CarouselSection />
         <RtwBtn />
       </section>
