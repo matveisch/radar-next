@@ -5,12 +5,12 @@ $breakpoints: (
   "xl": 1200px,
   // mostly common among mobile is mobileM size.
   // mobileS and mobileL are specific ones and might be used only in certain situations.
-  "mobileS": 320px,
-  "mobileM": 375px,
-  "mobileL": 425px,
-  "tablet": 768px,
-  "laptop": 1024px,
-  "laptopL": 1440px,
+  "mobileS": 320px + 1px,
+  "mobileM": 375px + 1px,
+  "mobileL": 425px + 1px,
+  "tablet": 768px + 1px,
+  "laptop": 1024px + 1px,
+  "laptopL": 1440px + 1px,
 );
 
 @mixin sm {
