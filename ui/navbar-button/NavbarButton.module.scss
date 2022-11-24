@@ -1,6 +1,10 @@
 @import "../../styles/variables.module";
+@import "../../styles/breakpoints.module";
 
 .navbarButton {
+  @media (max-width: map-get($breakpoints, "lg")) {
+    font-size: 0.8rem;
+  }
   position: relative;
   padding: 10px 0px;
   opacity: 0.6;
