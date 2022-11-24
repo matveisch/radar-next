@@ -1,36 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import styles from "./ReputationMeter.module.scss";
+import styles from "./ProfitMeter.module.scss";
 import Image from "next/image";
 import reputationScale from "../../images/reputationScale.png";
 import needle from "../../images/needle.svg";
-import { symlink } from "fs";
-import { setDefaultResultOrder } from "dns";
+import { getTsBuildInfoEmitOutputFilePath } from "typescript";
 
 interface Props {
   value: number;
 }
 
-function ReputationMeter({ value }: Props) {
+function ProfitMeter({ value }: Props) {
   const [rotateValue, setRotateValue] = useState(
-    "rotate(" + (300 * value) / 100 + "deg)"
+    "rotate(" + ((235 * value) / 100 - 60) + "deg)"
   );
   useEffect(() => {
-    setRotateValue("rotate(" + (300 * value) / 100 + "deg)");
+    setRotateValue("rotate(" + ((235 * value) / 100 - 45) + "deg)");
   }, [value]);
 
   return (
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
-          <Image id={styles.scaleImg} src={reputationScale} alt="repScale" />
+          <div
+            id={styles.bgImgWrapper}
+            style={{
+              filter: "hue-rotate(" + -(134 * (100 - value)) / 100 + "deg)",
+            }}
+          ></div>
+          <div id={styles.bgImgScales}></div>
           <motion.div
             id={styles.imgWrapper}
-            animate={{ rotate: [1, -1, 1] }}
+            animate={{ rotate: [30, 0, 30] }}
             transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-
+              duration: 6,
+              ease: "easeOut",
               repeat: Infinity,
             }}
           >
@@ -44,10 +48,10 @@ function ReputationMeter({ value }: Props) {
         </div>
       </div>
       <h4 id={styles.title} className="paragraph">
-        Reputation
+        Profit
       </h4>
     </>
   );
 }
 
-export default ReputationMeter;
+export default ProfitMeter;

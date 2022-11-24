@@ -1,5 +1,4 @@
 @import "../../styles/variables.module";
-
 #borderAround {
   border: 3px $main-green solid;
   border-radius: 24px;
@@ -10,22 +9,22 @@
     height: 195px;
     border: 2px $main-green solid;
     border-radius: 16px;
-    position: relative;
-    #scaleImg {
-      position: absolute;
+
+    #bgImg {
+      height: 100%;
+      width: 100%;
+      background-image: url("../../images/stability-bg.png");
+      background-repeat: no-repeat;
+      background-position: bottom;
     }
     #imgWrapper {
       width: 100%;
-      height: 100%;
-      position: relative;
-      bottom: 0%;
-      display: flex;
       align-items: center;
+      align-content: center;
       text-align: center;
-    }
-    #needleImg {
-      margin: auto;
-      filter: $main-green-filter;
+      position: relative;
+
+      bottom: 55%;
     }
   }
 }
