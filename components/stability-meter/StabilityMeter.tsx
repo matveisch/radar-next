@@ -47,7 +47,6 @@ function StabilityMeter({ value }: Props) {
             transition={{
               duration: 4,
               ease: "easeInOut",
-
               repeat: Infinity,
             }}
           >

@@ -1,0 +1,68 @@
+@import "../../styles/variables.module";
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 10deg;
+}
+@keyframes a {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+#borderAround {
+  border: 3px $main-green solid;
+  border-radius: 24px;
+  width: min-content;
+  padding: 7px;
+  #mainWrapper {
+    animation: a 10s linear infinite reverse;
+    background-image: url("../../images/chain.svg");
+    background: conic-gradient(
+      from var(--a) at 50% 50%,
+      #232932 0deg,
+      #69fe8b 0.04deg,
+      #69fe8b 0.07deg,
+      rgba(44, 69, 62, 0.469443) 168.75deg,
+      #232932 360deg
+    );
+    // background: conic-gradient(
+    //   from 179.51deg at 50% 50%,
+    //   #232932 0deg,
+    //   #69fe8b 0.04deg,
+    //   #69fe8b 0.07deg,
+    //   rgba(44, 69, 62, 0.469443) 168.75deg,
+    //   #232932 360deg
+    // );
+    width: 195px;
+    height: 195px;
+    border: 2px $main-green solid;
+    border-radius: 16px;
+    position: relative;
+  }
+}
+.rectangle {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: $main-green;
+}
+.circle {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: $main-green;
+  border-radius: 50%;
+}
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+
+  border-bottom: 9px solid $main-green;
+}
