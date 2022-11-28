@@ -8,13 +8,8 @@ import AttendanceMeter from "../../components/attendance-meter/AttendanceMeter";
 import ReactSlider from "react-slider";
 
 function AwarenessSection() {
-  const sliderBtn = useRef<HTMLDivElement>(null);
-  const btnContainer = useRef<HTMLDivElement>(null);
-  const sectionWrapper = useRef<HTMLDivElement>(null);
-  const [btnOffsetX, setBtnOffsetX] = useState<number | undefined>(0);
-  const [sliderBgWidth, setSliderBgWidth] = useState<number | undefined>(0);
-
   // new sliders value – accepts from 0 to 100
+  const sectionWrapper = useRef<HTMLDivElement>(null);
   const [sliderValue, setSliderValue] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [sectionVisible, setSectionVisible] = useState(false);
@@ -59,67 +54,72 @@ function AwarenessSection() {
     }
   }, [scrollPosition]);
 
-  //Track when scrolling this section
-  const { scrollYProgress } = useScroll({
-    target: sectionWrapper,
-    offset: ["end end", "start start"],
-  });
+  // const sliderBtn = useRef<HTMLDivElement>(null);
+  // const btnContainer = useRef<HTMLDivElement>(null);
+  // const [btnOffsetX, setBtnOffsetX] = useState<number | undefined>(0);
+  // const [sliderBgWidth, setSliderBgWidth] = useState<number | undefined>(0);
 
-  //Animate while scrolling this section
-  const x = useTransform(
-    scrollYProgress,
-    // Map x from these values:
-    [0, 1],
-    // Into these values:
-    [0, btnContainer.current?.clientWidth]
-  );
-  const xSmooth = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  // //Track when scrolling this section
+  // const { scrollYProgress } = useScroll({
+  //   target: sectionWrapper,
+  //   offset: ["end end", "start start"],
+  // });
 
-  useEffect(() => {
-    setBtnOffsetX(
-      Number(
-        sliderBtn.current?.style.transform.slice(
-          11,
-          sliderBtn.current?.style.transform.indexOf(".")
-        )
-      ) + 16
-    );
-    setSliderBgWidth(btnOffsetX);
-  }, [btnOffsetX]);
+  // //Animate while scrolling this section
+  // const x = useTransform(
+  //   scrollYProgress,
+  //   // Map x from these values:
+  //   [0, 1],
+  //   // Into these values:
+  //   [0, btnContainer.current?.clientWidth]
+  // );
+  // const xSmooth = useSpring(scrollYProgress, {
+  //   stiffness: 100,
+  //   damping: 30,
+  //   restDelta: 0.001,
+  // });
 
-  //set BG width when drag btn
-  function handleDrag() {
-    setBtnOffsetX(
-      Number(
-        sliderBtn.current?.style.transform.slice(
-          11,
-          sliderBtn.current?.style.transform.indexOf(".")
-        )
-      ) + 16
-    );
-    setSliderBgWidth(btnOffsetX);
-  }
+  // useEffect(() => {
+  //   setBtnOffsetX(
+  //     Number(
+  //       sliderBtn.current?.style.transform.slice(
+  //         11,
+  //         sliderBtn.current?.style.transform.indexOf(".")
+  //       )
+  //     ) + 16
+  //   );
+  //   setSliderBgWidth(btnOffsetX);
+  // }, [btnOffsetX]);
 
-  //resize and scroll handling BG width
-  useEffect(() => {
-    const handleResize = () => {
-      setSliderBgWidth(
-        Number(
-          sliderBtn.current?.style.transform.slice(
-            11,
-            sliderBtn.current?.style.transform.indexOf(".")
-          )
-        ) + 16
-      );
-    };
+  // //set BG width when drag btn
+  // function handleDrag() {
+  //   setBtnOffsetX(
+  //     Number(
+  //       sliderBtn.current?.style.transform.slice(
+  //         11,
+  //         sliderBtn.current?.style.transform.indexOf(".")
+  //       )
+  //     ) + 16
+  //   );
+  //   setSliderBgWidth(btnOffsetX);
+  // }
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleResize);
-  }, []);
+  // //resize and scroll handling BG width
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setSliderBgWidth(
+  //       Number(
+  //         sliderBtn.current?.style.transform.slice(
+  //           11,
+  //           sliderBtn.current?.style.transform.indexOf(".")
+  //         )
+  //       ) + 16
+  //     );
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+  //   window.addEventListener("scroll", handleResize);
+  // }, []);
 
   return (
     <div id={styles.awarenessWrapper} ref={sectionWrapper}>
