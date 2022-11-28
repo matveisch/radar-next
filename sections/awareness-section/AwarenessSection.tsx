@@ -1,10 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, LegacyRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import styles from "./AwarenessSection.module.scss";
 import ReputationMeter from "../../components/reputation-meter/ReputationMeter";
 import StabilityMeter from "../../components/stability-meter/StabilityMeter";
 import ProfitMeter from "../../components/profit-meter/ProfitMeter";
 import AttendanceMeter from "../../components/attendance-meter/AttendanceMeter";
+import ReactSlider from "react-slider";
 
 function AwarenessSection() {
   const sliderBtn = useRef<HTMLDivElement>(null);
@@ -12,6 +13,9 @@ function AwarenessSection() {
   const sectionWrapper = useRef<HTMLDivElement>(null);
   const [btnOffsetX, setBtnOffsetX] = useState<number | undefined>(0);
   const [sliderBgWidth, setSliderBgWidth] = useState<number | undefined>(0);
+
+  // new sliders value – accepts from 0 to 100
+  const [sliderValue, setSliderValue] = useState(0);
 
   //Track when scrolling this section
   const { scrollYProgress } = useScroll({
@@ -58,7 +62,7 @@ function AwarenessSection() {
     setSliderBgWidth(btnOffsetX);
   }
 
-  //resize and scroll handlig BG width
+  //resize and scroll handling BG width
   useEffect(() => {
     const handleResize = () => {
       setSliderBgWidth(
@@ -74,6 +78,7 @@ function AwarenessSection() {
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleResize);
   }, []);
+
   return (
     <div id={styles.awarenessWrapper} ref={sectionWrapper}>
       <div className={styles.flexBox}>
@@ -81,59 +86,38 @@ function AwarenessSection() {
           Social <br /> Awareness{" "}
         </h2>
         <div id={styles.sliderWrapper}>
-          <div style={{ width: "100%" }} ref={btnContainer}>
-            <motion.div
-              style={{ x }}
-              onDrag={() => handleDrag()}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 1 }}
-              drag="x"
-              dragConstraints={btnContainer}
-              dragMomentum={false}
-              dragElastic={0.08}
-              id={styles.sliderBtn}
-              ref={sliderBtn}
-            ></motion.div>
+          <div className={styles.insideWrapper}>
+            <ReactSlider
+              className="customSlider"
+              trackClassName="customSlider-track"
+              thumbClassName="customSlider-thumb"
+              value={sliderValue}
+              onChange={(value) => {
+                setSliderValue(value);
+              }}
+              renderThumb={(props) => (
+                <motion.div
+                  {...props}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1 }}
+                ></motion.div>
+              )}
+            />
           </div>
-          <div style={{ width: sliderBgWidth }} id={styles.sliderBG} />
         </div>
       </div>
       <div className={styles.flexBox}>
         <div className={styles.meterWrapper}>
-          <ReputationMeter
-            value={
-              sliderBgWidth != undefined && btnContainer.current != undefined
-                ? (sliderBgWidth * 100) / btnContainer.current?.clientWidth
-                : 0
-            }
-          />
+          <ReputationMeter value={sliderValue} />
         </div>
         <div className={styles.meterWrapper}>
-          <StabilityMeter
-            value={
-              sliderBgWidth != undefined && btnContainer.current != undefined
-                ? (sliderBgWidth * 100) / btnContainer.current?.clientWidth
-                : 0
-            }
-          />
+          <StabilityMeter value={sliderValue} />
         </div>
         <div className={styles.meterWrapper}>
-          <ProfitMeter
-            value={
-              sliderBgWidth != undefined && btnContainer.current != undefined
-                ? (sliderBgWidth * 100) / btnContainer.current?.clientWidth
-                : 0
-            }
-          />
+          <ProfitMeter value={sliderValue} />
         </div>
         <div className={styles.meterWrapper}>
-          <AttendanceMeter
-            value={
-              sliderBgWidth != undefined && btnContainer.current != undefined
-                ? (sliderBgWidth * 100) / btnContainer.current?.clientWidth
-                : 0
-            }
-          />
+          <AttendanceMeter value={sliderValue} />
         </div>
       </div>
     </div>
