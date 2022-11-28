@@ -16,6 +16,48 @@ function AwarenessSection() {
 
   // new sliders value – accepts from 0 to 100
   const [sliderValue, setSliderValue] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [sectionVisible, setSectionVisible] = useState(false);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    // looking for an element to appear on the page
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const intersecting = entry.isIntersecting;
+        intersecting ? setSectionVisible(true) : setSectionVisible(false);
+      });
+    });
+
+    // creating observer of the element
+    if (sectionWrapper.current) {
+      observer.observe(sectionWrapper.current);
+    }
+  }, []);
+
+  // adding scroll listener when there the section is on the screen
+  useEffect(() => {
+    if (sectionVisible) {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sectionVisible]);
+
+  useEffect(() => {
+    // change it! no hard coded numbers
+    let position = Math.floor(scrollPosition / 10 - 240);
+
+    if (position > 0 && position < 100) {
+      setSliderValue(position);
+    }
+  }, [scrollPosition]);
 
   //Track when scrolling this section
   const { scrollYProgress } = useScroll({
