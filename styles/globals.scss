@@ -118,8 +118,11 @@ a {
   background: $main-green;
   box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
   outline: none;
+
+  transition: transform 0.2s;
 }
 
 .customSlider-thumb:hover {
   box-shadow: -25px 0px 30px rgba(0, 0, 0, 0.25);
+  transform: scale(1.1);
 }

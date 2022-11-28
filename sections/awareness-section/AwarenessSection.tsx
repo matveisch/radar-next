@@ -137,13 +137,7 @@ function AwarenessSection() {
               onChange={(value) => {
                 setSliderValue(value);
               }}
-              renderThumb={(props) => (
-                <motion.div
-                  {...props}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 1 }}
-                ></motion.div>
-              )}
+              renderThumb={(props) => <div {...props}></div>}
             />
           </div>
         </div>
