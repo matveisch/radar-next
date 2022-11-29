@@ -7,6 +7,7 @@
   h2 {
     color: $off-white;
     display: inline;
+    z-index: 1;
   }
 
   #sliderWrapper {
@@ -23,9 +24,10 @@
   .flexBox {
     display: flex;
     margin-top: 40px;
+    justify-content: space-between;
 
     .meterWrapper {
-      flex-basis: 25%;
+      //  flex-basis: 25%;
     }
   }
 }

@@ -2,13 +2,13 @@
 
 #borderAround {
   border: 3px $main-green solid;
-  border-radius: 24px;
+  border-radius: 26px;
   width: min-content;
-  padding: 7px;
+  padding: 10px;
   #mainWrapper {
     width: 195px;
     height: 195px;
-    border: 2px $main-green solid;
+    border: 1.5px $main-green solid;
     border-radius: 16px;
     position: relative;
     #scaleImg {
