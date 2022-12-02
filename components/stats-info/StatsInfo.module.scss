@@ -1,4 +1,5 @@
 @import "../../styles/variables.module";
+@import "../../styles/breakpoints.module";
 
 #statsParent {
   padding: 20px $stats-padding;
@@ -21,6 +22,10 @@
     margin: auto;
     max-width: 1400px;
 
+    @media (max-width: map-get($breakpoints, "laptop")) {
+      display: none;
+    }
+
     .flexBox {
       min-width: 210px;
       flex-basis: 25%;
@@ -41,5 +46,26 @@
         display: inline;
       }
     }
+  }
+}
+
+.number {
+  display: flex;
+  align-items: center;
+}
+
+.statsContainerMobile {
+  display: flex;
+
+  @media (min-width: map-get($breakpoints, "laptop")) {
+    display: none;
+  }
+
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
   }
 }
