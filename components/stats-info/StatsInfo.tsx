@@ -8,11 +8,12 @@ import { useEffect, useState } from "react";
 function StatsInfo() {
   const [currentSlide, setCurrentSlide] = useState(1);
   SwiperCore.use([Autoplay]);
+  console.log(currentSlide);
 
   const num1 = useSpring({
     val: 981,
     from: { val: 0 },
-    reset: currentSlide === 1,
+    reset: currentSlide === 1 || currentSlide === 5,
   });
   const num2 = useSpring({
     val: 16,
