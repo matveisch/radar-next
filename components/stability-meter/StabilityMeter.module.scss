@@ -1,0 +1,35 @@
+@import "../../styles/variables.module";
+#borderAround {
+  border: 3px $main-green solid;
+  border-radius: 26px;
+  width: min-content;
+  padding: 10px;
+  #mainWrapper {
+    width: 195px;
+    height: 195px;
+    border: 1.5px $main-green solid;
+    border-radius: 16px;
+
+    #bgImg {
+      height: 100%;
+      width: 100%;
+      background-image: url("../../images/stability-bg.png");
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+    #imgWrapper {
+      width: 100%;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+      position: relative;
+
+      bottom: 55%;
+    }
+  }
+}
+#title {
+  margin-top: 20px;
+  color: $off-white;
+  text-align: center;
+}

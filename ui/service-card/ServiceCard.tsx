@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import arrow from "../../images/Learn-more-arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ServiceCard.module.scss";
+import { cardIdContextType, idContext } from "../../components/Layout";
 
 interface Props {
   id: number;
@@ -17,6 +18,8 @@ export default function ServiceCard({
   title,
   description,
 }: Props) {
+  const { setCardId } = useContext(idContext) as cardIdContextType;
+
   return (
     <div id={styles.cardParent}>
       <div>
@@ -43,10 +46,10 @@ export default function ServiceCard({
         </ul>
       </div>
 
-      <Link href="/services">
+      <Link href="/services" onClick={() => setCardId(id)}>
         <div id={styles.learnMoreParent}>
           <p id={styles.learnMore} className="light-link">
-            Leran more
+            Learn more
           </p>
           <Image id={styles.arrow} src={arrow} alt="Learn more arrow" />
         </div>

@@ -4,6 +4,8 @@ import Image from "next/image";
 import logo from "../../images/logo.png";
 import burger from "../../images/burger.svg";
 import styles from "./Navbar.module.scss";
+import { useContext } from "react";
+import { cardIdContextType, idContext } from "../Layout";
 
 interface Props {
   wrapperRef: React.RefObject<HTMLDivElement>;
@@ -16,12 +18,14 @@ export default function Navbar({
   showOptions,
   setShowOptions,
 }: Props) {
+  const { setCardId } = useContext(idContext) as cardIdContextType;
+
   function handleOptionClick() {
     setShowOptions(false);
   }
 
   return (
-    <nav id={styles.navbar}>
+    <nav id={styles.navbar} onClick={() => setCardId(null)}>
       <Link href="/">
         <div id={styles.logo}>
           <Image src={logo} alt="logo" />

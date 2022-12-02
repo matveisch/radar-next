@@ -50,6 +50,7 @@ export default function RtwBtn() {
         {iconsArr.map((item, index) => {
           return (
             <motion.div
+              id={styles.rtwImgWrapper}
               initial={false}
               animate={{
                 y: hovered ? 1 : 0,

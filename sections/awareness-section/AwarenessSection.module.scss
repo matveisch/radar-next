@@ -1,0 +1,39 @@
+@import "../../styles/variables.module";
+
+#awarenessWrapper {
+  margin: 140px 0px;
+  width: calc(100vw - calc($page-padding * 2));
+
+  h2 {
+    color: $off-white;
+    display: inline;
+    z-index: 1;
+  }
+
+  #sliderWrapper {
+    width: 100%;
+    position: relative;
+
+    .insideWrapper {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  .header {
+    display: flex;
+  }
+
+  .meters {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 224px);
+    justify-content: space-evenly;
+    gap: 30px;
+
+    .meterWrapper {
+      //  flex-basis: 25%;
+    }
+  }
+}

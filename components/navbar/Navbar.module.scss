@@ -1,4 +1,5 @@
 @import "../../styles/variables.module";
+@import "../../styles//breakpoints.module";
 
 #navbar {
   display: flex;
@@ -20,7 +21,7 @@
   }
 
   #navbarLinks {
-    @media (max-width: 960px) {
+    @media (max-width: map-get($breakpoints, "tablet")) {
       display: none;
     }
 
@@ -35,6 +36,9 @@
       border: 3px solid $main-green;
       transition: 0.3s;
       a {
+        @media (max-width: map-get($breakpoints, "lg")) {
+          padding: 5px 17.5px;
+        }
         padding: 10px 35px;
         &::after {
           content: "";
@@ -72,7 +76,7 @@
   }
 
   .imageWrapper {
-    @media (min-width: 960px) {
+    @media (min-width: map-get($breakpoints, "tablet")) {
       display: none;
     }
     width: 43px;
@@ -86,9 +90,20 @@
   }
 
   .menuOptions {
-    @media (min-width: 960px) {
+    @media (min-width: map-get($breakpoints, "tablet")) {
       display: none;
     }
+
+    @media (max-width: map-get($breakpoints, "mobileL")) {
+      width: 100%;
+      border-radius: 0;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      padding: 0;
+      padding-top: 50px;
+    }
+
     position: absolute;
     top: calc(48px + 43px);
     right: calc($page-padding - 43px);
@@ -101,6 +116,6 @@
     flex-direction: column;
     gap: 20px;
 
-    z-index: 1;
+    z-index: 2;
   }
 }

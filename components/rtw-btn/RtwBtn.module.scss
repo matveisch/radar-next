@@ -18,9 +18,7 @@
       rgba(105, 254, 139, 0) 100%
     );
     opacity: 0.8;
-    img {
-      filter: $main-green-filter;
-
+    #rtwImgWrapper {
       position: absolute;
       margin: auto;
       top: 0%;
@@ -28,6 +26,12 @@
       left: 0%;
       right: 0%;
       height: 32px;
+      width: 32px;
+    }
+    img {
+      filter: $main-green-filter;
+      width: auto;
+      height: 100%;
     }
   }
 
