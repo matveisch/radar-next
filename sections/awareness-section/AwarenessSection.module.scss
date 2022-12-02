@@ -21,10 +21,16 @@
     }
   }
 
-  .flexBox {
+  .header {
     display: flex;
+  }
+
+  .meters {
     margin-top: 40px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 224px);
+    justify-content: space-evenly;
+    gap: 30px;
 
     .meterWrapper {
       //  flex-basis: 25%;
