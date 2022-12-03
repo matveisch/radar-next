@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&display=swap");
 @import "../../styles/variables.module";
+@import "../../styles/breakpoints.module";
 
 #crop {
   width: 100%;
@@ -36,6 +37,19 @@
     h2 {
       text-transform: uppercase;
     }
+
+    @media (max-width: map-get($breakpoints, "mobileL")) {
+      gap: 10px;
+
+      h1 {
+        font-size: 7vw;
+        line-height: normal;
+      }
+
+      h2 {
+        font-size: 5vw;
+      }
+    }
   }
 
   #background {
@@ -45,6 +59,11 @@
 
     img {
       filter: $black-filter;
+
+      @media (max-width: map-get($breakpoints, "mobileL")) {
+        width: 90%;
+        height: 90%;
+      }
     }
 
     .imageWrapper {

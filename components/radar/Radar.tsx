@@ -95,7 +95,7 @@ export default function Radar() {
       <div id={style.radarContainer}>
         <div id={style.titles}>
           <h2 className="H3">full-cycle</h2>
-          <h1 className="H1">Digital Marketing Agency</h1>
+          <h1 className="H2">Digital Marketing Agency</h1>
         </div>
 
         <div id={style.background}>

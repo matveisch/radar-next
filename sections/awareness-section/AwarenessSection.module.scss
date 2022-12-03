@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 #awarenessWrapper {
-  margin: 140px 0px;
+  // margin: 140px 0px; // using flex-gap instead of margin (loot at home.module)
   width: calc(100vw - calc($page-padding * 2));
 
   h2 {
