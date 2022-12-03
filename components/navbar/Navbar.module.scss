@@ -9,6 +9,10 @@
   width: calc(100vw - calc($page-padding * 2));
   position: relative;
 
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    padding: 24px $page-padding 24px $page-padding;
+  }
+
   #logo {
     display: flex;
     align-items: center;
