@@ -59,6 +59,11 @@
 
     img {
       filter: $black-filter;
+
+      @media (max-width: map-get($breakpoints, "mobileL")) {
+        width: 90%;
+        height: 90%;
+      }
     }
 
     .imageWrapper {
