@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 #mainContainer {
-  margin-top: 180px;
+  // margin-top: 180px; // using flex-gap instead of margin (loot at home.module)
   width: calc(100vw - calc($page-padding * 2));
 
   #flex {

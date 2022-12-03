@@ -54,6 +54,12 @@
   align-items: center;
 }
 
+#statsParent {
+  @media (max-width: map-get($breakpoints, "laptop")) {
+    padding: 10px $stats-padding;
+  }
+}
+
 .statsContainerMobile {
   display: flex;
 

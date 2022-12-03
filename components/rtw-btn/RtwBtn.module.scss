@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 #rtwBtnBackground {
-  margin-top: 180px;
+  // margin-top: 180px; // using flex-gap instead of margin (loot at home.module)
   position: relative;
   height: 450px;
   width: 100vw;
