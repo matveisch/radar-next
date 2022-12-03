@@ -11,15 +11,15 @@ import automaticServices from "../../images/Group 37.svg";
 export default function TechnologySection() {
   return (
     <div id={styles.mainContainer}>
+      <h2 id={styles.techTitle} className="H2">
+        Technology
+      </h2>
+      <p id={styles.techParagraph} className="paragraph">
+        Мы используем множество автоматизированных сервисов и собственных ботов
+        которые позволяют отслеживать рынок.
+      </p>
       <div id={styles.flex}>
         <div id={styles.leftContainer}>
-          <h2 id={styles.techTitle} className="H2">
-            Technology
-          </h2>
-          <p id={styles.techParagraph} className="paragraph">
-            Мы используем множество автоматизированных сервисов и собственных
-            ботов которые позволяют отслеживать рынок.
-          </p>
           <div id={styles.techCardsWrapper}>
             <TechRectangle img={marketTracking} title={"Market Tracking"} />
             <TechRectangle img={trandResearch} title={"Trand Research"} />
