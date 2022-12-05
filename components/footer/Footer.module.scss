@@ -44,7 +44,9 @@
       color: $off-white;
 
       @media (max-width: map-get($breakpoints, "tablet")) {
-        flex-direction: row;
+        // flex-direction: row;
+        text-align: center;
+
         gap: 10px;
       }
 
@@ -60,6 +62,9 @@
       #footerSocialIcons {
         display: flex;
         gap: 10px;
+        @media (max-width: map-get($breakpoints, "tablet")) {
+          justify-content: center;
+        }
 
         a {
           img {

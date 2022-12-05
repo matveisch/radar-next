@@ -20,3 +20,18 @@ $off-black-filter: invert(25%) sepia(6%) saturate(961%) hue-rotate(178deg)
 // common values
 $page-padding: 10vw;
 $stats-padding: 1.357vw;
+
+//Borded radius
+
+// @media (max-width: map-get($breakpoints, "mobileL")) {
+//   $border-radius: $small-border-radius;
+// }
+@media all and (min-width: 500px) {
+  /* Apply first set of CSS rules */
+  $border-radius: 16px;
+}
+
+@media not all and (min-width: 500px) {
+  /* Apply second set of CSS rules */
+  $border-radius: 8px;
+}
