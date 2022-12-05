@@ -54,7 +54,7 @@ a {
   letter-spacing: -0.005em;
 
   @media (max-width: map-get($breakpoints, "mobileL")) {
-    font-size: 7vw;
+    font-size: 15.13vw;
   }
 }
 
@@ -91,6 +91,9 @@ a {
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    font-size: 12px;
+  }
 }
 
 .light-link {
@@ -113,6 +116,9 @@ a {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   transition: 0.1s;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    margin-left: 0px;
+  }
 }
 
 .customSlider-track.customSlider-track-0 {
@@ -129,6 +135,9 @@ a {
   outline: none;
 
   transition: transform 0.2s, box-shadow 0.3s, left 0.1s;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    margin-left: 0px;
+  }
 }
 
 .customSlider-thumb:hover {

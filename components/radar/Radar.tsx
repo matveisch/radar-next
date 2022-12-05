@@ -94,8 +94,11 @@ export default function Radar() {
     <div id={style.crop}>
       <div id={style.radarContainer}>
         <div id={style.titles}>
-          <h2 className="H3">full-cycle</h2>
-          <h1 className="H2">Digital Marketing Agency</h1>
+          {/* <h2 className="H3">Full cycle</h2> */}
+          <h1 className="H2">Radar Digitaly</h1>
+          <h2 className="H3" style={{ marginTop: 10 }}>
+            New Order Marketing Agency
+          </h2>
         </div>
 
         <div id={style.background}>
@@ -123,8 +126,8 @@ export default function Radar() {
               default: {
                 ease: "linear",
                 repeat: Infinity,
-                duration: 8,
-                repeatDelay: 1,
+                duration: 4.5,
+                repeatDelay: 0,
               },
               opacity: {
                 ease: "linear",

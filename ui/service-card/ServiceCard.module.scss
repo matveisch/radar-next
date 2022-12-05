@@ -6,13 +6,16 @@
 }
 
 #cardParent {
-  height: 255px;
+  height: auto;
   position: relative;
   background-color: $off-black;
   border-radius: 16px;
   padding: 20px;
   box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
   transition: 0.3s;
+  // @media (max-width: map-get($breakpoints, "tablet")) {
+  //   padding: 10px;
+  // }
 
   #title {
     color: $main-green;
@@ -59,7 +62,26 @@
       margin-right: 8px;
     }
   }
-
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    #icon {
+      width: 32px;
+      height: auto;
+    }
+    #title {
+      margin-left: 50px;
+      margin-top: -50px;
+    }
+    ul {
+      @for $i from 3 through 10 {
+        #listItem#{$i} {
+          margin-bottom: 5px;
+          color: $main-green;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
   &:hover {
     scale: 1.06;
     box-shadow: 3px 3px 32px rgba(0, 239, 56, 0.194);

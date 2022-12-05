@@ -15,7 +15,7 @@
   }
 
   #techParagraph {
-    // margin-bottom: 60px;
+    margin-bottom: 60px;
     color: $off-white;
 
     @media (max-width: 580px) {
@@ -28,36 +28,43 @@
     align-items: center;
     gap: 30px;
     position: relative;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
 
     #leftContainer {
       z-index: 1;
       width: 50%;
 
-      @media (max-width: 580px) {
+      @media (max-width: 600px) {
         width: 100%;
       }
 
       #techCardsWrapper {
         display: grid;
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-        grid-template-rows: repeat(2, 158px);
+        grid-template-columns: repeat(2, minmax(min(100px, 100%), 1fr));
+        grid-template-rows: repeat(2, minmax(100px, 150px));
         grid-gap: 30px;
 
-        @media (max-width: 580px) {
-          grid-template-columns: repeat(1, 250px);
-          grid-template-rows: repeat(4, 250px);
-          justify-content: center;
-        }
+        // @media (max-width: 580px) {
+        //   grid-template-columns: repeat(1, 250px);
+        //   grid-template-rows: repeat(4, 250px);
+        //   justify-content: center;
+        // }
       }
     }
     #rightContainer {
       z-index: 0;
       width: 50%;
       // position: relative;
-      right: 0;
+      //  right: 0;
 
-      @media (max-width: 580px) {
-        display: none;
+      @media (max-width: 600px) {
+        width: 100vw;
+
+        height: auto;
+        align-items: center;
+        text-align: center;
       }
 
       #techRadarGif {
@@ -67,6 +74,11 @@
         // width: 100%;
         position: relative;
         right: 25%;
+        @media (max-width: 600px) {
+          margin-top: -30%;
+          width: 100%;
+          position: inherit;
+        }
       }
     }
   }

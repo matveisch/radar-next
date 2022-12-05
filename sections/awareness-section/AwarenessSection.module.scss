@@ -18,11 +18,18 @@
       width: 100%;
       position: absolute;
       top: 50%;
+      @media (max-width: map-get($breakpoints, "tablet")) {
+        margin-top: 10px;
+        top: 100%;
+      }
     }
   }
 
   .header {
     display: flex;
+    @media (max-width: map-get($breakpoints, "tablet")) {
+      display: block;
+    }
   }
 
   .meters {
@@ -31,6 +38,9 @@
     grid-template-columns: repeat(auto-fit, 224px);
     justify-content: space-evenly;
     gap: 30px;
+    @media (max-width: map-get($breakpoints, "tablet")) {
+      margin-top: 100px;
+    }
 
     .meterWrapper {
       //  flex-basis: 25%;
