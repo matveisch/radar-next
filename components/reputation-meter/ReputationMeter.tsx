@@ -23,7 +23,6 @@ function ReputationMeter({ value }: Props) {
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
-          <Image id={styles.scaleImg} src={reputationScale} alt="repScale" />
           <motion.div
             id={styles.imgWrapper}
             animate={{ rotate: [1, -1, 1] }}

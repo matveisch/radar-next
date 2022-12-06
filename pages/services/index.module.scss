@@ -1,16 +1,14 @@
 @import "../../styles/variables.module";
 #servicesMainWrapper {
   padding: 0 $page-padding;
-  //height: calc(100vh - 300px);
-  //margin-bottom: 300px;
   display: flex;
   flex-direction: column;
 
   #servicesBtnGrid {
     display: grid;
-    // height: calc(100vh - 300px);
+
     grid-template-columns: repeat(auto-fill, minmax(max(230px, 20%), 1fr));
-    // grid-template-rows: repeat(auto-fill, minmax(min(170px, 20%), 1fr));
+
     grid-gap: 30px;
     column-gap: 30px;
 

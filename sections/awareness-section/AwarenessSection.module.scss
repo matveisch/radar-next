@@ -35,11 +35,14 @@
   .meters {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 224px);
+
+    grid-template-columns: repeat(auto-fill, minmax(max(100px, 20%), 1fr));
     justify-content: space-evenly;
     gap: 30px;
+
     @media (max-width: map-get($breakpoints, "tablet")) {
       margin-top: 100px;
+      gap: 30px 15px;
     }
 
     .meterWrapper {

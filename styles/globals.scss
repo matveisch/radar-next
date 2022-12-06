@@ -45,6 +45,10 @@ a {
   font-weight: 700;
   line-height: 84px;
   letter-spacing: 0.045em;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    font-size: 12vw;
+    line-height: 12vw;
+  }
 }
 
 .H2 {
@@ -63,6 +67,10 @@ a {
   font-weight: 600;
   line-height: 23px;
   letter-spacing: 0.045em;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
 }
 
 .H4 {
@@ -77,6 +85,9 @@ a {
   font-weight: 500;
   line-height: 25px;
   letter-spacing: 0.035em;
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    font-size: 16px;
+  }
 }
 
 .link {

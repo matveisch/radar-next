@@ -95,7 +95,7 @@ export default function Radar() {
       <div id={style.radarContainer}>
         <div id={style.titles}>
           {/* <h2 className="H3">Full cycle</h2> */}
-          <h1 className="H2">Radar Digitaly</h1>
+          <h1 className="H1">Radar Digitaly</h1>
           <h2 className="H3" style={{ marginTop: 10 }}>
             New Order Marketing Agency
           </h2>
@@ -126,7 +126,7 @@ export default function Radar() {
               default: {
                 ease: "linear",
                 repeat: Infinity,
-                duration: 4.5,
+                duration: 4,
                 repeatDelay: 0,
               },
               opacity: {
