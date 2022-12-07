@@ -21,7 +21,7 @@ const ServicesBtn: React.FC<Props> = (props: Props) => {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      animate={{ height: props.isOpen ? "170px" : "60px" }}
+      animate={{ height: props.isOpen ? "100%" : "60px" }}
       id={styles.mainWrapperBtn}
     >
       <motion.h4
@@ -37,9 +37,9 @@ const ServicesBtn: React.FC<Props> = (props: Props) => {
       </motion.h4>
       <motion.div
         animate={{
-          height: props.isOpen ? "210px" : "55px",
-          width: props.isOpen ? "210px" : "55px",
-          x: hovered && props.isOpen ? 20 : 0,
+          height: props.isOpen ? "210px" : "40px",
+          width: props.isOpen ? "210px" : "40px",
+          x: hovered && props.isOpen ? 20 : -20,
           scale: hovered && props.isOpen ? 1.2 : 1,
           rotate: hovered ? -10 : !props.isOpen ? 0 : -20,
         }}

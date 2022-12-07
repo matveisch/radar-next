@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 #awarenessWrapper {
-  margin: 140px 0px;
+  // margin: 140px 0px; // using flex-gap instead of margin (loot at home.module)
   width: calc(100vw - calc($page-padding * 2));
 
   h2 {
@@ -18,19 +18,34 @@
       width: 100%;
       position: absolute;
       top: 50%;
+      @media (max-width: map-get($breakpoints, "tablet")) {
+        margin-top: 10px;
+        top: 100%;
+      }
     }
   }
 
   .header {
     display: flex;
+    @media (max-width: map-get($breakpoints, "tablet")) {
+      display: block;
+    }
   }
 
   .meters {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 224px);
+
+    //grid-template-columns: repeat(auto-fill, minmax(max(100px, 20%), 1fr));
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-evenly;
     gap: 30px;
+
+    @media (max-width: map-get($breakpoints, "tablet")) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 100px;
+      gap: 30px 15px;
+    }
 
     .meterWrapper {
       //  flex-basis: 25%;

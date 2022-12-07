@@ -7,9 +7,7 @@
   background: $off-black;
   box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
   border-radius: 16px;
-  align-items: center;
   display: flex;
-  justify-content: center;
 
   .imageTitle {
     margin: auto;
@@ -18,8 +16,12 @@
     gap: 10px;
     align-items: center;
     text-align: center;
-    width: 157px;
-    height: 76px;
+    img {
+      @media (max-width: map-get($breakpoints, "tablet")) {
+        width: 40px;
+        height: 100%;
+      }
+    }
 
     h1 {
       color: $off-white;

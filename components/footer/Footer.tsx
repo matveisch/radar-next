@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import NavbarButton from "../../ui/navbar-button/NavbarButton";
 import useServicesList from "../../data/servicesList";
 import Sublink from "../../ui/sublink/Sublink";
@@ -15,7 +15,7 @@ export default function Footer() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
 
   return (
-    <div id={styles.footerMainWrapper}>
+    <footer id={styles.footerMainWrapper}>
       <div id={styles.footerLeftContainer}>
         <div id={styles.footerLogo}>
           <Image src={logo} alt="logo" />
@@ -54,6 +54,6 @@ export default function Footer() {
           })}
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

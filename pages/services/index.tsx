@@ -65,7 +65,11 @@ const Services = () => {
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main id={styles.servicesMainWrapper} onWheel={handleWheel}>
+      <main
+        id={styles.servicesMainWrapper}
+        onWheel={handleWheel}
+        style={{ height: isOpen ? "calc(100vh-300px)" : "auto" }}
+      >
         <div id={styles.servicesBtnGrid}>
           {servicesArr.map((item, index) => {
             return (
@@ -118,7 +122,10 @@ const Services = () => {
         </div>
         <motion.div
           animate={{ opacity: isOpen ? 0 : 1 }}
-          style={{ visibility: isOpen ? "hidden" : "visible" }}
+          style={{
+            visibility: isOpen ? "hidden" : "visible",
+            display: isOpen ? "none" : "block",
+          }}
           className={styles.paragraphs}
         >
           <p style={{ color: "white", fontSize: "60px" }}>
