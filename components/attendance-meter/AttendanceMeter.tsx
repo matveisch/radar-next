@@ -22,11 +22,7 @@ function AttendanceMeter({ value }: Props) {
             animate={{ opacity: value > 25 ? value / 100 : 0, rotate: 200 }}
             className={styles.triangle}
           ></motion.div>
-          {/* <motion.div
-          style={{ left: "70%", top: "50%" }}
-          animate={{ opacity: value > 60 ? value / 100 : 0, rotate: 250 }}
-          className={styles.triangle}
-        ></motion.div> */}
+
           <motion.div
             style={{ left: "70%", top: "35%" }}
             animate={{ opacity: value > 0 ? value / 100 : 0, rotate: 250 }}

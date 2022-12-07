@@ -6,9 +6,9 @@
   height: 450px;
   width: 100vw;
   background-color: $main-green;
-  @media (max-width: map-get($breakpoints, "mobileL")) {
-    height: 90vh;
-  }
+  // @media (max-width: map-get($breakpoints, "mobileL")) {
+  //   height: 90vh;
+  // }
 
   #rtwBtnContainer {
     position: relative;
