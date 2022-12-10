@@ -1,0 +1,14 @@
+@import "../../styles/variables.module";
+
+
+#chosenService{
+    background-color: $main-green;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px 20px;
+    border-radius: 16px;
+    p{
+        display: inline;
+    }
+}

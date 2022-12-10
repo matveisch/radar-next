@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
+import ServicesMenuMobile from "../../components/services-menu-mobile/ServicesMenuMobile";
 import useServicesList from "../../data/servicesList";
 import Link from "next/link";
 import ServicesBtn from "../../ui/services-btn/ServicesBtn";
@@ -65,10 +66,14 @@ const Services = () => {
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
+      <main>
+
+      {/* DESCKTOP MENU */}
+
+      <div
         id={styles.servicesMainWrapper}
         onWheel={handleWheel}
-        style={{ height: isOpen ? "calc(100vh-300px)" : "auto" }}
+        style={{ height: isOpen ? "calc(100vh - 142px)" : "auto" }}
       >
         <div id={styles.servicesBtnGrid}>
           {servicesArr.map((item, index) => {
@@ -119,8 +124,15 @@ const Services = () => {
               </Link>
             </motion.div>
           </motion.div>
-        </div>
-        <motion.div
+        </div> 
+      </div>
+
+      {/* MOBILE MENU */}
+
+      <div id={styles.servicesMobileWrapper}>
+              <ServicesMenuMobile />
+      </div>
+      {/* <motion.div
           animate={{ opacity: isOpen ? 0 : 1 }}
           style={{
             visibility: isOpen ? "hidden" : "visible",
@@ -134,7 +146,7 @@ const Services = () => {
           <p style={{ color: "white", fontSize: "60px" }}>
             {checkedService.content}
           </p>
-        </motion.div>
+        </motion.div> */}
       </main>
     </div>
   );

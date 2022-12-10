@@ -1,14 +1,27 @@
 @import "../../styles/variables.module";
+
+#servicesMobileWrapper{
+  visibility: hidden;
+  display: none;
+  @include breakpoint(937px) {
+    visibility: visible;
+    display: block;
+  }
+}
 #servicesMainWrapper {
   padding: 0 $page-padding;
   display: flex;
   flex-direction: column;
-
+ 
+  @include breakpoint(937px) {
+    visibility: hidden;
+    display: none;
+  }
   #servicesBtnGrid {
     display: grid;
 
     grid-template-columns: repeat(auto-fill, minmax(max(230px, 20%), 1fr));
-
+    //grid-template-rows: repeat(auto-fit,100%);
     grid-gap: 30px;
     column-gap: 30px;
 
