@@ -2,13 +2,23 @@
 
 
 #itemLi{
-    margin: 0;
+    margin: 10px auto;
     padding: 0;
     list-style:none;
     background-color: $off-black;
     width: 100%;
     max-width: 300px;
-    text-align: center;
-    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
     border-radius: 16px;
+    #menuItemImg{
+        filter: $off-white-filter;
+        height: 30px;
+        width: auto;
+        margin-right: 10px;
+    }
+    #menuItemText{
+        color: $off-white;
+    }
 }

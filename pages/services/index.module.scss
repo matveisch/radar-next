@@ -1,6 +1,8 @@
 @import "../../styles/variables.module";
 
 #servicesMobileWrapper{
+  
+
   visibility: hidden;
   display: none;
   @include breakpoint(937px) {

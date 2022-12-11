@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { motion, useCycle } from "framer-motion";
+import Image from "next/image";
 import styles from "./ServicesDropdownItem.module.scss";
 import useServicesList from "../../data/servicesList";
 import { cardIdContextType, idContext } from "../../components/Layout";
@@ -40,9 +41,10 @@ export default function ServicesDropdownItem({ itemId, toggle }: Props){
             toggle()}}
             id={styles.itemLi}
         >
-            <div>
-                <p>{servicesArr[itemId].name}</p>
-            </div>
+            
+              <Image id={styles.menuItemImg} src={require(`../../images/${servicesArr[itemId].img}.svg`)} alt={servicesArr[itemId].name} />
+                <p className='paragraph' id={styles.menuItemText}>{servicesArr[itemId].name}</p>
+            
         </motion.li>
     )
 }

@@ -21,13 +21,13 @@ const variants ={
 }
 export default function ServicesDropdownMenu({ toggle }: Props){
     const servicesArr = useServicesList();
-
+    const { cardId } = useContext(idContext) as cardIdContextType;
     return(
         <motion.ul
         id={styles.servicesUl}
         variants={variants}
         >
-           {servicesArr.map((item, index) => 
+           {servicesArr.filter(item => item.id!=cardId).map((item, index) => 
                 <ServicesDropdownItem itemId={item.id} toggle={() => toggle()} />
            )}
             

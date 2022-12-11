@@ -8,8 +8,8 @@ interface Props {
   }
 
   const variants = {
-    closed: { opacity: 1, x: 0 },
-    open: { opacity: 0, x:0 },
+    closed: { opacity: 1, y: 0, display: 'block' },
+    open: { opacity: 0, y:"100%", display: 'none' },
   }
 
 export default function ServicesDescription({ serviceId }: Props){
