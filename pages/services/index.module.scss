@@ -2,7 +2,7 @@
 
 #servicesMobileWrapper{
   
-
+  padding: 0 $page-padding;
   visibility: hidden;
   display: none;
   @include breakpoint(937px) {

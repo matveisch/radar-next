@@ -23,7 +23,7 @@ export default function ServicesDescription({ serviceId }: Props){
           <p style={{ color: "white", fontSize: "60px" }}>
             {servicesArr[serviceId].name}
           </p>
-          <p style={{ color: "white", fontSize: "60px" }}>
+          <p style={{ color: "white", fontSize: "20px" }}>
             {servicesArr[serviceId].content}
           </p> 
         </motion.div>
