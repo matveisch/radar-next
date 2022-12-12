@@ -38,9 +38,9 @@ export default function Layout({ children }: Props) {
       <idContext.Provider value={contextValue}>
         <header>
           <Navbar
-            setShowOptions={setShowOptions}
-            showOptions={showOptions}
-            wrapperRef={wrapperRef}
+          // setShowOptions={setShowOptions}
+          // showOptions={showOptions}
+          // wrapperRef={wrapperRef}
           />
         </header>
         <main>{children}</main>

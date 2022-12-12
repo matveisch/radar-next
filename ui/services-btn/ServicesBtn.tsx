@@ -21,12 +21,12 @@ const ServicesBtn: React.FC<Props> = (props: Props) => {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      animate={{ height: props.isOpen ? "100%" : "60px" }}
+      animate={{ height: props.isOpen ? "210px" : "60px" }}
       id={styles.mainWrapperBtn}
     >
       <motion.h4
         animate={{
-          fontSize: props.isOpen ? "50px" : "34px",
+          fontSize: props.isOpen ? "3vw" : "2vw",
           marginTop: props.isOpen ? "20px" : 0,
           width: props.isOpen ? "40%" : "100%",
         }}

@@ -1,24 +1,23 @@
 @import "../../styles/variables.module";
 
-
-#itemLi{
-    margin: 10px auto;
-    padding: 0;
-    list-style:none;
-    background-color: $off-black;
-    //width: 100%;
-    max-width: 300px;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-radius: 16px;
-    #menuItemImg{
-        filter: $off-white-filter;
-        height: 30px;
-        width: auto;
-        margin-right: 10px;
-    }
-    #menuItemText{
-        color: $off-white;
-    }
+#itemLi {
+  margin: 10px auto;
+  padding: 0;
+  list-style: none;
+  background-color: $off-black;
+  //width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 16px;
+  #menuItemImg {
+    filter: $off-white-filter;
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+  }
+  #menuItemText {
+    color: $off-white;
+  }
 }

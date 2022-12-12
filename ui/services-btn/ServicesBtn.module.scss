@@ -10,7 +10,6 @@
   // padding: 20px;
   height: 100%;
   overflow: hidden;
-  flex-basis: 20%;
 
   &:hover {
     box-shadow: 0 0 32px 0px rgba(105, 254, 139, 0.15);
@@ -26,6 +25,10 @@
     line-height: 50px;
     z-index: 1;
     width: 40%;
+
+    @include breakpoint(1024px) {
+      font-size: 34px;
+    }
   }
 
   #imgBtn {

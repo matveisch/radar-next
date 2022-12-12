@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import ServicesMenuMobile from "../../components/services-menu-mobile/ServicesMenuMobile";
 import useServicesList from "../../data/servicesList";
 import Link from "next/link";
@@ -67,86 +67,80 @@ const Services = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {/* DESCKTOP MENU */}
 
-      {/* DESCKTOP MENU */}
-
-      <div
-        id={styles.servicesMainWrapper}
-        onWheel={handleWheel}
-        style={{ height: isOpen ? "calc(100vh - 142px)" : "auto" }}
-      >
-        <div id={styles.servicesBtnGrid}>
-          {servicesArr.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className={
-                  index == checkedService.id && !isOpen
-                    ? `${styles.checkedServiceBtn} ${styles.servicesBtn}`
-                    : styles.servicesBtn
-                }
-                onClick={() => handleClick(index)}
-              >
-                <ServicesBtn
-                  name={item.name}
-                  image={item.img}
-                  isOpen={isOpen}
-                />
-              </div>
-            );
-          })}
-          <motion.div
-            ref={contactBtn}
-            id={styles.contactCard}
-            animate={{ height: isOpen ? "170px" : "60px" }}
-          >
-            <motion.h4
-              id={styles.title}
-              className="H4"
+        <div
+          id={styles.servicesMainWrapper}
+          onWheel={handleWheel}
+          style={{ height: isOpen ? "calc(100vh - 142px)" : "auto" }}
+        >
+          <div id={styles.servicesBtnGrid}>
+            {servicesArr.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className={
+                    index == checkedService.id && !isOpen
+                      ? `${styles.checkedServiceBtn} ${styles.servicesBtn}`
+                      : styles.servicesBtn
+                  }
+                  onClick={() => handleClick(index)}
+                >
+                  <ServicesBtn
+                    name={item.name}
+                    image={item.img}
+                    isOpen={isOpen}
+                  />
+                </div>
+              );
+            })}
+            <motion.div
+              ref={contactBtn}
+              id={styles.contactCard}
               animate={{
-                height: isOpen ? "100px" : 0,
-                fontSize: isOpen ? "47px" : "34px",
-                marginTop: isOpen ? "20px" : 0,
-                opacity: isOpen ? 1 : 0,
-              }}
-              transition={{
-                default: {},
-                opacity: {
-                  duration: 0,
-                },
+                height: isOpen ? "170px" : "60px",
+                padding: isOpen ? "20px" : "0px",
               }}
             >
-              Need help?
-            </motion.h4>
-            <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.03 }}>
-              <Link href="/contact" id={styles.contactCardBtn} className="link">
-                Ask Us
-              </Link>
+              <motion.h4
+                id={styles.title}
+                className="H4"
+                animate={{
+                  height: isOpen ? "100px" : 0,
+                  fontSize: isOpen ? "3vw" : "2vw",
+                  marginTop: isOpen ? "20px" : 0,
+                  opacity: isOpen ? 1 : 0,
+                }}
+                transition={{
+                  default: {},
+                  opacity: {
+                    duration: 0,
+                  },
+                }}
+              >
+                Need help?
+              </motion.h4>
+              <motion.div
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <Link
+                  href="/contact"
+                  id={styles.contactCardBtn}
+                  className="link"
+                >
+                  Ask Us
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </div> 
-      </div>
+          </div>
+        </div>
 
-      {/* MOBILE MENU */}
+        {/* MOBILE MENU */}
 
-      <div id={styles.servicesMobileWrapper}>
-              <ServicesMenuMobile />
-      </div>
-      {/* <motion.div
-          animate={{ opacity: isOpen ? 0 : 1 }}
-          style={{
-            visibility: isOpen ? "hidden" : "visible",
-            display: isOpen ? "none" : "block",
-          }}
-          className={styles.paragraphs}
-        >
-          <p style={{ color: "white", fontSize: "60px" }}>
-            {checkedService.name}
-          </p>
-          <p style={{ color: "white", fontSize: "60px" }}>
-            {checkedService.content}
-          </p>
-        </motion.div> */}
+        <div id={styles.servicesMobileWrapper}>
+          <ServicesMenuMobile />
+        </div>
       </main>
     </div>
   );
