@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { motion, useCycle } from "framer-motion";
 import ServicesMenuMobile from "../../components/services-menu-mobile/ServicesMenuMobile";
+import ServicesMenuDesktop from "../../components/services-menu-desktop/ServicesMenuDesktop";
 import useServicesList from "../../data/servicesList";
 import Link from "next/link";
 import ServicesBtn from "../../ui/services-btn/ServicesBtn";
@@ -68,8 +69,10 @@ const Services = () => {
       </Head>
       <main>
         {/* DESCKTOP MENU */}
-
-        <div
+        <div id={styles.servicesDesktopWrapper}>
+          <ServicesMenuDesktop />
+        </div>
+        {/* <div
           id={styles.servicesMainWrapper}
           onWheel={handleWheel}
           style={{ height: isOpen ? "calc(100vh - 142px)" : "auto" }}
@@ -134,7 +137,7 @@ const Services = () => {
               </motion.div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
 
         {/* MOBILE MENU */}
 

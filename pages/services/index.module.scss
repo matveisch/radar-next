@@ -9,6 +9,16 @@
     display: block;
   }
 }
+
+#servicesDesktopWrapper {
+  padding: 0 $page-padding;
+  visibility: visible;
+  display: block;
+  @include breakpoint(770px) {
+    visibility: hidden;
+    display: none;
+  }
+}
 #servicesMainWrapper {
   padding: 0 $page-padding;
   display: flex;

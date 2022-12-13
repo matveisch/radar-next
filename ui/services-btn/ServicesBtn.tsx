@@ -1,70 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./ServicesBtn.module.scss";
 import Image from "next/image";
+import useServicesList from "../../data/servicesList";
+import { cardIdContextType, idContext } from "../../components/Layout";
 
 interface Props {
-  name: string;
-  image: string;
+  itemId: number;
+  setOpen: Function;
   isOpen: boolean;
 }
 
-const ServicesBtn: React.FC<Props> = (props: Props) => {
+const wrapperAnim = {
+  open: {
+    height: "calc(40vh - 100px)",
+  },
+  closed: {
+    height: "60px",
+  },
+};
+
+const imgAnim = {
+  open: {
+    x: "0",
+  },
+  closed: {
+    x: "-60px",
+  },
+};
+
+const titleAnim = {
+  open: {
+    fontSize: "3vw",
+  },
+  closed: {
+    fontSize: "2vw",
+  },
+};
+const ServicesBtn: React.FC<Props> = ({ itemId, setOpen, isOpen }: Props) => {
   const [hovered, setHovered] = useState(false);
+  const servicesArr = useServicesList();
+  const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
 
   return (
     <motion.div
-      whileTap={{ scale: 0.95 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       whileHover={{
         scale: 1.05,
-        transition: { duration: 0.1 },
+        boxShadow: "0px 3px 16px 0px rgba(105, 254, 139, 0.2)",
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      animate={{ height: props.isOpen ? "210px" : "60px" }}
-      id={styles.mainWrapperBtn}
+      variants={wrapperAnim}
+      id={styles.mainWrapper}
+      animate={{
+        backgroundColor: cardId == itemId && !isOpen ? "#69fe8b" : "#3a3f47",
+      }}
+      onClick={() => {
+        setOpen(false);
+        setCardId(itemId);
+      }}
     >
       <motion.h4
-        animate={{
-          fontSize: props.isOpen ? "3vw" : "2vw",
-          marginTop: props.isOpen ? "20px" : 0,
-          width: props.isOpen ? "40%" : "100%",
-        }}
-        id={styles.titleBtn}
-        className="H4"
+        className="H3"
+        id={styles.title}
+        variants={titleAnim}
+        animate={{ color: itemId == cardId && !isOpen ? "#232932" : "#eeeeee" }}
+        transition={{ duration: 0 }}
       >
-        {props.name}
+        {servicesArr[itemId != undefined ? itemId : 0].name}
       </motion.h4>
       <motion.div
+        id={styles.imgWrapper}
+        variants={imgAnim}
         animate={{
-          height: props.isOpen ? "210px" : "40px",
-          width: props.isOpen ? "210px" : "40px",
-          x: hovered && props.isOpen ? 20 : -20,
-          scale: hovered && props.isOpen ? 1.2 : 1,
-          rotate: hovered ? -10 : !props.isOpen ? 0 : -20,
+          rotate: hovered && isOpen ? -25 : isOpen ? -15 : 0,
         }}
       >
         <Image
-          id={styles.imgBtn}
-          src={require(`../../images/${props.image}.svg`)}
-          alt={props.image}
+          id={styles.menuItemImg}
+          src={require(`../../images/${
+            servicesArr[itemId != undefined ? itemId : 0].img
+          }.svg`)}
+          alt={servicesArr[itemId != undefined ? itemId : 0].name}
         />
       </motion.div>
-      <motion.div
-        id={styles.arrow}
-        animate={{
-          opacity: props.isOpen ? 1 : 0,
-          width: hovered ? 100 : 20,
-        }}
-        transition={{
-          default: {
-            duration: 0.2,
-          },
-          opacity: {
-            duration: 0,
-          },
-        }}
-      ></motion.div>
     </motion.div>
   );
 };

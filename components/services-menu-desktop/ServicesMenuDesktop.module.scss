@@ -1,0 +1,10 @@
+@import "../../styles/variables.module";
+
+#servicesMenuWrapper {
+  #servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(100px, 20%), 1fr));
+    //grid-template-rows: repeat(auto-fit,100%);
+    gap: 30px;
+  }
+}

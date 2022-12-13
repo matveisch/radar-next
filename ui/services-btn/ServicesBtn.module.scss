@@ -1,50 +1,36 @@
 @import "../../styles/variables.module";
 
-#mainWrapperBtn {
+#mainWrapper {
   background-color: $off-black;
+  width: 100%;
+  border-radius: 16px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 16px;
-  // padding: 20px;
-  height: 100%;
   overflow: hidden;
+  height: calc(40vh - 100px);
 
-  &:hover {
-    box-shadow: 0 0 32px 0px rgba(105, 254, 139, 0.15);
-  }
-
-  #titleBtn {
-    height: auto;
-    position: relative;
-    margin-top: 20px;
-    margin-left: 20px;
-    color: $off-white;
-    font-size: 50px;
-    line-height: 50px;
-    z-index: 1;
-    width: 40%;
-
-    @include breakpoint(1024px) {
-      font-size: 34px;
-    }
-  }
-
-  #imgBtn {
-    filter: $black-filter;
-    margin-right: 20px;
-
-    width: auto;
-    height: 100%;
-  }
-  #arrow {
-    height: 3px;
-    width: 30px;
-    background-color: $main-green;
+  #title {
     position: absolute;
-    bottom: 40px;
+    margin: 0;
+    width: min-content;
+
+    color: $off-white;
     margin-left: 20px;
-    border-radius: 1.5px;
+    font-size: 3vw;
+    z-index: 1;
+  }
+  #imgWrapper {
+    position: absolute;
+    right: 0;
+    margin-right: -40px;
+    width: auto;
+    height: 80%;
+    img {
+      filter: $black-filter;
+      width: auto;
+      height: 100%;
+    }
   }
 }
