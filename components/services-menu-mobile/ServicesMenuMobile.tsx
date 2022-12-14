@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import styles from "./ServicesMenuMobile.module.scss";
 import Image from "next/image";
@@ -8,10 +8,19 @@ import ServicesDescription from "../services-description/ServicesDescription";
 import useServicesList from "../../data/servicesList";
 
 export default function ServicesMenuMobile() {
-  const [isOpen, toggleOpen] = useCycle(true, false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const servicesArr = useServicesList();
-  const { cardId } = useContext(idContext) as cardIdContextType;
-
+  const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+  useEffect(() => {
+    if (cardId != undefined) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  }, [cardId]);
   return (
     <motion.div
       initial={false}
@@ -28,13 +37,15 @@ export default function ServicesMenuMobile() {
         >
           <Image
             id={styles.chosenServiceImg}
-            src={require(`../../images/${
-              servicesArr[cardId != null ? cardId : 0].img
-            }.svg`)}
+            src={
+              cardId != null
+                ? require(`../../images/${servicesArr[cardId].img}.svg`)
+                : require(`../../images/select.svg`)
+            }
             alt={servicesArr[cardId != null ? cardId : 0].name}
           />
           <p className="H4" id={styles.chosenServiceText}>
-            {servicesArr[cardId != null ? cardId : 0].name}
+            {cardId != null ? servicesArr[cardId].name : "Select a service"}
           </p>
           <motion.div
             id={styles.dropDownImg}

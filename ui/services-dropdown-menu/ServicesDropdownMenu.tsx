@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import styles from "./ServicesDropdownMenu.module.scss";
 import { cardIdContextType, idContext } from "../../components/Layout";
@@ -20,7 +20,8 @@ const variants = {
 };
 export default function ServicesDropdownMenu({ toggle }: Props) {
   const servicesArr = useServicesList();
-  const { cardId } = useContext(idContext) as cardIdContextType;
+  const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+
   return (
     <motion.ul id={styles.servicesUl} variants={variants}>
       {servicesArr

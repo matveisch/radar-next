@@ -116,41 +116,6 @@ export default function Navbar() {
           </motion.ul>
         </motion.div>
       </motion.div>
-      {/* <div className={styles.imageWrapper} ref={wrapperRef}>
-        <Image
-          src={burger}
-          alt="burger-icon"
-          className={styles.burgerIcon}
-          onClick={() => setShowOptions(!showOptions)}
-        />
-      </div>
-      <div
-        className={styles.menuOptions}
-        style={showOptions ? undefined : { display: "none" }}
-      >
-        <NavbarButton
-          buttonName={"Services"}
-          linkTo={"/services"}
-          onClick={handleOptionClick}
-        />
-        <NavbarButton
-          buttonName={"About us"}
-          linkTo={"/"}
-          onClick={handleOptionClick}
-        />
-        <NavbarButton
-          buttonName={"Research"}
-          linkTo={"/"}
-          onClick={handleOptionClick}
-        />
-        <div id="contact-btn">
-          <NavbarButton
-            buttonName={"Contact"}
-            linkTo={"/contact"}
-            onClick={handleOptionClick}
-          />
-        </div> */}
-      {/* </div> */}
     </nav>
   );
 }
