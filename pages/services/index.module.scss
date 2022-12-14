@@ -1,15 +1,39 @@
 @import "../../styles/variables.module";
+
+#servicesMobileWrapper {
+  padding: 0 $page-padding;
+  visibility: hidden;
+  display: none;
+  @include breakpoint(770px) {
+    visibility: visible;
+    display: block;
+  }
+}
+
+#servicesDesktopWrapper {
+  padding: 0 $page-padding;
+  visibility: visible;
+  display: block;
+  @include breakpoint(770px) {
+    visibility: hidden;
+    display: none;
+  }
+}
 #servicesMainWrapper {
   padding: 0 $page-padding;
   display: flex;
   flex-direction: column;
 
+  @include breakpoint(770px) {
+    visibility: hidden;
+    display: none;
+  }
   #servicesBtnGrid {
     display: grid;
 
-    grid-template-columns: repeat(auto-fill, minmax(max(230px, 20%), 1fr));
-
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(max(100px, 20%), 1fr));
+    //grid-template-rows: repeat(auto-fit,100%);
+    grid-gap: 15px;
     column-gap: 30px;
 
     .checkedServiceBtn {
@@ -33,12 +57,12 @@
       display: flex;
       flex-direction: column;
 
-      @include breakpoint(1262px) {
-        grid-column: span 2;
-      }
-      @include breakpoint(937px) {
-        grid-column: span 1;
-      }
+      // @include breakpoint(1262px) {
+      //   grid-column: span 2;
+      // }
+      // @include breakpoint(937px) {
+      //   grid-column: span 1;
+      // }
 
       #contactCardBtn {
         display: block;
@@ -55,10 +79,10 @@
       }
       #title {
         //  position: relative;
-        font-size: 47px;
+        font-size: 3vw;
         margin-top: 20px;
         color: $off-white;
-        line-height: 50px;
+        line-height: 3vw;
         z-index: 1;
         pointer-events: none;
       }

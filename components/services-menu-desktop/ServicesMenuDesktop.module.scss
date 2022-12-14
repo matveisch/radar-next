@@ -1,0 +1,42 @@
+@import "../../styles/variables.module";
+
+#servicesMenuWrapper {
+  #servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(100px, 20%), 1fr));
+    //grid-template-rows: repeat(auto-fit,100%);
+    gap: 30px;
+    #contactCard {
+      background-color: $off-black;
+      width: 100%;
+      border-radius: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      height: calc(40vh - 100px);
+      #contactBtn {
+        margin: 20px;
+        border-radius: 16px;
+        border: 3px solid $off-black;
+        background-color: $black;
+
+        #contactLink {
+          height: 100%;
+          display: block;
+          text-align: center;
+          color: $off-white;
+          text-decoration: none;
+        }
+      }
+      #contactTitle {
+        margin: 20px 0 0 20px;
+        color: $off-white;
+        line-height: 3vw;
+        font-size: 3vw;
+        z-index: 1;
+      }
+    }
+  }
+}

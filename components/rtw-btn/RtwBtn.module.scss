@@ -2,7 +2,7 @@
 
 #rtwBtnBackground {
   // margin-top: 180px; // using flex-gap instead of margin (loot at home.module)
-  position: relative;
+
   height: 450px;
   width: 100vw;
   background-color: $main-green;
@@ -13,15 +13,12 @@
   #rtwBtnContainer {
     position: relative;
     height: 100%;
+    display: flex;
     overflow: hidden;
     align-items: center;
-    background: radial-gradient(
-      25.8% 50% at 50% 50%,
-      rgba(35, 41, 50, 0.8) 0%,
-      rgba(105, 254, 139, 0) 100%
-    );
-    opacity: 0.8;
-    #rtwImgWrapper {
+
+    //opacity: 0.8;
+    .rtwImgWrapper {
       position: absolute;
       margin: auto;
       top: 0%;
@@ -40,18 +37,19 @@
 
   #rtwBtn {
     cursor: pointer;
-    position: absolute;
-    color: $main-green;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding: 30px 100px;
 
+    z-index: 2;
+    color: $main-green;
+    margin: 0 auto;
+    padding: 30px 100px;
     background-color: $black;
     border-radius: 100px;
     text-align: center;
     border: 0;
+
+    // &:hover {
+    //   scale: 1.05;
+    // }
     @media (max-width: map-get($breakpoints, "tablet")) {
       padding: 30px 0;
       border-radius: 100px;
