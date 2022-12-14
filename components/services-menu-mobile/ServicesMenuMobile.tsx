@@ -33,6 +33,7 @@ export default function ServicesMenuMobile() {
           id={styles.chosenService}
           onClick={() => {
             toggleOpen();
+            cardId == null ? setCardId(0) : {};
           }}
         >
           <Image
