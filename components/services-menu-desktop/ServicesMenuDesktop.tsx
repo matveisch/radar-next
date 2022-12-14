@@ -18,11 +18,9 @@ const contactCardAnim = {
 const contactTitleAnim = {
   open: {
     display: "block",
-    visibility: "visible",
   },
   closed: {
     display: "none",
-    visibility: "hidden",
   },
 };
 const contactBtnAnim = {
