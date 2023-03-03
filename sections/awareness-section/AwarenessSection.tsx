@@ -60,6 +60,7 @@ function AwarenessSection() {
         <h2 className="H2">
           Social <br /> Awareness{" "}
         </h2>
+
         <div id={styles.sliderWrapper}>
           <div className={styles.insideWrapper}>
             <ReactSlider
@@ -75,6 +76,10 @@ function AwarenessSection() {
           </div>
         </div>
       </div>
+      <p className="paragraph" id={styles.awarnessText}>
+        Узнаваемый бизнес привлекает больше клиентов, повышает доверие к
+        компании и ее продуктам, что ведет к увеличению прибыли и росту бизнеса.
+      </p>
       <div className={styles.meters}>
         <div className={styles.meterWrapper}>
           <ReputationMeter value={sliderValue} />
