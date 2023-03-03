@@ -1,0 +1,25 @@
+.appSwitcher {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  margin-left: calc(43px + 16px);
+
+  a {
+    font-family: 'Mulish', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 116.5%;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    color: rgba(238, 238, 238, 0.6);
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .separator {
+    height: 19px;
+    width: 2px;
+    background-color: #D9D9D9;
+  }
+}

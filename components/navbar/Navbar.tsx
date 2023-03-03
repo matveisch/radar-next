@@ -1,42 +1,42 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import NavbarButton from "../../ui/navbar-button/NavbarButton";
-import BurgerMenu from "../../ui/burger-menu-path/BurgerMenu";
-import { motion, useCycle } from "framer-motion";
-import Image from "next/image";
-import logo from "../../images/logo.png";
-import burger from "../../images/burger.svg";
-import styles from "./Navbar.module.scss";
-import { useContext, useRef, useEffect } from "react";
-import { cardIdContextType, idContext } from "../Layout";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
+import NavbarButton from '../../ui/navbar-button/NavbarButton';
+import BurgerMenu from '../../ui/burger-menu-path/BurgerMenu';
+import { motion, useCycle } from 'framer-motion';
+import Image from 'next/image';
+import logo from '../../images/logo.png';
+import styles from './Navbar.module.scss';
+import React, { useContext, useRef, useEffect } from 'react';
+import { cardIdContextType, idContext } from '../Layout';
+import AppSwitcher from '../AppSwitcher/AppSwitcher';
 
 interface Props {
   wrapperRef: React.RefObject<HTMLDivElement>;
   showOptions: boolean;
   setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
 const background = {
   open: {
-    height: "auto",
-    boxShadow: "0px 100px 90px 0px rgba(0, 0, 0, 0.5)",
+    height: 'auto',
+    boxShadow: '0px 100px 90px 0px rgba(0, 0, 0, 0.5)',
   },
   closed: {
     height: 0,
   },
 };
+
 const navMenu = {
   open: {
-    dislay: "block",
-
+    dislay: 'block',
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
-    dislay: "none",
-
+    dislay: 'none',
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
+
 const navItem = {
   open: {
     y: 0,
@@ -56,39 +56,31 @@ const navItem = {
 
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
-
-  // function handleOptionClick() {
-  //   setShowOptions(false);
-  // }
   const [isOpen, toggleOpen] = useCycle(false, true);
   useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
+    isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
   }, [isOpen]);
-  const containerRef = useRef(null);
 
   return (
     <nav id={styles.navbar} onClick={() => setCardId(null)}>
-      <Link href="/">
-        <div id={styles.logo}>
-          <Image src={logo} alt="logo" />
-          <h1 className="H3">radar digitaly</h1>
-        </div>
-      </Link>
+      <div>
+        <Link href="/">
+          <div id={styles.logo}>
+            <Image src={logo} alt="logo" />
+            <h1 className="H3">radar digitaly</h1>
+          </div>
+        </Link>
+        <AppSwitcher />
+      </div>
       <div id={styles.navbarLinks}>
-        <NavbarButton buttonName={"Services"} linkTo={"/services"} />
-        <NavbarButton buttonName={"About us"} linkTo={"/"} />
-        <NavbarButton buttonName={"Research"} linkTo={"/"} />
+        <NavbarButton buttonName={'Services'} linkTo={'/services'} />
+        <NavbarButton buttonName={'About us'} linkTo={'/'} />
+        <NavbarButton buttonName={'Research'} linkTo={'/'} />
         <div id={styles.contactBtn}>
-          <NavbarButton buttonName={"Contact"} linkTo={"/contact"} />
+          <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
         </div>
       </div>
-      <motion.div
-        id={styles.mobileNav}
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-      >
+      <motion.div id={styles.mobileNav} initial={false} animate={isOpen ? 'open' : 'closed'}>
         <BurgerMenu toggle={() => toggleOpen()} />
         <motion.div
           drag="y"
@@ -98,20 +90,19 @@ export default function Navbar() {
           dragMomentum={false}
           id={styles.mobileNavBG}
           variants={background}
-          onClick={() => toggleOpen()}
-        >
+          onClick={() => toggleOpen()}>
           <motion.ul id={styles.mobileNavUl} variants={navMenu}>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={"Services"} linkTo={"/services"} />
+              <NavbarButton buttonName={'Services'} linkTo={'/services'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={"About us"} linkTo={"/"} />
+              <NavbarButton buttonName={'About us'} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={"Research"} linkTo={"/"} />
+              <NavbarButton buttonName={'Research'} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={"Contact"} linkTo={"/contact"} />
+              <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
             </motion.li>
           </motion.ul>
         </motion.div>
