@@ -13,7 +13,7 @@ export interface LabServiceBlockProps {
 function LabServiceBlock({ title, description, price, image, marginTop }: LabServiceBlockProps) {
   return (
     <div className={styles.labServiceBlock} style={{ marginTop }}>
-      <Image src={image} alt="service-image" />
+      <Image src={image} alt="service-image" className={styles.titleImage} />
       <h3>{title}</h3>
       <p>{description}</p>
       <div className={styles.footer}>

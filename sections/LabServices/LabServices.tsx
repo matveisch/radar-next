@@ -1,7 +1,6 @@
 import styles from './LabServices.module.scss';
 import LabServiceBlock, { LabServiceBlockProps } from '../../components/LabServiceBlock/LabServiceBlock';
 import tvLab from '../../images/tv-lab.svg';
-import partyLab from '../../images/partyLab.svg';
 
 function LabServices() {
   const services: LabServiceBlockProps[] = [
@@ -18,7 +17,7 @@ function LabServices() {
       description:
         'Вокруг твоей рекламы стоит нанятая группа, постоянно снимая билборд на видео и громко его обсуждая в разговорной манере, а также снимает небольшие короткие видео в социальные сети по его поводу.',
       price: 5000,
-      image: partyLab,
+      image: tvLab,
       marginTop: '102px',
     },
     {
@@ -26,7 +25,7 @@ function LabServices() {
       description:
         'Мы организовываем несколько фестивалей за спонсорством твоей компании. На мероприятии будет раздаваться разнообразная забрендированная атрибутика твоей организации. Реклама самого мероприятия будет находится во всех социальных сетях.',
       price: 10000,
-      image: partyLab,
+      image: tvLab,
       marginTop: '0',
     },
   ];
