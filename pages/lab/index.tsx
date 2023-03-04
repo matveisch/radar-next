@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
-
+import Bubbles from '../../sections/bubbles';
+import Bubble from '../../ui/bubble';
 function Lab() {
   return (
     <div>
@@ -10,6 +11,8 @@ function Lab() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Lab</div>
+      {/* <Bubbles /> */}
+      <Bubble />
     </div>
   );
 }
