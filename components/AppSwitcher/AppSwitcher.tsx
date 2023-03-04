@@ -5,7 +5,6 @@ import Link from 'next/link';
 function AppSwitcher() {
   const router = useRouter();
   const { pathname } = router;
-  console.log(pathname);
 
   return (
     <div className={styles.appSwitcher}>

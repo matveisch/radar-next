@@ -2,6 +2,9 @@ import Head from 'next/head';
 import React from 'react';
 import Bubbles from '../../sections/bubbles';
 import Bubble from '../../ui/bubble';
+import LabServices from '../../sections/LabServices/LabServices';
+import styles from './index.module.scss';
+
 function Lab() {
   return (
     <div>
@@ -10,9 +13,10 @@ function Lab() {
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>Lab</div>
-      {/* <Bubbles /> */}
-      <Bubble />
+
+      <div className={styles.lab}>
+        <LabServices />
+      </div>
     </div>
   );
 }
