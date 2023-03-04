@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
+import LabServices from '../../sections/LabServices/LabServices';
+import styles from './index.module.scss';
 
 function Lab() {
   return (
@@ -9,7 +11,9 @@ function Lab() {
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>Lab</div>
+      <div className={styles.lab}>
+        <LabServices />
+      </div>
     </div>
   );
 }
