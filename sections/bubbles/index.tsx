@@ -10,5 +10,5 @@ export default function Bubbles() {
     setBubblesArr(aga);
   }, 3000);
 
-  return <div>{bubblesArr}</div>;
+  return <div id={styles.bubbleWrapper}>{bubblesArr}</div>;
 }

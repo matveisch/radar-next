@@ -16,6 +16,8 @@ function Lab() {
 
       <div className={styles.lab}>
         <LabServices />
+        {/* <Bubbles /> */}
+        <Bubble />
       </div>
     </div>
   );
