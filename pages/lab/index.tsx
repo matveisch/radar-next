@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import LabServices from '../../sections/LabServices/LabServices';
 import styles from './index.module.scss';
+import WhyRadar from '../../sections/WhyRadar/WhyRadar';
 
 function Lab() {
   return (
@@ -13,6 +14,7 @@ function Lab() {
       </Head>
       <div className={styles.lab}>
         <LabServices />
+        <WhyRadar />
       </div>
     </div>
   );
