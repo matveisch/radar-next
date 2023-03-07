@@ -4,6 +4,7 @@ import Bubbles from '../../sections/bubbles';
 import Bubble from '../../ui/bubble';
 import LabServices from '../../sections/LabServices/LabServices';
 import styles from './index.module.scss';
+import WhyRadar from '../../sections/WhyRadar/WhyRadar';
 
 function Lab() {
   return (
@@ -16,6 +17,7 @@ function Lab() {
 
       <div className={styles.lab}>
         <LabServices />
+        <WhyRadar />
         {/* <Bubbles /> */}
         <Bubble />
       </div>
