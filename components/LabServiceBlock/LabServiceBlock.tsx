@@ -9,10 +9,11 @@ export interface LabServiceBlockProps {
   price: number;
   image: string;
   marginTop: string;
+  id: string;
 }
-function LabServiceBlock({ title, description, price, image, marginTop }: LabServiceBlockProps) {
+function LabServiceBlock({ title, description, price, image, marginTop, id }: LabServiceBlockProps) {
   return (
-    <div className={styles.labServiceBlock} style={{ marginTop }}>
+    <div className={styles.labServiceBlock} style={{ marginTop }} id={id}>
       <Image src={image} alt="service-image" className={styles.titleImage} />
       <h3>{title}</h3>
       <p>{description}</p>
