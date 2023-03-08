@@ -117,6 +117,77 @@ a {
   letter-spacing: 0;
 }
 
+// styling elements
+h1,
+h2,
+h3,
+h4,
+p,
+a, {
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 77px;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: 0.045em;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    font-size: 12vw;
+    line-height: 12vw;
+  }
+}
+
+h2 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -0.005em;
+
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    font-size: 15.13vw;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0.045em;
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 0.035em;
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    font-size: 16px;
+  }
+}
+
+a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.045em;
+  @media (max-width: map-get($breakpoints, "mobileL")) {
+    font-size: 12px;
+  }
+}
+
 // slider from awareness section
 .customSlider {
   width: 100%;
@@ -131,7 +202,7 @@ a {
   border-bottom-right-radius: 16px;
   transition: 0.1s;
   @media (max-width: map-get($breakpoints, "tablet")) {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 
@@ -150,7 +221,7 @@ a {
 
   transition: transform 0.2s, box-shadow 0.3s, left 0.1s;
   @media (max-width: map-get($breakpoints, "tablet")) {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 

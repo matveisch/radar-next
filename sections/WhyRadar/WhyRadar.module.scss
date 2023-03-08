@@ -1,0 +1,14 @@
+.whyRadar {
+  margin-top: 200px;
+
+  h2 {
+    color: #EEEEEE;
+    margin-bottom: 200px;
+  }
+
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 253px);
+    gap: 30px;
+  }
+}

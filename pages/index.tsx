@@ -6,6 +6,7 @@ import ServicesSection from "../sections/services-section/ServicesSection";
 import TechnologySection from "../sections/technology-section/TechnologySection";
 import AwarenessSection from "../sections/awareness-section/AwarenessSection";
 import styles from "../styles/Home.module.scss";
+import Main from "./main";
 import { motion, useScroll } from "framer-motion";
 
 export default function Home() {
@@ -18,17 +19,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={styles.App}>
+      <section className={`${styles.App}`}>
         <motion.div
           className={styles.progressBar}
           style={{ scaleX: scrollYProgress }}
         />
-        <RadarSection />
-        <ServicesSection />
-        <TechnologySection />
-        <AwarenessSection />
-        <CarouselSection />
-        <RtwBtn />
+        <Main />
       </section>
     </div>
   );

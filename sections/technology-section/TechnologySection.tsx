@@ -17,8 +17,9 @@ export default function TechnologySection() {
             Technology
           </h2>
           <p id={styles.techParagraph} className="paragraph">
-            Мы используем множество автоматизированных сервисов и собственных
-            ботов которые позволяют отслеживать рынок.
+            - Мы сделаем рекламу дешевле - Сохраним твое время - Качественно
+            сформулируем и оформим рекламную идею - Выбираем поверхности с
+            лучшим соотношением цена - качество
           </p>
           <div id={styles.techCardsWrapper}>
             <TechRectangle img={marketTracking} title={"Market Tracking"} />

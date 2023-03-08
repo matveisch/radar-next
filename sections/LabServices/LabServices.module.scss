@@ -1,0 +1,65 @@
+.labServices {
+  position: relative;
+
+  h2 {
+    color: #EEEEEE;
+  }
+
+  .servicesContainer {
+    display: grid;
+    grid-template-columns: 347px 30px 347px 30px 347px;
+    grid-template-rows: 102px 102px 687px;
+
+    #service1 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    #service2 {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    #service3 {
+      grid-column: 5;
+      grid-row: 1;
+    }
+    
+    @media (max-width: 1200px) {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 347px 30px 347px;
+      grid-template-rows: 149px 375px 303px 138px 267px 430px;
+
+      #service1 {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      #service2 {
+        grid-column: 3;
+        grid-row: 3;
+      }
+
+      #service3 {
+        grid-column: 1;
+        grid-row: 5;
+      }
+    }
+
+    @media (max-width: 740px) {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: unset;
+      gap: 100px;
+
+      margin-top: 100px;
+
+      #service1, #service2, #service3 {
+        grid-column: 1;
+        grid-row: unset;
+      }
+    }
+  }
+}
