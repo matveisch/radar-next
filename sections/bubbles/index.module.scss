@@ -1,5 +1,11 @@
 #bubbleWrapper {
   position: absolute;
-  width: 1;
-  height: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 50vh;
+  z-index: -1;
+  div {
+    position: absolute;
+  }
 }

@@ -2,14 +2,27 @@ import React, { useState } from 'react';
 import styles from './index.module.scss';
 import { motion } from 'framer-motion';
 
-export default function Bubble() {
+interface Props {
+  width: number;
+  height: number;
+}
+
+export default function Bubble({ width, height }: Props) {
   const [hovered, setHovered] = useState<boolean>(false);
+  const [pos, setPos] = useState({
+    top: Math.random() * height + 'px',
+    left: Math.random() * width + 'px',
+  });
+  const [scale, setScale] = useState(Math.random() * 1.3);
+  console.log(pos.top);
+  console.log(pos.left);
   return (
     <motion.div
       onHoverStart={() => setHovered(true)}
       onClick={() => setHovered(true)}
+      style={pos}
       animate={{
-        scale: hovered ? [null, 1.3] : [0, 1, 1.3],
+        scale: hovered ? [null, scale] : [0, scale - 0.3, scale],
         x: 100,
         y: 100,
         opacity: hovered ? [null, 0] : [0, 1, 0],

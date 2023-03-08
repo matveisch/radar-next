@@ -1,0 +1,12 @@
+@import '../../styles/variables.module';
+
+#titles {
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  color: $off-white;
+  padding-top: 10%;
+  h1 {
+    margin-bottom: 20px;
+  }
+}

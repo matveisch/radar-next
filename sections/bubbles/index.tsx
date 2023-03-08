@@ -4,12 +4,25 @@ import Bubble from '../../ui/bubble';
 
 export default function Bubbles() {
   const [bubblesArr, setBubblesArr] = useState([<Bubble />]);
+  const [windowSize, setWindowSize] = useState({});
   const aga = [...bubblesArr];
-
+  const ref = useRef(null);
+  useEffect(() => {
+    setWindowSize({
+      width: ref.current.offsetWidth,
+      height: ref.current.offsetHeight,
+    });
+    console.log(ref.current.offsetWidth);
+    console.log(ref.current.offsetHeight);
+  }, [ref.current]);
   setTimeout(() => {
-    aga.push(<Bubble />);
+    aga.push(<Bubble width={windowSize.width} height={windowSize.height} />);
     setBubblesArr(aga);
-  }, 3000);
+  }, 700);
 
-  return <div id={styles.bubbleWrapper}>{bubblesArr}</div>;
+  return (
+    <div ref={ref} id={styles.bubbleWrapper}>
+      {bubblesArr}
+    </div>
+  );
 }
