@@ -11,4 +11,20 @@
     grid-template-columns: repeat(2, 253px);
     gap: 30px;
   }
+
+  .mainContainer {
+    display: flex;
+    position: relative;
+    
+    .techRadarGif {
+      width: 810px;
+      height: 810px;
+
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
