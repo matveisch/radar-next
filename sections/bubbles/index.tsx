@@ -4,9 +4,10 @@ import Bubble from '../../ui/bubble';
 
 export default function Bubbles() {
   const [bubblesArr, setBubblesArr] = useState([<Bubble />]);
-  const aga = [bubblesArr];
+  const aga = [...bubblesArr];
+
   setTimeout(() => {
-    aga.push([<Bubble />]);
+    aga.push(<Bubble />);
     setBubblesArr(aga);
   }, 3000);
 
