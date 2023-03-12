@@ -4,7 +4,7 @@ import Bubbles from '../bubbles';
 
 export default function LabHero() {
   return (
-    <div>
+    <div id={styles.labhero}>
       <Bubbles />
       <div id={styles.titles}>
         <h1 className="H1">Radar Digitaly</h1>
