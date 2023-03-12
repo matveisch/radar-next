@@ -27,6 +27,7 @@ export default function Bubble({ width, height }: Props) {
         y: Math.random() * 100,
         opacity: hovered ? [null, 0] : [0, 1, 0],
         filter: 'blur(0px)',
+        rotate: Math.random() * 180,
       }}
       transition={{
         filter: { duration: 5 },
@@ -48,6 +49,10 @@ export default function Bubble({ width, height }: Props) {
           repeat: 4,
           repeatType: 'mirror',
           delay: 2,
+        },
+        rotate: {
+          type: 'just',
+          duration: 10,
         },
       }}
       onAnimationEnd={() => console.log('END')}
