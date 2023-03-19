@@ -20,7 +20,6 @@ function Lab() {
         <LabHero />
         <LabServices />
         <WhyRadar />
-        {/* <Bubbles /> */}
       </div>
     </div>
   );
