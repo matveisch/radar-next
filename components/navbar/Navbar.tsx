@@ -60,7 +60,7 @@ export default function Navbar() {
   useEffect(() => {
     isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
   }, [isOpen]);
-
+  useEffect(() => {}, []);
   return (
     <nav id={styles.navbar} onClick={() => setCardId(null)}>
       <div>
@@ -75,7 +75,7 @@ export default function Navbar() {
       <div id={styles.navbarLinks}>
         <NavbarButton buttonName={'Services'} linkTo={'/services'} />
         <NavbarButton buttonName={'About us'} linkTo={'/'} />
-        <NavbarButton buttonName={'Research'} linkTo={'/'} />
+        <NavbarButton buttonName={'Research'} linkTo={'/guides'} />
         <div id={styles.contactBtn}>
           <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
         </div>

@@ -13,7 +13,7 @@ export default function Bubble({ width, height }: Props) {
     top: Math.random() * height + 'px',
     left: Math.random() * width + 'px',
   });
-  console.log(pos);
+
   const [scale, setScale] = useState(Math.random() * 1.3);
 
   return (

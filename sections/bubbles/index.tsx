@@ -7,21 +7,9 @@ export default function Bubbles() {
   const ref = useRef();
 
   const [bubblesArr, setBubblesArr] = useState<any[]>([]);
-  // useEffect(() => {
-  //   setWindowSize({
-  //     width: ref.current ? undefined : ref.current.offsetWidth,
-  //     height: ref.current!.offsetHeight,
-  //   });
-  //   setBubblesArr([
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //     <Bubble height={windowSize.height} width={windowSize.width} />,
-  //   ]);
-  // }, [ref.current]);
+  const [secondBubblesArr, setSecondBubblesArr] = useState<any[]>([]);
+  const [changed, setChanged] = useState<boolean>(true);
+  const notInitialRender = useRef(false);
 
   function useWindowSize() {
     const [windowSize, setWindowSize] = useState({
@@ -41,36 +29,52 @@ export default function Bubbles() {
 
       handleResize();
 
-      console.log(ref);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
     return windowSize;
   }
   useEffect(() => {
+    let timer = 500;
+    console.log('FIRST: ' + bubblesArr.length);
     setTimeout(() => {
       if (bubblesArr.length > 20) {
-        setBubblesArr(bubblesArr.slice(1, bubblesArr.length));
+        notInitialRender.current = true;
+        setChanged(!changed);
+        setTimeout(() => {
+          setBubblesArr([]);
+        }, 10000);
+      } else {
+        setBubblesArr([...bubblesArr, <Bubble width={size.width} height={size.height} />]);
       }
-      setBubblesArr([...bubblesArr, <Bubble width={size.width} height={size.height} />]);
-    }, 500);
+    }, timer);
   }, [bubblesArr]);
 
-  // while (bubblesArr.length < 10) {
-  //   setTimeout(() => {
-  //     setBubblesArr([...bubblesArr, bubblesArr.length]);
-  //   }, 1000);
-  //   if (bubblesArr.length >= 9) {
-  //     let arr = [...bubblesArr];
-  //     arr.shift();
-  //     setBubblesArr([...arr]);
-  //   }
-  // }
+  useEffect(() => {
+    let timer = 500;
+    console.log('SECOND: ' + secondBubblesArr.length);
+    if (notInitialRender.current) {
+      setTimeout(() => {
+        if (secondBubblesArr.length > 20) {
+          setTimeout(() => {
+            setSecondBubblesArr([]);
+          }, 10000);
+        } else {
+          setSecondBubblesArr([...secondBubblesArr, <Bubble width={size.width} height={size.height} />]);
+          setChanged(!changed);
+        }
+      }, 500);
+    }
+    // } else {
+    //   notInitialRender.current = true;
+    // }
+  }, [changed]);
+
   const size = useWindowSize();
-  console.log(size);
+
   return (
     <div ref={ref} id={styles.bubbleWrapper}>
-      {/* {bubblesArr.length ? bubblesArr.map(item => <Bubble width={size.width} height={size.height} />) : <></>} */}
       {bubblesArr}
+      {secondBubblesArr}
     </div>
   );
 }
