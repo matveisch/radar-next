@@ -73,6 +73,12 @@ export default function Navbar() {
         <AppSwitcher />
       </div>
       <div id={styles.navbarLinks}>
+        <Link href="/" locale="ru">
+          Ru
+        </Link>
+        <Link href="/" locale="en">
+          En
+        </Link>
         <NavbarButton buttonName={'Services'} linkTo={'/services'} />
         <NavbarButton buttonName={'About us'} linkTo={'/'} />
         <NavbarButton buttonName={'Research'} linkTo={'/guides'} />
