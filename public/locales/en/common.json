@@ -6,6 +6,48 @@
   "adsCreated": "hello",
 
   "ourServices": "Our Services",
-  "ourTeamDoes": "our team does"
+  "ourTeamDoes": "our team does",
+  "learnMore": "Learn More",
+  "servicesList": {
+    "social": "Social Media Marketing",
+    "targetAds": "Targeted Ads",
+    "postsCreation": "Posts Creation",
+    "integration": "Integration",
+
+    "web": "Web Development",
+    "contextAds": "Contextual Ads",
+    "offerAds": "Offer Ads",
+    "seo": "SEO",
+    "pragmaticBaing": "Pragmatic Basing",
+    "mediaAds": "Media Ads",
+
+    "tv": "TV Advertising",
+    "detailPlacement": "Detailed Placement",
+    "adsPlacement": "Ads Placement",
+    "adsInSport": "Ads in Sport",
+    "programsSponsorship": "Programs Sponsorship",
+    "videoProduction": "Video Production",
+
+    "radio": "Radio Advertising",
+    "webPlacement": "Web Placement",
+    "targetRadioAds": "Targeted Radio Ads",
+    "etherIntegration": "Ether Integration",
+    "internetRadio": "Internet Radio",
+    "audioProduction": "Audio Production",
+
+    "creatives": "Creatives",
+    "AdsConcepts": "Ads Concepts",
+    "copywriting": "Copywriting",
+    "ctmDevelopment": "CTM Development",
+    "videoPhotoProduction": "Video & Photo Production",
+
+    "3d": "3D",
+    "videoConceptsCreation": "Video Concepts Creation",
+    "quality3dCreation": "Quality 3D Creation",
+    "adsDecor": "Ads Decor",
+
+    "dooh": "DOOH",
+    "videoCreation": "Video Creation"
+  }
 
 }
