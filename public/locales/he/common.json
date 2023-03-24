@@ -1,0 +1,52 @@
+{
+  "newAgency": "סוכנות שיווק סדר חדשה",
+  "adsViews": "שלום",
+  "trafficPerWeek": "שלום",
+  "trafficEngagement": "שלום",
+  "adsCreated": "שלום",
+
+  "ourServices": "השירותים שלנו",
+  "ourTeamDoes": "הצוות שלנו עושה",
+  "learnMore": "למידע נוסף",
+  "servicesList": {
+    "social": "שיווק במדיה חברתית",
+    "targetAds": "פרסומות ממוקדות",
+    "postsCreation": "יצירת פוסטים",
+    "integration": "שילוב",
+
+    "web": "פיתוח אתרים",
+    "contextAds": "פרסומות קונטקסטואליות",
+    "offerAds": "פרסומות מבצע",
+    "seo": "קידום אתרים במנועי חיפוש",
+    "pragmaticBaing": "פרסום פרגמטי",
+    "mediaAds": "פרסומות במדיה",
+
+    "tv": "פרסום בטלוויזיה",
+    "detailPlacement": "מיקום מדוייק",
+    "adsPlacement": "מיקום פרסומות",
+    "adsInSport": "פרסומות בספורט",
+    "programsSponsorship": "ספונסורסט תוכניות",
+    "videoProduction": "הפקת וידאו",
+
+    "radio": "פרסום ברדיו",
+    "webPlacement": "מיקום באינטרנט",
+    "targetRadioAds": "פרסומות רדיו ממוקדות",
+    "etherIntegration": "שילוב עם רשתות אפיקטיביות",
+    "internetRadio": "רדיו באינטרנט",
+    "audioProduction": "הפקת אודיו",
+
+    "creatives": "יצירתיות",
+    "AdsConcepts": "רעיונות פרסום",
+    "copywriting": "כתיבת טקסטים פרסומיים",
+    "ctmDevelopment": "פיתוח CTM",
+    "videoPhotoProduction": "הפקת וידאו ותמונות",
+
+    "3d": "עיצוב תלת מימדי",
+    "videoConceptsCreation": "יצירת רעיונות וידאו",
+    "quality3dCreation": "יצירת תלת מימד איכותי",
+    "adsDecor": "קישוטי פרסומות",
+
+    "dooh": "DOOH",
+    "videoCreation": "יצירת וידאו"
+  }
+}

@@ -6,15 +6,9 @@ import { motion, useCycle } from 'framer-motion';
 import Image from 'next/image';
 import logo from '../../images/logo.png';
 import styles from './Navbar.module.scss';
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
-
-interface Props {
-  wrapperRef: React.RefObject<HTMLDivElement>;
-  showOptions: boolean;
-  setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const background = {
   open: {
@@ -79,6 +73,9 @@ export default function Navbar() {
         <Link href="/" locale="en">
           En
         </Link>
+        <Link href="/" locale="he">
+          He
+        </Link>
         <NavbarButton buttonName={'Services'} linkTo={'/services'} />
         <NavbarButton buttonName={'About us'} linkTo={'/'} />
         <NavbarButton buttonName={'Research'} linkTo={'/guides'} />
@@ -91,7 +88,7 @@ export default function Navbar() {
         <motion.div
           drag="y"
           dragConstraints={{ top: 0, bottom: 0 }}
-          onDragStart={(event, info) => toggleOpen()}
+          onDragStart={() => toggleOpen()}
           dragElastic={0}
           dragMomentum={false}
           id={styles.mobileNavBG}
