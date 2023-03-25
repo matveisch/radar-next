@@ -1,0 +1,19 @@
+{
+  "lets": "בואו",
+  "talk": "נדבר",
+
+  "required": "חובה",
+  "phoneMustMatch": "חייב להיות בפורמט 05[x][-][0-9]{7}",
+  "invalidEmail": "כתובת המייל שגויה",
+  "messageTooLong": "הודעה ארוכה מדי",
+  "fieldRequired": "שדה חובה",
+
+  "name": "שם",
+  "email": "דואר אלקטרוני",
+  "phone": "טלפון",
+  "message": "הודעה",
+  "send": "שלח הודעה",
+  "weWillContactYou": "ניצור קשר בתוך 24 שעות",
+  "prefer": "מועדף",
+  "response": "תגובה"
+}
