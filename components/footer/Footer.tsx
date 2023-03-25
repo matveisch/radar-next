@@ -13,7 +13,7 @@ import { useTranslation } from 'next-i18next';
 export default function Footer() {
   const servicesList = useServicesList();
   const { setCardId } = useContext(idContext) as cardIdContextType;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('header');
 
   return (
     <footer id={styles.footerMainWrapper}>
