@@ -1,15 +1,17 @@
-import React from "react";
-import TechRectangle from "../../ui/tech-rectangle/TechRectangle";
-import CarouselImg from "../../ui/carousel-img/CarouselImg";
-import Carousel from "../../components/carousel/Carousel";
+import React from 'react';
+import TechRectangle from '../../ui/tech-rectangle/TechRectangle';
+import CarouselImg from '../../ui/carousel-img/CarouselImg';
+import Carousel from '../../components/carousel/Carousel';
 
-import creatives from "../../images/colored-creative.svg";
-import development from "../../images/colored-developent.svg";
-import copyrighting from "../../images/colored-copyrighting.svg";
-import styles from "./CarouselSection.module.scss";
-import carouselStyles from "../../components/carousel/Carousel.module.scss";
+import creatives from '../../images/colored-creative.svg';
+import development from '../../images/colored-developent.svg';
+import copyrighting from '../../images/colored-copyrighting.svg';
+import styles from './CarouselSection.module.scss';
+import carouselStyles from '../../components/carousel/Carousel.module.scss';
+import { useTranslation } from 'next-i18next';
 
 export default function CarouselSection() {
+  const { t } = useTranslation('common');
   const arrayOfBlocks = [
     <TechRectangle img={development} title="Development" key={0} />,
     <CarouselImg
@@ -18,8 +20,7 @@ export default function CarouselSection() {
     />,
     <TechRectangle img={copyrighting} title="Copyrighting" key={2} />,
     <p className="paragraph" key={3}>
-      Мы устраиваем вот такие штуки и вот такие штуки и можем проводить эфиры
-      вообще без проблем хотете? И рекламу в телик БАМ
+      {t('weDo')}
     </p>,
     <TechRectangle img={creatives} title="Creatives" key={4} />,
     <CarouselImg
@@ -30,18 +31,9 @@ export default function CarouselSection() {
 
   return (
     <div id={styles.carouselSection}>
-      <Carousel
-        arrayOfBlocks={arrayOfBlocks}
-        styleType={carouselStyles.animationOne}
-      />
-      <Carousel
-        arrayOfBlocks={arrayOfBlocks}
-        styleType={carouselStyles.animationTwo}
-      />
-      <Carousel
-        arrayOfBlocks={arrayOfBlocks}
-        styleType={carouselStyles.animationThree}
-      />
+      <Carousel arrayOfBlocks={arrayOfBlocks} styleType={carouselStyles.animationOne} />
+      <Carousel arrayOfBlocks={arrayOfBlocks} styleType={carouselStyles.animationTwo} />
+      <Carousel arrayOfBlocks={arrayOfBlocks} styleType={carouselStyles.animationThree} />
     </div>
   );
 }
