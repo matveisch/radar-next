@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState, LegacyRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import styles from "./AwarenessSection.module.scss";
-import ReputationMeter from "../../components/reputation-meter/ReputationMeter";
-import StabilityMeter from "../../components/stability-meter/StabilityMeter";
-import ProfitMeter from "../../components/profit-meter/ProfitMeter";
-import AttendanceMeter from "../../components/attendance-meter/AttendanceMeter";
-import ReactSlider from "react-slider";
+import React, { useRef, useEffect, useState } from 'react';
+import styles from './AwarenessSection.module.scss';
+import ReputationMeter from '../../components/reputation-meter/ReputationMeter';
+import StabilityMeter from '../../components/stability-meter/StabilityMeter';
+import ProfitMeter from '../../components/profit-meter/ProfitMeter';
+import AttendanceMeter from '../../components/attendance-meter/AttendanceMeter';
+import ReactSlider from 'react-slider';
+import { useTranslation } from 'next-i18next';
 
 function AwarenessSection() {
   // new sliders value – accepts from 0 to 100
@@ -13,6 +13,7 @@ function AwarenessSection() {
   const [sliderValue, setSliderValue] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [sectionVisible, setSectionVisible] = useState(false);
+  const { t } = useTranslation('common');
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -21,8 +22,8 @@ function AwarenessSection() {
 
   useEffect(() => {
     // looking for an element to appear on the page
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         const intersecting = entry.isIntersecting;
         intersecting ? setSectionVisible(true) : setSectionVisible(false);
       });
@@ -37,11 +38,11 @@ function AwarenessSection() {
   // adding scroll listener when there the section is on the screen
   useEffect(() => {
     if (sectionVisible) {
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener('scroll', handleScroll, { passive: true });
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [sectionVisible]);
 
@@ -58,7 +59,7 @@ function AwarenessSection() {
     <div id={styles.awarenessWrapper} ref={sectionWrapper}>
       <div className={styles.header}>
         <h2 className="H2">
-          Social <br /> Awareness{" "}
+          {t('social')} <br /> {t('awareness')}{' '}
         </h2>
 
         <div id={styles.sliderWrapper}>
@@ -68,17 +69,16 @@ function AwarenessSection() {
               trackClassName="customSlider-track"
               thumbClassName="customSlider-thumb"
               value={sliderValue}
-              onChange={(value) => {
+              onChange={value => {
                 setSliderValue(value);
               }}
-              renderThumb={(props) => <div {...props}></div>}
+              renderThumb={props => <div {...props}></div>}
             />
           </div>
         </div>
       </div>
       <p className="paragraph" id={styles.awarnessText}>
-        Узнаваемый бизнес привлекает больше клиентов, повышает доверие к
-        компании и ее продуктам, что ведет к увеличению прибыли и росту бизнеса.
+        {t('knownBusiness')}
       </p>
       <div className={styles.meters}>
         <div className={styles.meterWrapper}>

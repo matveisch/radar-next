@@ -48,6 +48,21 @@
 
     "dooh": "DOOH",
     "videoCreation": "Video Creation"
-  }
+  },
+
+  "technology": "Technologies",
+  "proposition": "- We will make advertising cheaper - Save your time - Formulate and design the advertising idea with quality - Choose surfaces with the best price-quality ratio",
+  "marketTracking": "Market tracking",
+  "trendResearch": "Trends and research",
+  "bots": "Bots",
+  "automaticServices": "Automated services",
+
+  "social": "Social",
+  "awareness": "Awareness",
+  "knownBusiness": "A recognizable business attracts more customers, increases trust in the company and its products, leading to increased profits and business growth.",
+  "reputation": "Reputation",
+  "stability": "Stability",
+  "profit": "Profit",
+  "attendance": "Attendance"
 
 }
