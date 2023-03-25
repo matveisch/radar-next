@@ -9,6 +9,7 @@ import styles from './Navbar.module.scss';
 import React, { useContext, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
+import { useTranslation } from 'next-i18next';
 
 const background = {
   open: {
@@ -51,10 +52,12 @@ const navItem = {
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
   }, [isOpen]);
-  useEffect(() => {}, []);
+
   return (
     <nav id={styles.navbar} onClick={() => setCardId(null)}>
       <div>
@@ -76,11 +79,11 @@ export default function Navbar() {
         <Link href="/" locale="he">
           He
         </Link>
-        <NavbarButton buttonName={'Services'} linkTo={'/services'} />
-        <NavbarButton buttonName={'About us'} linkTo={'/'} />
-        <NavbarButton buttonName={'Research'} linkTo={'/guides'} />
+        <NavbarButton buttonName={t('services')} linkTo={'/services'} />
+        <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
+        <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
         <div id={styles.contactBtn}>
-          <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
+          <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
       </div>
       <motion.div id={styles.mobileNav} initial={false} animate={isOpen ? 'open' : 'closed'}>
@@ -96,16 +99,16 @@ export default function Navbar() {
           onClick={() => toggleOpen()}>
           <motion.ul id={styles.mobileNavUl} variants={navMenu}>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Services'} linkTo={'/services'} />
+              <NavbarButton buttonName={t('services')} linkTo={'/services'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'About us'} linkTo={'/'} />
+              <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Research'} linkTo={'/'} />
+              <NavbarButton buttonName={t('research')} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
+              <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
             </motion.li>
           </motion.ul>
         </motion.div>

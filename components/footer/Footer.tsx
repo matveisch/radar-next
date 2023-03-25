@@ -1,18 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
-import NavbarButton from "../../ui/navbar-button/NavbarButton";
-import useServicesList from "../../data/servicesList";
-import Sublink from "../../ui/sublink/Sublink";
-import Image from "next/image";
-import styles from "./Footer.module.scss";
-
-import logo from "../../images/logo.png";
-import telegram from "images/telegram-filled.svg";
-import whatsapp from "images/whatsapp.svg";
-import { cardIdContextType, idContext } from "../Layout";
+import React, { useContext } from 'react';
+import NavbarButton from '../../ui/navbar-button/NavbarButton';
+import useServicesList from '../../data/servicesList';
+import Sublink from '../../ui/sublink/Sublink';
+import Image from 'next/image';
+import styles from './Footer.module.scss';
+import logo from '../../images/logo.png';
+import telegram from 'images/telegram-filled.svg';
+import whatsapp from 'images/whatsapp.svg';
+import { cardIdContextType, idContext } from '../Layout';
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
   const servicesList = useServicesList();
   const { setCardId } = useContext(idContext) as cardIdContextType;
+  const { t } = useTranslation('common');
 
   return (
     <footer id={styles.footerMainWrapper}>
@@ -36,21 +37,14 @@ export default function Footer() {
       </div>
       <div id={styles.footerRightContainer}>
         <div id={styles.footerMenu}>
-          <NavbarButton buttonName={"Services"} linkTo={"/services"} />
-          <NavbarButton buttonName={"About us"} linkTo={"/"} />
-          <NavbarButton buttonName={"Research"} linkTo={"/"} />
-          <NavbarButton buttonName={"Contact"} linkTo={"/contact"} />
+          <NavbarButton buttonName={t('services')} linkTo={'/services'} />
+          <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
+          <NavbarButton buttonName={t('research')} linkTo={'/'} />
+          <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
         <div id={styles.footerSubmenu}>
-          {servicesList.map((item) => {
-            return (
-              <Sublink
-                key={item.id}
-                to="/services"
-                title={item.name}
-                onClick={() => setCardId(item.id)}
-              />
-            );
+          {servicesList.map(item => {
+            return <Sublink key={item.id} to="/services" title={item.name} onClick={() => setCardId(item.id)} />;
           })}
         </div>
       </div>

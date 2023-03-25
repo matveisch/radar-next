@@ -1,12 +1,20 @@
 {
+  "services": "Services",
+  "aboutUs": "About Us",
+  "research": "Research",
+  "contact": "Contact",
+
+  "lab": "LAB",
+  "original": "ORIGINAL",
+
   "newAgency": "New Order Marketing Agency",
-  "adsViews": "hello",
-  "trafficPerWeek": "hello",
-  "trafficEngagement": "hello",
-  "adsCreated": "hello",
+  "adsViews": "Number of ad views per day",
+  "trafficPerWeek": "Channel traffic for the week",
+  "trafficEngagement": "Traffic attracted to our clients",
+  "adsCreated": "Number of advertising publications created by our team",
 
   "ourServices": "Our Services",
-  "ourTeamDoes": "our team does",
+  "ourTeamDoes": "Our team consults on internet advertising campaigns, creates advertising campaign concepts, and integrates them into ad placements.",
   "learnMore": "Learn More",
   "servicesList": {
     "social": "Social Media Marketing",
@@ -65,6 +73,8 @@
   "profit": "Profit",
   "attendance": "Attendance",
 
-  "weDo": "We do"
+  "weDo": "We organize such things and such things and can conduct broadcasts without any problems, do you want it? And advertising on TV BAM",
+
+  "readyToWork": "READY TO WORK?"
 
 }
