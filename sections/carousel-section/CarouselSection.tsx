@@ -13,16 +13,16 @@ import { useTranslation } from 'next-i18next';
 export default function CarouselSection() {
   const { t } = useTranslation('common');
   const arrayOfBlocks = [
-    <TechRectangle img={development} title="Development" key={0} />,
+    <TechRectangle img={development} title={t('development')} key={0} />,
     <CarouselImg
       image="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
       key={1}
     />,
-    <TechRectangle img={copyrighting} title="Copyrighting" key={2} />,
+    <TechRectangle img={copyrighting} title={t('copywriting')} key={2} />,
     <p className="paragraph" key={3}>
       {t('weDo')}
     </p>,
-    <TechRectangle img={creatives} title="Creatives" key={4} />,
+    <TechRectangle img={creatives} title={t('creatives')} key={4} />,
     <CarouselImg
       image="https://images.unsplash.com/photo-1524124689028-f924049fe2d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
       key={5}
