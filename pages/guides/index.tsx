@@ -10,12 +10,14 @@ import { guideIdContextType, guideContext } from '../../components/Layout';
 import GuideBtn from '../../ui/guide-menu-btn';
 import GuideService from '../../components/guide-service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 function Services() {
   const guidesArr = useGuidesList();
   const servicesArr = useServicesList();
   const { guideId } = useContext(guideContext) as guideIdContextType;
   const stepsArr = [...guidesArr[guideId].steps];
+  const { t } = useTranslation('guides');
 
   // useEffect(() => {
   //   document.body.style.background =
@@ -41,7 +43,7 @@ function Services() {
           }
         })}
         <h2 className="H2" id={styles.alsoTitle}>
-          Мы можем помочь
+          {t('weCanHelp')}
         </h2>
         <div id={styles.servicesWrapper}>
           <GuideService
@@ -61,7 +63,7 @@ function Services() {
           />
         </div>
         <h2 className="H2" id={styles.alsoTitle}>
-          Читайте также
+          {t('readAlso')}
         </h2>
         <div className={styles.also}>
           {guidesArr

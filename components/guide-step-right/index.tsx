@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.scss';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   step: number;
@@ -8,11 +9,15 @@ interface Props {
 }
 
 export default function GuideStepRight({ step, text, last }: Props) {
+  const { t } = useTranslation('guides');
+
   return (
     <div id={styles.main}>
       <div id={styles.border}>
         <div id={styles.stepNum}>
-          <p className="H3">STEP {step}</p>
+          <p className="H3">
+            {t('step')} {step}
+          </p>
         </div>
         <div id={styles.wrapper}>
           <p className="paragraph">{text}</p>
