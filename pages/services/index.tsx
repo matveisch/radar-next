@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { motion, useCycle } from 'framer-motion';
 import ServicesMenuMobile from '../../components/services-menu-mobile/ServicesMenuMobile';
 import ServicesMenuDesktop from '../../components/services-menu-desktop/ServicesMenuDesktop';
 import useServicesList from '../../data/servicesList';
-import Link from 'next/link';
-import ServicesBtn from '../../ui/services-btn/ServicesBtn';
 import styles from './index.module.scss';
 import { cardIdContextType, idContext } from '../../components/Layout';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Services = () => {
   //   const location = useLocation();
@@ -80,3 +78,11 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['header', 'services'])),
+    },
+  };
+}
