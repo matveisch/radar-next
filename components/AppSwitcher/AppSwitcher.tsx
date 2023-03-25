@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 function AppSwitcher() {
   const router = useRouter();
   const { pathname } = router;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('header');
 
   return (
     <div className={styles.appSwitcher}>

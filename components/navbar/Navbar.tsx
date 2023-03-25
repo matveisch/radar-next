@@ -10,6 +10,7 @@ import React, { useContext, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const background = {
   open: {
@@ -52,7 +53,8 @@ const navItem = {
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const { t } = useTranslation('common');
+  const router = useRouter();
+  const { t } = useTranslation('header');
 
   useEffect(() => {
     isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
@@ -70,13 +72,13 @@ export default function Navbar() {
         <AppSwitcher />
       </div>
       <div id={styles.navbarLinks}>
-        <Link href="/" locale="ru">
+        <Link href={router.pathname} locale="ru">
           Ru
         </Link>
-        <Link href="/" locale="en">
+        <Link href={router.pathname} locale="en">
           En
         </Link>
-        <Link href="/" locale="he">
+        <Link href={router.pathname} locale="he">
           He
         </Link>
         <NavbarButton buttonName={t('services')} linkTo={'/services'} />

@@ -1,8 +1,9 @@
-import Head from "next/head";
-import React from "react";
-import CircleContact from "../../components/circle-contact/CircleContact";
-import ContactForm from "../../components/contact-form/ContactForm";
-import styles from "./index.module.scss";
+import Head from 'next/head';
+import React from 'react';
+import CircleContact from '../../components/circle-contact/CircleContact';
+import ContactForm from '../../components/contact-form/ContactForm';
+import styles from './index.module.scss';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Contact = () => {
   return (
@@ -21,3 +22,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['contact', 'header'])),
+    },
+  };
+}

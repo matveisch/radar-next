@@ -42,8 +42,7 @@ function StatsInfo() {
           slidesPerView={1}
           autoplay={{ delay: 2000 }}
           loop={true}
-          onSlideChange={swiper => setCurrentSlide(swiper.activeIndex)}
-          onSwiper={swiper => console.log(swiper)}>
+          onSlideChange={swiper => setCurrentSlide(swiper.activeIndex)}>
           <SwiperSlide>
             <div className={styles.slider}>
               <p className={`light-paragraph ${styles.statText}`}>{t('adsViews')}</p>
