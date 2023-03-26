@@ -1,5 +1,5 @@
-import styles from "./Carousel.module.scss";
-import { useEffect, useState } from "react";
+import styles from './Carousel.module.scss';
+import { useEffect, useState } from 'react';
 
 type Props = {
   arrayOfBlocks: JSX.Element[];
@@ -9,12 +9,12 @@ type Props = {
 export default function Carousel({ arrayOfBlocks, styleType }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const [animationStyle, setAnimationStyle] = useState({
-    animationPlayState: "running",
+    animationPlayState: 'running',
   });
 
   useEffect(() => {
     setAnimationStyle({
-      animationPlayState: isHovered ? "paused" : "running",
+      animationPlayState: isHovered ? 'paused' : 'running',
     });
   }, [isHovered]);
 
@@ -32,12 +32,8 @@ export default function Carousel({ arrayOfBlocks, styleType }: Props) {
       }}
       onMouseLeave={() => {
         setIsHovered(!isHovered);
-      }}
-    >
-      <div
-        className={`${styles.slideTrack} ${styleType}`}
-        style={animationStyle}
-      >
+      }}>
+      <div className={`${styles.slideTrack} ${styleType}`} style={animationStyle}>
         {arrayOfBlocks.map((item, index) => {
           return (
             <div key={index} className={styles.carouselItem}>

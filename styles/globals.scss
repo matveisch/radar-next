@@ -201,6 +201,7 @@ a {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   transition: 0.1s;
+
   @media (max-width: map-get($breakpoints, "tablet")) {
     margin-left: 0;
   }

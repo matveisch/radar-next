@@ -4,6 +4,7 @@ import { Formik, Form, FormikHelpers, Field } from 'formik';
 import * as Yup from 'yup';
 import ErrorMessage from '../../ui/error-message/ErrorMessage';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export interface Values {
   name: string;
@@ -17,6 +18,7 @@ const phoneRegex = /^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$/;
 const ContactForm = () => {
   const [isEmail, SetIsEmail] = useState(false);
   const { t } = useTranslation('contact');
+  const { locale } = useRouter();
 
   let validationShape = {
     name: Yup.string().required(t('required') || 'Required'),
@@ -93,7 +95,7 @@ const ContactForm = () => {
                 {errors.phone && touched.phone ? <ErrorMessage error={errors.phone} /> : null}
               </div>
             )}
-            <div className={styles.buttonContainer}>
+            <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
               <button
                 className={`link ${styles.emailButton}`}
                 style={{ marginBottom: '29px' }}
@@ -119,7 +121,7 @@ const ContactForm = () => {
             <button className={`${styles.sendButton} paragraph`} type="submit" style={{ marginBottom: '24px' }}>
               {t('send')}
             </button>
-            <div className={styles.buttonContainer}>
+            <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
               <p className={`light-paragraph ${styles.contactWithin}`}>{t('weWillContactYou')}</p>
             </div>
           </Form>

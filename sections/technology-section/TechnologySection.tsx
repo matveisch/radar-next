@@ -8,9 +8,11 @@ import marketTracking from '../../images/Group 34.svg';
 import bots from '../../images/Group 39.svg';
 import automaticServices from '../../images/Group 37.svg';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export default function TechnologySection() {
   const { t } = useTranslation('common');
+  const { locale } = useRouter();
 
   return (
     <div id={styles.mainContainer}>
@@ -30,7 +32,12 @@ export default function TechnologySection() {
           </div>
         </div>
         <div id={styles.rightContainer}>
-          <Image id={styles.techRadarGif} src={radarTechGif} alt="Tech radar animation" />
+          <Image
+            id={styles.techRadarGif}
+            src={radarTechGif}
+            alt="Tech radar animation"
+            style={locale === 'he' ? { right: 'unset', left: '25%' } : undefined}
+          />
         </div>
       </div>
     </div>

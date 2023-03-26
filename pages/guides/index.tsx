@@ -35,13 +35,15 @@ function Services() {
       <div className={styles.guide}>
         {/* <div className={styles.squaresBg}></div> */}
         <GuidesHero />
-        {stepsArr.map((item, index) => {
-          if (index % 2 == 0) {
-            return <GuideStepLeft text={item} step={index + 1} last={stepsArr.length < index + 2} key={index} />;
-          } else {
-            return <GuideStepRight text={item} step={index + 1} last={stepsArr.length < index + 2} key={index} />;
-          }
-        })}
+        <div dir="ltr">
+          {stepsArr.map((item, index) => {
+            if (index % 2 == 0) {
+              return <GuideStepLeft text={item} step={index + 1} last={stepsArr.length < index + 2} key={index} />;
+            } else {
+              return <GuideStepRight text={item} step={index + 1} last={stepsArr.length < index + 2} key={index} />;
+            }
+          })}
+        </div>
         <h2 className="H2" id={styles.alsoTitle}>
           {t('weCanHelp')}
         </h2>
