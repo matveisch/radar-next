@@ -6,30 +6,32 @@ import moneyWhy from '../../images/money-why.svg';
 import WhyBlock from '../../components/WhyBlock/WhyBlock';
 import radarTechGif from '../../images/Radar-tech.gif';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 function WhyRadar() {
+  const { t } = useTranslation('lab');
   const blocks = [
     {
       image: radarWhy,
-      text: 'Следим за всеми новшествами рекламы в мире и выбираем лучшее',
+      text: t('followTrends'),
     },
     {
       image: gearWhy,
-      text: 'Занимаемся производством и организацией',
+      text: t('organization'),
     },
     {
       image: bulbWhy,
-      text: 'Создаем каждую идею отдельно под личные запросы',
+      text: t('individualIdeas'),
     },
     {
       image: moneyWhy,
-      text: 'Сокращаем затраты',
+      text: t('decreasingCosts'),
     },
   ];
 
   return (
     <div className={styles.whyRadar}>
-      <h2>Почему Radar Digitally</h2>
+      <h2>{t('whyRadar')}</h2>
       <div className={styles.mainContainer}>
         <div className={styles.blocks}>
           {blocks.map((block, index) => (

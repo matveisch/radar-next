@@ -6,12 +6,15 @@ import { motion, useCycle } from 'framer-motion';
 import Image from 'next/image';
 import logo from '../../images/logo.png';
 import styles from './Navbar.module.scss';
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
+
 import languageIcon from '../../images/Web.svg';
 import LanguageToggle from '../../ui/language-toggle-desctop';
 import LanguageToggleMobile from '../../ui/language-toggle-mobile';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 interface Props {
   wrapperRef: React.RefObject<HTMLDivElement>;
   showOptions: boolean;
@@ -59,10 +62,13 @@ const navItem = {
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const router = useRouter();
+  const { t } = useTranslation('header');
+
   useEffect(() => {
     isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
   }, [isOpen]);
-  useEffect(() => {}, []);
+
   return (
     <nav id={styles.navbar} onClick={() => setCardId(null)}>
       <div>
@@ -75,11 +81,20 @@ export default function Navbar() {
         <AppSwitcher />
       </div>
       <div id={styles.navbarLinks}>
-        <NavbarButton buttonName={'Services'} linkTo={'/services'} />
-        <NavbarButton buttonName={'About us'} linkTo={'/'} />
-        <NavbarButton buttonName={'Research'} linkTo={'/guides'} />
+        <Link href={router.pathname} locale="ru">
+          Ru
+        </Link>
+        <Link href={router.pathname} locale="en">
+          En
+        </Link>
+        <Link href={router.pathname} locale="he">
+          He
+        </Link>
+        <NavbarButton buttonName={t('services')} linkTo={'/services'} />
+        <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
+        <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
         <div id={styles.contactBtn}>
-          <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
+          <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
         <div id={styles.languageToggleWrapper}>
           <LanguageToggle />
@@ -90,7 +105,7 @@ export default function Navbar() {
         <motion.div
           drag="y"
           dragConstraints={{ top: 0, bottom: 0 }}
-          onDragStart={(event, info) => toggleOpen()}
+          onDragStart={() => toggleOpen()}
           dragElastic={0}
           dragMomentum={false}
           id={styles.mobileNavBG}
@@ -98,16 +113,16 @@ export default function Navbar() {
           onClick={() => toggleOpen()}>
           <motion.ul id={styles.mobileNavUl} variants={navMenu}>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Services'} linkTo={'/services'} />
+              <NavbarButton buttonName={t('services')} linkTo={'/services'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'About us'} linkTo={'/'} />
+              <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Research'} linkTo={'/'} />
+              <NavbarButton buttonName={t('research')} linkTo={'/'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
+              <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
               <LanguageToggleMobile />

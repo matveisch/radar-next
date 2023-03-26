@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import styles from './index.module.scss';
 import Image from 'next/image';
-import { cardIdContextType, idContext } from '../../components/Layout';
+import { cardIdContextType, idContext } from '../Layout';
 import Link from 'next/link';
 import arrow from '../../images/learn-more.svg';
+import { useTranslation } from 'next-i18next';
 
 interface serviceContext {
   id: number;
@@ -19,6 +20,8 @@ interface Props {
 
 export default function GuideService({ service, highlight }: Props) {
   const { setCardId } = useContext(idContext) as cardIdContextType;
+  const { t } = useTranslation('guides');
+
   return (
     <div id={styles.main} style={{ border: highlight ? '#69fe8b 5px solid' : '#006e51 5px solid;' }}>
       <div id={styles.nameImg}>
@@ -36,7 +39,7 @@ export default function GuideService({ service, highlight }: Props) {
       </ul>
       <Link href="/services" onClick={() => setCardId(service.id)} id={styles.learnMoreParent}>
         <p id={styles.learnMore} className="link">
-          Learn more
+          {t('learnMore')}
         </p>
         <Image id={styles.arrow} src={arrow} alt="Learn more arrow" />
       </Link>

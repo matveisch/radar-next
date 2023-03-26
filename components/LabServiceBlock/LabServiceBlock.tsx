@@ -2,6 +2,7 @@ import styles from './LabServiceBlock.module.scss';
 import PriceTag from '../../ui/PriceTag/PriceTag';
 import rightArrow from '../../images/right-arrow.svg';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 export interface LabServiceBlockProps {
   title: string;
@@ -11,6 +12,8 @@ export interface LabServiceBlockProps {
   id: string;
 }
 function LabServiceBlock({ title, description, price, image, id }: LabServiceBlockProps) {
+  const { t } = useTranslation('lab');
+
   return (
     <div className={styles.labServiceBlock} id={id}>
       <Image src={image} alt="service-image" className={styles.titleImage} />
@@ -19,7 +22,7 @@ function LabServiceBlock({ title, description, price, image, id }: LabServiceBlo
       <div className={styles.footer}>
         <PriceTag price={price} />
         <button>
-          <p className="light-link">Подробнее</p>
+          <p className="light-link">{t('more')}</p>
           <Image src={rightArrow} alt="arrow" />
         </button>
       </div>

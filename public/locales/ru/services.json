@@ -1,0 +1,41 @@
+{
+  "social": "Социальные сети",
+  "targetAds": "Таргетная реклама",
+  "postsCreation": "Создание постов",
+  "integration": "Интеграция",
+
+  "web": "Веб-разработка",
+  "contextAds": "Контекстная реклама",
+  "offerAds": "Офферная реклама",
+  "seo": "CEO",
+  "pragmaticBaing": "Программатик баинг",
+  "mediaAds": "Медийная реклама",
+
+  "tv": "Телевидение",
+  "detailPlacement": "Точечное размещение",
+  "adsPlacement": "Размещение прямой рекламы",
+  "adsInSport": "Реклама в спортивных трансляциях",
+  "programsSponsorship": "Спонсорство программ",
+  "videoProduction": "Видеопродакшн",
+
+  "radio": "Радио",
+  "webPlacement": "Сетевое размещение",
+  "targetRadioAds": "Прямая радиореклама",
+  "etherIntegration": "Интеграция в эфир",
+  "internetRadio": "Интернет-радио",
+  "audioProduction": "Аудиопродакшн",
+
+  "creatives": "Креативы",
+  "AdsConcepts": "Концепты рекламных компаний",
+  "copywriting": "Копирайтинг",
+  "ctmDevelopment": "Разработка CTM",
+  "videoPhotoProduction": "Продакшн фото, видео и аудио",
+
+  "3d": "3D",
+  "videoConceptsCreation": "Создание концептов видео",
+  "quality3dCreation": "Создание качественного 3D контента",
+  "adsDecor": "Оформление в рамках рекламной компании",
+
+  "dooh": "DOOH",
+  "videoCreation": "Создание рекламных роликов"
+}
