@@ -3,6 +3,7 @@ import PriceTag from '../../ui/PriceTag/PriceTag';
 import rightArrow from '../../images/right-arrow.svg';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export interface LabServiceBlockProps {
   title: string;
@@ -13,6 +14,7 @@ export interface LabServiceBlockProps {
 }
 function LabServiceBlock({ title, description, price, image, id }: LabServiceBlockProps) {
   const { t } = useTranslation('lab');
+  const { locale } = useRouter();
 
   return (
     <div className={styles.labServiceBlock} id={id}>
@@ -23,7 +25,7 @@ function LabServiceBlock({ title, description, price, image, id }: LabServiceBlo
         <PriceTag price={price} />
         <button>
           <p className="light-link">{t('more')}</p>
-          <Image src={rightArrow} alt="arrow" />
+          <Image src={rightArrow} alt="arrow" style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined} />
         </button>
       </div>
     </div>
