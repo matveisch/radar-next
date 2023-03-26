@@ -9,17 +9,16 @@ import styles from './Navbar.module.scss';
 import React, { useContext, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
-
-import languageIcon from '../../images/Web.svg';
 import LanguageToggle from '../../ui/language-toggle-desctop';
 import LanguageToggleMobile from '../../ui/language-toggle-mobile';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-interface Props {
-  wrapperRef: React.RefObject<HTMLDivElement>;
-  showOptions: boolean;
-  setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
-}
+
+// interface Props {
+//   wrapperRef: React.RefObject<HTMLDivElement>;
+//   showOptions: boolean;
+//   setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
 const background = {
   open: {
@@ -62,7 +61,7 @@ const navItem = {
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const router = useRouter();
+  const { locale } = useRouter();
   const { t } = useTranslation('header');
 
   useEffect(() => {
@@ -81,15 +80,6 @@ export default function Navbar() {
         <AppSwitcher />
       </div>
       <div id={styles.navbarLinks}>
-        <Link href={router.pathname} locale="ru">
-          Ru
-        </Link>
-        <Link href={router.pathname} locale="en">
-          En
-        </Link>
-        <Link href={router.pathname} locale="he">
-          He
-        </Link>
         <NavbarButton buttonName={t('services')} linkTo={'/services'} />
         <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
         <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
@@ -110,6 +100,7 @@ export default function Navbar() {
           dragMomentum={false}
           id={styles.mobileNavBG}
           variants={background}
+          style={locale === 'he' ? { right: 'unset', left: '0' } : undefined}
           onClick={() => toggleOpen()}>
           <motion.ul id={styles.mobileNavUl} variants={navMenu}>
             <motion.li className={styles.mobileNavLi} variants={navItem}>

@@ -8,10 +8,26 @@ import radarTechGif from '../../images/Radar-tech.gif';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 function WhyRadar() {
   const { t } = useTranslation('lab');
   const { locale } = useRouter();
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setScreenWidth(window.innerWidth);
+      });
+    };
+  }, []);
 
   const blocks = [
     {
@@ -45,7 +61,7 @@ function WhyRadar() {
           className={styles.techRadarGif}
           src={radarTechGif}
           alt="Tech radar animation"
-          style={locale === 'he' ? { left: 'unset', right: '50%' } : undefined}
+          style={locale === 'he' && screenWidth > 1000 ? { left: 'unset', right: '50%' } : undefined}
         />
       </div>
     </div>

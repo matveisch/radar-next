@@ -4,6 +4,8 @@ import Image from 'next/image';
 import languageIcon from '../../images/Web.svg';
 import styles from './index.module.scss';
 import dropDown from '../../images/drop-down.svg';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const toggleVariants = {
   open: {
@@ -17,7 +19,8 @@ const toggleVariants = {
 export default function LanguageToggle() {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedLang, setSelectedLang] = useState<string>('Eng');
-  const languagesArr = ['Eng', 'Heb', 'Rus'];
+  const languagesArr = ['En', 'He', 'Ru'];
+
   return (
     <motion.div
       id={styles.main}
@@ -48,6 +51,7 @@ export default function LanguageToggle() {
     </motion.div>
   );
 }
+
 const menuItemVariants = {
   open: {
     height: 'auto',
@@ -72,17 +76,25 @@ const menuItemVariants = {
     },
   },
 };
+
 interface menuItemProps {
   text: string;
   setSelected: Function;
   isSelected: boolean;
 }
+
 export function MenuItem({ text, setSelected, isSelected }: menuItemProps) {
+  const router = useRouter();
+
   return (
     <motion.div variants={menuItemVariants} onClick={() => setSelected(text)}>
-      <p className={styles.menuItem} style={{ color: isSelected ? '#69fe8b' : '#eeeeee' }}>
+      <Link
+        className={styles.menuItem}
+        style={{ color: isSelected ? '#69fe8b' : '#eeeeee' }}
+        href={router.pathname}
+        locale={text.toLowerCase()}>
         {text}
-      </p>
+      </Link>
     </motion.div>
   );
 }
