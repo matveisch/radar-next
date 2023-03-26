@@ -1,0 +1,42 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+
+#main {
+  z-index: 5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+
+  left: 0;
+  border: 3px $main-green solid;
+  border-radius: 20px;
+  padding: 3px;
+  background-color: $black;
+
+  #selected {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    img {
+      filter: $main-green-filter;
+      height: 30px;
+      width: auto;
+    }
+    p {
+      color: $off-white;
+      padding-right: 10px;
+    }
+    #dropdown {
+      height: 10px;
+      width: auto;
+    }
+  }
+}
+.menuItem {
+  color: $off-white;
+  text-align: center;
+  margin-top: 5px;
+}

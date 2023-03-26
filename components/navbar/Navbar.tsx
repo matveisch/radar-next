@@ -9,7 +9,9 @@ import styles from './Navbar.module.scss';
 import React, { useContext, useRef, useEffect } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
-
+import languageIcon from '../../images/Web.svg';
+import LanguageToggle from '../../ui/language-toggle-desctop';
+import LanguageToggleMobile from '../../ui/language-toggle-mobile';
 interface Props {
   wrapperRef: React.RefObject<HTMLDivElement>;
   showOptions: boolean;
@@ -79,6 +81,9 @@ export default function Navbar() {
         <div id={styles.contactBtn}>
           <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
         </div>
+        <div id={styles.languageToggleWrapper}>
+          <LanguageToggle />
+        </div>
       </div>
       <motion.div id={styles.mobileNav} initial={false} animate={isOpen ? 'open' : 'closed'}>
         <BurgerMenu toggle={() => toggleOpen()} />
@@ -103,6 +108,9 @@ export default function Navbar() {
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
               <NavbarButton buttonName={'Contact'} linkTo={'/contact'} />
+            </motion.li>
+            <motion.li className={styles.mobileNavLi} variants={navItem}>
+              <LanguageToggleMobile />
             </motion.li>
           </motion.ul>
         </motion.div>

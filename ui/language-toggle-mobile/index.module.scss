@@ -1,0 +1,8 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

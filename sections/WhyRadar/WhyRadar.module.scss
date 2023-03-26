@@ -1,8 +1,8 @@
 .whyRadar {
-  margin-top: 200px;
+  margin: 200px 0;
 
   h2 {
-    color: #EEEEEE;
+    color: #eeeeee;
     margin-bottom: 200px;
   }
 
@@ -19,7 +19,7 @@
   .mainContainer {
     display: flex;
     position: relative;
-    
+
     .techRadarGif {
       width: 810px;
       height: 810px;
@@ -39,10 +39,9 @@
         height: auto;
       }
     }
-    
+
     @media (max-width: 1000px) {
       flex-direction: column;
-
     }
   }
 }

@@ -1,5 +1,5 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #navbar {
   display: flex;
@@ -9,7 +9,7 @@
   width: calc(100vw - calc($page-padding * 2));
   position: relative;
 
-  @media (max-width: map-get($breakpoints, "mobileL")) {
+  @media (max-width: map-get($breakpoints, 'mobileL')) {
     padding: 24px $page-padding 24px $page-padding;
   }
 
@@ -25,13 +25,14 @@
   }
 
   #navbarLinks {
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       display: none;
     }
 
     width: 50%;
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
 
     #contactBtn {
       display: flex;
@@ -40,12 +41,12 @@
       border: 3px solid $main-green;
       transition: 0.3s;
       a {
-        @media (max-width: map-get($breakpoints, "lg")) {
+        @media (max-width: map-get($breakpoints, 'lg')) {
           padding: 5px 17.5px;
         }
         padding: 10px 35px;
         &::after {
-          content: "";
+          content: '';
           position: absolute;
           background-color: $main-green;
           height: 100%;
@@ -64,7 +65,7 @@
           font-weight: 800;
 
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             background-color: $main-green;
             height: 3px;
@@ -80,7 +81,7 @@
   }
 
   .imageWrapper {
-    @media (min-width: map-get($breakpoints, "tablet")) {
+    @media (min-width: map-get($breakpoints, 'tablet')) {
       display: none;
     }
     width: 43px;
@@ -94,11 +95,11 @@
   }
 
   .menuOptions {
-    @media (min-width: map-get($breakpoints, "tablet")) {
+    @media (min-width: map-get($breakpoints, 'tablet')) {
       display: none;
     }
 
-    @media (max-width: map-get($breakpoints, "mobileL")) {
+    @media (max-width: map-get($breakpoints, 'mobileL')) {
       width: 100%;
       border-radius: 0;
       top: 0;
@@ -130,7 +131,7 @@
   top: 0;
   right: 0;
   z-index: 3;
-  @media (min-width: map-get($breakpoints, "tablet")) {
+  @media (min-width: map-get($breakpoints, 'tablet')) {
     display: none;
   }
   #mobileNavBG {
@@ -146,7 +147,7 @@
     align-items: center;
     justify-content: space-around;
     &::after {
-      content: "";
+      content: '';
       width: 30%;
       height: 3px;
       background-color: $main-green;
@@ -178,4 +179,10 @@
       }
     }
   }
+}
+#languageToggleWrapper {
+  position: relative;
+  width: 127px;
+
+  height: auto;
 }
