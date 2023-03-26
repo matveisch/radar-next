@@ -55,11 +55,11 @@
     align-items: flex-end;
     text-align: right;
     transition: 0.3s;
+    gap: 8px;
 
     #learnMore {
       margin-left: auto;
       color: $main-green;
-      margin-right: 8px;
     }
   }
   @media (max-width: map-get($breakpoints, "mobileL")) {

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styles from './ServiceCard.module.scss';
 import { cardIdContextType, idContext } from '../../components/Layout';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 interface Props {
   id: number;
@@ -16,6 +17,7 @@ interface Props {
 export default function ServiceCard({ id, imageURL, title, description }: Props) {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const { t } = useTranslation('common');
+  const { locale } = useRouter();
 
   return (
     <div id={styles.cardParent}>
@@ -40,7 +42,12 @@ export default function ServiceCard({ id, imageURL, title, description }: Props)
           <p id={styles.learnMore} className="light-link">
             {t('learnMore')}
           </p>
-          <Image id={styles.arrow} src={arrow} alt="Learn more arrow" />
+          <Image
+            id={styles.arrow}
+            src={arrow}
+            alt="Learn more arrow"
+            style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined}
+          />
         </div>
       </Link>
     </div>

@@ -7,9 +7,12 @@ import WhyBlock from '../../components/WhyBlock/WhyBlock';
 import radarTechGif from '../../images/Radar-tech.gif';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 function WhyRadar() {
   const { t } = useTranslation('lab');
+  const { locale } = useRouter();
+
   const blocks = [
     {
       image: radarWhy,
@@ -38,7 +41,12 @@ function WhyRadar() {
             <WhyBlock key={index} image={block.image} text={block.text} />
           ))}
         </div>
-        <Image className={styles.techRadarGif} src={radarTechGif} alt="Tech radar animation" />
+        <Image
+          className={styles.techRadarGif}
+          src={radarTechGif}
+          alt="Tech radar animation"
+          style={locale === 'he' ? { left: 'unset', right: '50%' } : undefined}
+        />
       </div>
     </div>
   );

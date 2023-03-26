@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './ServicesMenuDesktop.module.scss';
 import useServicesList from '../../data/servicesList';
-import { cardIdContextType, idContext } from '../../components/Layout';
+import { cardIdContextType, idContext } from '../Layout';
 import ServicesBtn from '../../ui/services-btn/ServicesBtn';
 import ServicesDescription from '../services-description/ServicesDescription';
+import { useTranslation } from 'next-i18next';
 
 const contactCardAnim = {
   open: {
@@ -29,9 +30,10 @@ const contactBtnAnim = {
 };
 export default function ServicesMenuDesktop() {
   const [isOpen, setIsOpen] = useState<boolean>(true);
-
   const servicesArr = useServicesList();
   const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+  const { t } = useTranslation('services');
+
   useEffect(() => {
     if (cardId != undefined) {
       setIsOpen(false);
@@ -53,7 +55,7 @@ export default function ServicesMenuDesktop() {
         })}
         <motion.div id={styles.contactCard} variants={contactCardAnim}>
           <motion.h4 id={styles.contactTitle} className="H3" variants={contactTitleAnim}>
-            Need help?
+            {t('needHelp')}
           </motion.h4>
           <motion.div
             id={styles.contactBtn}
@@ -63,7 +65,7 @@ export default function ServicesMenuDesktop() {
               boxShadow: '0px 3px 16px 0px rgba(105, 254, 139, 0.2)',
             }}>
             <Link href="/contact" id={styles.contactLink} className="paragraph">
-              Ask Us
+              {t('askUs')}
             </Link>
           </motion.div>
         </motion.div>

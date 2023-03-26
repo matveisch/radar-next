@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 interface Props {
   step: number;
@@ -10,6 +11,7 @@ interface Props {
 
 export default function GuideStepLeft({ step, text, last }: Props) {
   const { t } = useTranslation('guides');
+  const { locale } = useRouter();
 
   return (
     <div id={styles.main}>
@@ -20,7 +22,9 @@ export default function GuideStepLeft({ step, text, last }: Props) {
           </p>
         </div>
         <div id={styles.wrapper}>
-          <p className="paragraph">{text}</p>
+          <p className="paragraph" dir={locale === 'he' ? 'rtl' : 'ltr'}>
+            {text}
+          </p>
         </div>
         {!last && <div id={styles.arrow}></div>}
       </div>
