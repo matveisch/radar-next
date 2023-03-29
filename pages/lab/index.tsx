@@ -7,8 +7,13 @@ import LabHero from '../../sections/LabHero';
 import WhyRadar from '../../sections/WhyRadar/WhyRadar';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import quoteIcon from '../../images/quote.svg';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 function Lab() {
+  const { t } = useTranslation('lab');
+  const { locale } = useRouter();
+
   return (
     <div>
       <Head>
@@ -18,13 +23,13 @@ function Lab() {
       </Head>
       <div className={styles.lab}>
         <LabHero />
-        <div id={styles.labQuote}>
+        <div id={styles.labQuote} style={locale === 'he' ? { marginLeft: 'unset', marginRight: '-10vw' } : undefined}>
           <div id={styles.topDiv}></div>
           <div id={styles.quote}>
             <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} />
             <p className="H4">
-              Самый простой способ завоевать новых клиентов — это делать хорошую рекламу.
-              <p>- Дэвил Огилви</p>
+              {t('quotation')}
+              <p>{t('quoteAuthor')}</p>
             </p>
 
             <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} />
