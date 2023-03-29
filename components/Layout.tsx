@@ -1,7 +1,6 @@
-import React, { useEffect, createContext, Dispatch, SetStateAction, useRef, useState } from 'react';
+import React, { useEffect, createContext, Dispatch, SetStateAction, useState } from 'react';
 import Navbar from './navbar/Navbar';
 import Footer from './footer/Footer';
-import { number } from 'yup/lib/locale';
 import { useRouter } from 'next/router';
 
 interface Props {
@@ -21,18 +20,11 @@ export const idContext = createContext<cardIdContextType | null>(null);
 export const guideContext = createContext<guideIdContextType | null>(null);
 
 export default function Layout({ children }: Props) {
-  const [showOptions, setShowOptions] = useState(false);
   const [cardId, setCardId] = useState<number | null>(null);
   const [guideId, setGuideId] = useState<number>(0);
-  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const contextValue: cardIdContextType = { cardId, setCardId };
   const guideIdValue: guideIdContextType = { guideId, setGuideId };
-  function handleClickOutside(e: { target: any }) {
-    if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
-      setShowOptions(false);
-    }
-  }
   const router = useRouter();
 
   useEffect(() => {
@@ -44,7 +36,7 @@ export default function Layout({ children }: Props) {
     }
   }, [router.route]);
   return (
-    <div onClick={handleClickOutside}>
+    <div style={{ overflowX: 'hidden' }}>
       <idContext.Provider value={contextValue}>
         <guideContext.Provider value={guideIdValue}>
           <header>

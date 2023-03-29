@@ -6,19 +6,13 @@ import { motion, useCycle } from 'framer-motion';
 import Image from 'next/image';
 import logo from '../../images/logo.png';
 import styles from './Navbar.module.scss';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
 import AppSwitcher from '../AppSwitcher/AppSwitcher';
 import LanguageToggle from '../../ui/language-toggle-desctop';
 import LanguageToggleMobile from '../../ui/language-toggle-mobile';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-
-// interface Props {
-//   wrapperRef: React.RefObject<HTMLDivElement>;
-//   showOptions: boolean;
-//   setShowOptions: React.Dispatch<React.SetStateAction<boolean>>;
-// }
 
 const background = {
   open: {
@@ -63,10 +57,6 @@ export default function Navbar() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const { locale } = useRouter();
   const { t } = useTranslation('header');
-
-  useEffect(() => {
-    isOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset');
-  }, [isOpen]);
 
   return (
     <nav id={styles.navbar} onClick={() => setCardId(null)}>
