@@ -29,7 +29,8 @@ function Lab() {
             <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} />
             <p className="H4">
               {t('quotation')}
-              <p>{t('quoteAuthor')}</p>
+              {<br />}
+              <span className="paragraph">{t('quoteAuthor')}</span>
             </p>
 
             <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} />
