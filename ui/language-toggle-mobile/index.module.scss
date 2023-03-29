@@ -5,4 +5,9 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  .link {
+    &:hover {
+      color: $main-green;
+    }
+  }
 }

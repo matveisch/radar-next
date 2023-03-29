@@ -18,7 +18,8 @@ export default function LanguageToggleMobile() {
             locale={item.toLowerCase()}
             key={index}
             onClick={() => setSelectedLang(item)}
-            style={{ color: item == selectedLang ? '#69fe8b' : '#eeeeee' }}>
+            style={{ color: item == selectedLang ? '#69fe8b' : '#eeeeee' }}
+            className={styles.link}>
             {item}
           </Link>
         );

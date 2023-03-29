@@ -12,7 +12,7 @@ import GuideService from '../../components/guide-service';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-function Services() {
+function Guides() {
   const guidesArr = useGuidesList();
   const servicesArr = useServicesList();
   const { guideId } = useContext(guideContext) as guideIdContextType;
@@ -27,7 +27,7 @@ function Services() {
   return (
     <div>
       <Head>
-        <title>Contact</title>
+        <title>Guides</title>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -79,7 +79,7 @@ function Services() {
   );
 }
 
-export default Services;
+export default Guides;
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {

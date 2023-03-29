@@ -81,7 +81,7 @@ export default function Navbar() {
       </div>
       <div id={styles.navbarLinks}>
         <NavbarButton buttonName={t('services')} linkTo={'/services'} />
-        <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
+        <NavbarButton buttonName={t('aboutUs')} linkTo={'/about-us'} />
         <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
         <div id={styles.contactBtn}>
           <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
@@ -107,15 +107,16 @@ export default function Navbar() {
               <NavbarButton buttonName={t('services')} linkTo={'/services'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
+              <NavbarButton buttonName={t('aboutUs')} linkTo={'/about-us'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
-              <NavbarButton buttonName={t('research')} linkTo={'/'} />
+              <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
               <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
             </motion.li>
             <motion.li className={styles.mobileNavLi} variants={navItem}>
+              <p style={{ color: '#eeeeee', fontSize: '16px', textAlign: 'center', marginBottom: 10 }}>Language: </p>
               <LanguageToggleMobile />
             </motion.li>
           </motion.ul>

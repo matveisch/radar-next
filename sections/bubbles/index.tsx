@@ -20,8 +20,8 @@ export default function Bubbles() {
     useEffect(() => {
       function handleResize() {
         setWindowSize({
-          width: ref.current!.offsetWidth,
-          height: ref.current!.offsetHeight,
+          width: ref.current!.offsetWidth - 300,
+          height: ref.current!.offsetHeight - 300,
         });
       }
 
