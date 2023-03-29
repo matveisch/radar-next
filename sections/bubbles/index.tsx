@@ -6,8 +6,8 @@ import { number } from 'yup';
 export default function Bubbles() {
   const ref = useRef();
 
-  const [bubblesArr, setBubblesArr] = useState<any[]>([]);
-  const [secondBubblesArr, setSecondBubblesArr] = useState<any[]>([]);
+  const [bubblesArr, setBubblesArr] = useState<any[]>([<Bubble key={0} width={300} height={500} />]);
+  const [secondBubblesArr, setSecondBubblesArr] = useState<any[]>([<Bubble key={0} width={300} height={500} />]);
   const [changed, setChanged] = useState<boolean>(true);
   const notInitialRender = useRef(false);
 
@@ -35,7 +35,7 @@ export default function Bubbles() {
   }
   useEffect(() => {
     let timer = 500;
-    console.log('FIRST: ' + bubblesArr.length);
+    // console.log('FIRST: ' + bubblesArr.length);
     setTimeout(() => {
       if (bubblesArr.length > 20) {
         notInitialRender.current = true;
@@ -44,14 +44,14 @@ export default function Bubbles() {
           setBubblesArr([]);
         }, 10000);
       } else {
-        setBubblesArr([...bubblesArr, <Bubble width={size.width} height={size.height} />]);
+        setBubblesArr([...bubblesArr, <Bubble key={bubblesArr.length} width={size.width} height={size.height} />]);
       }
     }, timer);
   }, [bubblesArr]);
 
   useEffect(() => {
     let timer = 500;
-    console.log('SECOND: ' + secondBubblesArr.length);
+    // console.log('SECOND: ' + secondBubblesArr.length);
     if (notInitialRender.current) {
       setTimeout(() => {
         if (secondBubblesArr.length > 20) {
@@ -59,7 +59,10 @@ export default function Bubbles() {
             setSecondBubblesArr([]);
           }, 10000);
         } else {
-          setSecondBubblesArr([...secondBubblesArr, <Bubble width={size.width} height={size.height} />]);
+          setSecondBubblesArr([
+            ...secondBubblesArr,
+            <Bubble key={secondBubblesArr.length} width={size.width} height={size.height} />,
+          ]);
           setChanged(!changed);
         }
       }, 500);
