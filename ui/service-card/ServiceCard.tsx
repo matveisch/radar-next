@@ -20,7 +20,7 @@ export default function ServiceCard({ id, imageURL, title, description }: Props)
   const { locale } = useRouter();
 
   return (
-    <div id={styles.cardParent}>
+    <div id={locale === 'he' ? styles.cardParentRtl : styles.cardParent}>
       <div>
         <Image id={styles.icon} alt="icon" src={require(`../../images/${imageURL}.svg`)} />
         <h4 id={styles.title} className="H4">
