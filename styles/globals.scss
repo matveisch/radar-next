@@ -207,8 +207,26 @@ a {
   }
 }
 
+.customSlider-track-rtl {
+  top: 5px;
+  margin-right: -177px;
+  z-index: 0;
+  height: 50px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: 0.1s;
+
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    margin-left: 0;
+  }
+}
+
 .customSlider-track.customSlider-track-0 {
   background: linear-gradient(270deg, #69fe8b 0%, #232932 100%);
+}
+
+.customSlider-track-rtl.customSlider-track-rtl-0 {
+  background: linear-gradient(90deg, #69fe8b 0%, #232932 100%);
 }
 
 .customSlider-thumb {
@@ -219,8 +237,23 @@ a {
   background: $main-green;
   box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
   outline: none;
-
   transition: transform 0.2s, box-shadow 0.3s, left 0.1s;
+
+  @media (max-width: map-get($breakpoints, "tablet")) {
+    margin-left: 0;
+  }
+}
+
+.customSlider-thumb-rtl {
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: $main-green;
+  box-shadow: -15px 0px 20px rgba(0, 0, 0, 0.25);
+  outline: none;
+  transition: transform 0.2s, box-shadow 0.3s, right 0.1s;
+
   @media (max-width: map-get($breakpoints, "tablet")) {
     margin-left: 0;
   }

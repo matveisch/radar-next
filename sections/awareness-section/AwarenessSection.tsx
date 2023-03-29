@@ -6,6 +6,7 @@ import ProfitMeter from '../../components/profit-meter/ProfitMeter';
 import AttendanceMeter from '../../components/attendance-meter/AttendanceMeter';
 import ReactSlider from 'react-slider';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 function AwarenessSection() {
   // new sliders value – accepts from 0 to 100
@@ -14,6 +15,7 @@ function AwarenessSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [sectionVisible, setSectionVisible] = useState(false);
   const { t } = useTranslation('common');
+  const { locale } = useRouter();
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -65,9 +67,10 @@ function AwarenessSection() {
         <div id={styles.sliderWrapper}>
           <div className={styles.insideWrapper}>
             <ReactSlider
+              invert={locale === 'he'}
               className="customSlider"
-              trackClassName="customSlider-track"
-              thumbClassName="customSlider-thumb"
+              trackClassName={locale === 'he' ? 'customSlider-track-rtl' : 'customSlider-track'}
+              thumbClassName={locale === 'he' ? 'customSlider-thumb-rtl' : 'customSlider-thumb'}
               value={sliderValue}
               onChange={value => {
                 setSliderValue(value);
