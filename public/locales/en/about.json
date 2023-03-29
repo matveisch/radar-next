@@ -1,0 +1,27 @@
+{
+  "aboutUs": "About us",
+  "team": "Team",
+  "aboutRadar": "Radar Digitaly is a marketing company that helps businesses achieve their goals and increase profitability. Our team of marketing and advertising experts creates individual strategies for each client, taking into account their needs and business specifics. We use modern technologies and tools to achieve the set goals as effectively as possible. We are proud of our achievements and strive to do everything possible to make our clients feel confident in their success.",
+  "simonName": "Semyon Schwartzman",
+  "simonDescription": {
+    "experience": "5 years of experience in organizing advertising activities",
+    "expert": "Expert in the field of influencer contact"
+  },
+  "rinaName": "Rina Zhuravleva",
+  "rinaDescription": {
+    "experience": "Over 25 years of experience in the advertising business",
+    "spb": "Headed the Russian Media Group in St. Petersburg (holding of radio stations 'Russkoe Radio', 'Maximum', 'Di-fm', 'Monte-Carlo', 'Peter-Fm') for more than 10 years",
+    "marketingAgency": "Has been leading a full-cycle advertising agency for over 10 years",
+    "expert": "Sales expert, certified psychologist"
+  },
+  "vadimName": "Vadim Snegirev",
+  "vadimDescription": {
+    "experience": "Over 20 years of experience in the advertising business",
+    "expert": "Expert in promoting advertising agencies on the Russian market"
+  },
+  "elenaName": "Elena Krahmal",
+  "elenaDescription": {
+    "experience": "Over 20 years of experience in the advertising business",
+    "cases": "Over a thousand successful cases attest to expertise in communication with resource holders"
+  }
+}
