@@ -1,0 +1,37 @@
+{   
+    "base" : "Base",
+    "advanced": "Advanced",
+    "all-in": "All-in",
+
+    "social-des" : "Social networks are one of the most convenient and unobtrusive ways of advertising on the Internet. Many interested customers initially simply wander through social platforms in search of content. The right advertising can attract such people to your product.",
+
+    "social-base-1": "Market research and strategy building",
+    "social-base-2": "Coverage of the target audience up to 60,000 people",
+    "social-base-3": "Creation of sales material",
+    "social-base-4": "Placement control and real-time reporting",
+
+    "social-advanced-1": "Coverage of the target audience up to 120,000 people",
+    "social-advanced-2": "Bonus advertising integrations on partner sites and platforms",
+    "social-advanced-3": "Project manager ready to make initial communication with the client",
+    "social-advanced-4": "All features of the Basic package",
+
+    "social-all-in-1" : "Coverage of the target audience up to 200,000 people",
+    "social-all-in-2" : "Sponsorships at events",
+    "social-all-in-3" : "Creating and Maintaining a Single Resource",
+    "social-all-in-4" : "Bonus advertising opportunities from the company",
+
+    "tv-des": "Advertising on TV is one of the favorite and effective ways to influence the audience. TV is often like a family member: everyone watches their favorite programs, shows, news. A commercial woven into favorite and interesting television content is perceived both more effectively and easier, remaining in the memory of the buyer for a long time.",
+
+    "tv-base-1": "Market research and strategy building",
+    "tv-base-2": "Coverage of the target audience up to 200,000 people",
+    "tv-base-3": "Placement control and real-time reporting",
+
+    "tv-advanced-1": "Market research and strategy building",
+    "tv-advanced-2": "Coverage of the target audience up to 350,000 people",
+    "tv-advanced-3": "Placement control and real-time reporting",
+
+    "tv-all-in-1": "Coverage of the target audience up to 600,000 people",
+    "tv-all-in-2": "Advertising integrations of selling content",
+    "tv-all-in-3": "Sponsorship and collaborations",
+    "tv-all-in-4": "Placement control and real-time reporting"
+}

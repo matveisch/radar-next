@@ -82,7 +82,7 @@ export default Services;
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['header', 'services'])),
+      ...(await serverSideTranslations(locale, ['header', 'services', 'tariffs'])),
     },
   };
 }

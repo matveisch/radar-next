@@ -1,0 +1,28 @@
+@import '../../styles/variables.module.scss';
+#mainWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 30px;
+  #description {
+    grid-column: 1/-1;
+    text-align: center;
+
+    margin: 50px auto;
+    max-width: 650px;
+    color: $off-white;
+  }
+  #firstTariff {
+    // grid-column: 1/2;
+  }
+  #secondTariff {
+    // grid-column: 1/2;
+  }
+  #thirdTariff {
+    // grid-column: 2/3;
+    // grid-row: 2/4;
+    height: 100%;
+  }
+  @media (max-width: 770px) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+}

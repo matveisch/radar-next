@@ -47,7 +47,7 @@ export default function ServicesMenuDesktop() {
       id={styles.servicesMenuWrapper}
       animate={isOpen ? 'open' : 'closed'}
       onWheel={event => {
-        event.deltaY > 0 ? setIsOpen(false) : setIsOpen(true);
+        event.deltaY < 0 && event.view.pageYOffset < 1 ? setIsOpen(true) : setIsOpen(false);
       }}>
       <motion.div id={styles.servicesGrid}>
         {servicesArr.map((item, index) => {
