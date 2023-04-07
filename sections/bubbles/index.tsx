@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './index.module.scss';
 import Bubble from '../../ui/bubble';
-import { number } from 'yup';
 
 export default function Bubbles() {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
 
-  const [bubblesArr, setBubblesArr] = useState<any[]>([<Bubble key={0} width={300} height={500} />]);
-  const [secondBubblesArr, setSecondBubblesArr] = useState<any[]>([<Bubble key={0} width={300} height={500} />]);
+  const [bubblesArr, setBubblesArr] = useState<JSX.Element[]>([<Bubble key={0} width={300} height={500} />]);
+  const [secondBubblesArr, setSecondBubblesArr] = useState<JSX.Element[]>([
+    <Bubble key={0} width={300} height={500} />,
+  ]);
   const [changed, setChanged] = useState<boolean>(true);
   const notInitialRender = useRef(false);
 
@@ -50,7 +51,7 @@ export default function Bubbles() {
   }, [bubblesArr]);
 
   useEffect(() => {
-    let timer = 500;
+    // let timer = 500;
     // console.log('SECOND: ' + secondBubblesArr.length);
     if (notInitialRender.current) {
       setTimeout(() => {
