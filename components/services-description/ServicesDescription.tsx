@@ -19,7 +19,14 @@ export default function ServicesDescription({ serviceId }: Props) {
     <motion.div variants={variants} id={styles.mainWrapper}>
       <p id={styles.description}>{service.description}</p>
       {service.prices.map((item, index) => {
-        return <TariffCard price={item.price} tariff={item.tariff} tariffDescription={item.tariffDescription} />;
+        return (
+          <TariffCard
+            price={item.price}
+            tariff={item.tariff}
+            tariffDescription={item.tariffDescription}
+            key={`${index}-${item.price}`}
+          />
+        );
       })}
       {/* <motion.div id={styles.firstTariff}>
         <TariffCard
