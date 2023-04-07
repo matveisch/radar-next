@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './index.module.scss';
-import { motion } from 'framer-motion';
 
 interface Props {
   price: number;
@@ -21,7 +20,7 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
       </div>
       <ul className="paragraph">
         {tariffDescription.map((item, index) => {
-          return <li>{item}</li>;
+          return <li key={index}>{item}</li>;
         })}
       </ul>
       <button id={styles.button} className="paragraph">

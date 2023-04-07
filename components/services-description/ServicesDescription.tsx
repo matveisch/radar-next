@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './ServicesDescription.module.scss';
-import TariffCard from '../../ui/serviceTariff';
+import TariffCard from '../../ui/TariffCard';
 import useServicesPricesList from '../../data/servicesPrices';
 
 interface Props {

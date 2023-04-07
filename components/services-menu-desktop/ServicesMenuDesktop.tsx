@@ -31,7 +31,7 @@ const contactBtnAnim = {
 export default function ServicesMenuDesktop() {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const servicesArr = useServicesList();
-  const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+  const { cardId } = useContext(idContext) as cardIdContextType;
   const { t } = useTranslation('services');
 
   useEffect(() => {
@@ -41,12 +41,14 @@ export default function ServicesMenuDesktop() {
       setIsOpen(true);
     }
   }, []);
+
   return (
     <motion.div
       initial={false}
       id={styles.servicesMenuWrapper}
       animate={isOpen ? 'open' : 'closed'}
-      onWheel={event => {
+      onWheel={(event: any) => {
+        console.log(event.view);
         event.deltaY < 0 && event.view.pageYOffset < 1 ? setIsOpen(true) : setIsOpen(false);
       }}>
       <motion.div id={styles.servicesGrid}>
