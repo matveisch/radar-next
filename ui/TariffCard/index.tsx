@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './index.module.scss';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
+import vshape from '../../images/vshape.svg';
 
 interface Props {
   price: string;
@@ -22,11 +24,17 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
       </div>
       <ul className="paragraph">
         {tariffDescription.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return (
+            <li key={index}>
+              <Image className={styles.vshape} src={vshape} alt="vshape" />
+
+              {item}
+            </li>
+          );
         })}
       </ul>
       <button id={styles.button} className="paragraph">
-        Связаться с нами
+        {t('contact-us')}
       </button>
     </div>
   );

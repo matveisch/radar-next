@@ -32,7 +32,24 @@ export default function useServicesPricesList() {
     },
     {
       id: 1,
-      prices: [],
+      description: t('web-des'),
+      prices: [
+        {
+          tariff: t('base'),
+          price: '2000₪',
+          tariffDescription: [t('web-base-1'), t('web-base-2'), t('web-base-3')],
+        },
+        {
+          tariff: t('advanced'),
+          price: '10000₪',
+          tariffDescription: [t('web-advanced-1'), t('web-advanced-2'), t('web-advanced-3'), t('web-advanced-4')],
+        },
+        {
+          tariff: t('redesign'),
+          price: '5000₪',
+          tariffDescription: [t('web-redesign-1'), t('web-redesign-2'), t('web-redesign-3')],
+        },
+      ],
     },
     {
       id: 2,

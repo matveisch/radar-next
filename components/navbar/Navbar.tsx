@@ -3,7 +3,7 @@ import NavbarButton from '../../ui/navbar-button/NavbarButton';
 import BurgerMenu from '../../ui/burger-menu-path/BurgerMenu';
 import { motion, useCycle } from 'framer-motion';
 import Image from 'next/image';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import styles from './Navbar.module.scss';
 import React, { useContext } from 'react';
 import { cardIdContextType, idContext } from '../Layout';

@@ -4,6 +4,7 @@
     "all-in": "All-in",
     "from": "from ",
     "per-min": " /min",
+    "contact-us": "Connect with us",
 
     "social-des" : "Social networks are one of the most convenient and unobtrusive ways of advertising on the Internet. Many interested customers initially simply wander through social platforms in search of content. The right advertising can attract such people to your product.",
 
@@ -21,6 +22,23 @@
     "social-all-in-2" : "Sponsorships at events",
     "social-all-in-3" : "Creating and Maintaining a Single Resource",
     "social-all-in-4" : "Bonus advertising opportunities from the company",
+
+    "web-des": "We offer website development services, which includes creating a quality and unique website that meets modern technology and design standards. We focus on creating websites that not only function effectively and display well on different devices, but also reflect our client's unique style and individuality. Our team of developers is ready to create a website that helps attract new customers and increase your brand recognition in the online space.",
+    "redesign": "Website redesign",
+
+    "web-base-1": "Creating a simple website with limited functionality, for example, with a few pages, basic design, and minimal customization.",
+"web-base-2": "Suitable for small businesses or individuals who need an online presence without additional features.",
+"web-base-3": "Pricing varies depending on the complexity and number of pages.",
+
+"web-advanced-1": "Designing and developing a website that meets specific client needs and requirements.",
+"web-advanced-2": "Advanced features may include e-commerce integration, advanced content management systems, custom integration with third-party tools, and more.",
+"web-advanced-3": "Requires more time and experience, which is reflected in pricing.",
+"web-advanced-4": "Price range: from 10,000 to 50,000 ₪ and more, depending on project complexity and workload.",
+
+"web-redesign-1": "Modernizing an existing website to give it a fresh look, improve user interaction, and enhance website functionality.",
+"web-redesign-2": "Changes can involve layout, design, content, and website features to improve its effectiveness.",
+"web-redesign-3": "Price range: from 5,000 to 20,000 ₪, depending on the volume of the redesign and website complexity.",
+
 
     "tv-des": "Advertising on TV is one of the favorite and effective ways to influence the audience. TV is often like a family member: everyone watches their favorite programs, shows, news. A commercial woven into favorite and interesting television content is perceived both more effectively and easier, remaining in the memory of the buyer for a long time.",
 

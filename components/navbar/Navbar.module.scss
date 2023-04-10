@@ -17,6 +17,11 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    img {
+      height: 40px;
+      width: auto;
+      filter: $main-green-filter;
+    }
 
     h1 {
       text-transform: uppercase;
