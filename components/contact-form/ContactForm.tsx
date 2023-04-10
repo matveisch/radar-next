@@ -13,7 +13,7 @@ export interface Values {
   message: string;
 }
 interface Props {
-  messageText?: string;
+  messageText?: string | undefined | string[];
 }
 const phoneRegex = /^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$/;
 
