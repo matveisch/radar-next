@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import NavbarButton from '../../ui/navbar-button/NavbarButton';
 import BurgerMenu from '../../ui/burger-menu-path/BurgerMenu';
 import { motion, useCycle } from 'framer-motion';
@@ -26,11 +25,11 @@ const background = {
 
 const navMenu = {
   open: {
-    dislay: 'block',
+    display: 'block',
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
-    dislay: 'none',
+    display: 'none',
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
@@ -55,7 +54,7 @@ const navItem = {
 export default function Navbar() {
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const { locale } = useRouter();
+  const { locale, pathname } = useRouter();
   const { t } = useTranslation('header');
 
   return (
@@ -73,7 +72,7 @@ export default function Navbar() {
         <NavbarButton buttonName={t('services')} linkTo={'/services'} />
         <NavbarButton buttonName={t('aboutUs')} linkTo={'/about-us'} />
         <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
-        <div id={styles.contactBtn}>
+        <div id={styles.contactBtn} style={pathname === '/lab' ? { border: '3px solid #B338FF' } : undefined}>
           <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
         <div id={styles.languageToggleWrapper}>

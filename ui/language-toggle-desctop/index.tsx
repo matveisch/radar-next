@@ -20,16 +20,26 @@ export default function LanguageToggle() {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedLang, setSelectedLang] = useState<string>('Eng');
   const languagesArr = ['En', 'He', 'Ru'];
+  const { pathname } = useRouter();
 
   return (
     <motion.div
+      style={pathname === '/lab' ? { border: '3px solid #B338FF' } : undefined}
       id={styles.main}
       variants={toggleVariants}
       initial={false}
       animate={open ? 'open' : 'closed'}
       onClick={() => setOpen(!open)}>
       <div id={styles.selected}>
-        <Image src={languageIcon} alt="language icon" />
+        <Image
+          src={languageIcon}
+          alt="language icon"
+          style={
+            pathname === '/lab'
+              ? { filter: 'invert(34%) sepia(87%) saturate(3749%) hue-rotate(261deg) brightness(98%) contrast(107%)' }
+              : undefined
+          }
+        />
         {/* <p>{selectedLang}</p> */}
         <motion.div
           id={styles.arrow}
@@ -41,7 +51,16 @@ export default function LanguageToggle() {
               rotate: 0,
             },
           }}>
-          <Image src={dropDown} alt="dropDown icon" id={styles.dropdown} />
+          <Image
+            src={dropDown}
+            alt="dropDown icon"
+            id={styles.dropdown}
+            style={
+              pathname === '/lab'
+                ? { filter: 'invert(34%) sepia(87%) saturate(3749%) hue-rotate(261deg) brightness(98%) contrast(107%)' }
+                : undefined
+            }
+          />
         </motion.div>
       </div>
 
