@@ -1,7 +1,6 @@
 import React from 'react';
 import ServicesMenuMobile from '../../components/services-menu-mobile/ServicesMenuMobile';
 import ServicesMenuDesktop from '../../components/services-menu-desktop/ServicesMenuDesktop';
-import useServicesList from '../../data/servicesList';
 import styles from './index.module.scss';
 
 import Head from 'next/head';

@@ -1,10 +1,12 @@
 {   
-    "base" : "Base",
+    "base" : "Basic",
     "advanced": "Advanced",
     "all-in": "All-in",
     "from": "from ",
     "per-min": " /min",
     "contact-us": "Connect with us",
+    "messageText": "Hello, i'm interested in package of services: ",
+    
 
     "social-des" : "Social networks are one of the most convenient and unobtrusive ways of advertising on the Internet. Many interested customers initially simply wander through social platforms in search of content. The right advertising can attract such people to your product.",
 

@@ -28,27 +28,6 @@ export default function ServicesDescription({ serviceId }: Props) {
           />
         );
       })}
-      {/* <motion.div id={styles.firstTariff}>
-        <TariffCard
-          price={service.prices[0].price}
-          tariff={service.prices[0].tariff}
-          tariffDescription={service.prices[0].tariffDescription}
-        />
-      </motion.div>
-      <motion.div id={styles.secondTariff}>
-        <TariffCard
-          price={service.prices[1].price}
-          tariff={service.prices[1].tariff}
-          tariffDescription={service.prices[1].tariffDescription}
-        />
-      </motion.div>
-      <motion.div id={styles.thirdTariff}>
-        <TariffCard
-          price={service.prices[2].price}
-          tariff={service.prices[2].tariff}
-          tariffDescription={service.prices[2].tariffDescription}
-        />
-      </motion.div> */}
     </motion.div>
   );
 }

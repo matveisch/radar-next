@@ -12,10 +12,12 @@ export interface Values {
   email: string;
   message: string;
 }
-
+interface Props {
+  messageText?: string;
+}
 const phoneRegex = /^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$/;
 
-const ContactForm = () => {
+const ContactForm = ({ messageText }: Props) => {
   const [isEmail, SetIsEmail] = useState(false);
   const { t } = useTranslation('contact');
   const { locale } = useRouter();
@@ -112,6 +114,7 @@ const ContactForm = () => {
                 id="message"
                 name="message"
                 placeholder={t('message')}
+                value={messageText}
                 as={'textarea'}
                 touched={touched.message}
                 errors={errors.message}
