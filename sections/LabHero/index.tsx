@@ -7,13 +7,13 @@ export default function LabHero() {
 
   return (
     <div id={styles.labhero}>
-      <Bubbles />
       <div id={styles.titles}>
         <h1 className="H1">Radar Digitaly</h1>
         <h2 className="H3" style={{ marginTop: 10 }}>
           {t('newAgency')}
         </h2>
       </div>
+      <Bubbles />
     </div>
   );
 }

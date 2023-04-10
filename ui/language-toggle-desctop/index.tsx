@@ -55,7 +55,7 @@ export default function LanguageToggle() {
 const menuItemVariants = {
   open: {
     height: 'auto',
-    display: 'block',
+    display: 'flex',
     y: 0,
     opacity: 1,
     transition: {
@@ -87,7 +87,7 @@ export function MenuItem({ text, setSelected, isSelected }: menuItemProps) {
   const router = useRouter();
 
   return (
-    <motion.div variants={menuItemVariants} onClick={() => setSelected(text)}>
+    <motion.div variants={menuItemVariants} onClick={() => setSelected(text)} className={styles.menuItemWrapper}>
       <Link
         className={styles.menuItem}
         style={{ color: isSelected ? '#69fe8b' : '#eeeeee' }}

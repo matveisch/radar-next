@@ -28,12 +28,13 @@ export default function Bubble({ width, height }: Props) {
         opacity: hovered ? [null, 0] : [0, 1, 0],
         filter: 'blur(0px)',
         rotate: Math.random() * 180,
+        display: hovered ? 'none' : 'absolute',
       }}
       transition={{
-        filter: { duration: 5 },
-        scale: { duration: hovered ? 0.2 : 8, times: hovered ? [0, 1] : [0, 0.99, 1] },
+        filter: { duration: 3 },
+        scale: { duration: hovered ? 0.2 : 5, times: hovered ? [0, 1] : [0, 0.99, 1] },
         opacity: {
-          duration: hovered ? 0.2 : 8,
+          duration: hovered ? 0.2 : 5,
           times: hovered ? [0, 1] : [0, 0.99, 1],
         },
 
@@ -53,6 +54,9 @@ export default function Bubble({ width, height }: Props) {
         rotate: {
           type: 'just',
           duration: 10,
+        },
+        display: {
+          delay: 0.5,
         },
       }}
       onAnimationEnd={() => console.log('END')}

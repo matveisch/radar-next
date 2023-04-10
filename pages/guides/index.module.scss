@@ -34,4 +34,9 @@
   display: flex;
   gap: 30px;
   justify-content: center;
+  flex-wrap: wrap;
+
+  // @media (max-width: 800px) {
+  //   flex-direction: column;
+  // }
 }

@@ -4,7 +4,7 @@
 }
 #labQuote {
   background-color: #7f27ee;
-  height: 300px;
+  height: auto;
   width: calc(100% + 20vw);
   display: flex;
   flex-direction: column;
@@ -17,6 +17,12 @@
     justify-content: space-between;
     gap: 100px;
     text-align: center;
+    align-items: center;
+    margin: 50px 0;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   #quoteIconLeft {
     height: 60px;

@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './index.module.scss';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
-  price: number;
+  price: string;
   tariff: string;
   tariffDescription: string[];
 }
 
 export default function TariffCard({ price, tariff, tariffDescription }: Props) {
+  const { t } = useTranslation('tariffs');
   return (
     <div id={styles.mainWrapper}>
       <div id={styles.topWrapper}>
@@ -15,7 +17,7 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
           {tariff}
         </h3>
         <p id={styles.price} className="H2">
-          от {price}₪
+          {`${t('from')}${price}`}
         </p>
       </div>
       <ul className="paragraph">
