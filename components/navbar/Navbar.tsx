@@ -72,7 +72,7 @@ export default function Navbar() {
         <NavbarButton buttonName={t('services')} linkTo={'/services'} />
         <NavbarButton buttonName={t('aboutUs')} linkTo={'/about-us'} />
         <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
-        <div id={styles.contactBtn} style={pathname === '/lab' ? { border: '3px solid #B338FF' } : undefined}>
+        <div id={pathname === '/lab' ? styles.contactBtnViolet : styles.contactBtn}>
           <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
         <div id={styles.languageToggleWrapper}>
