@@ -78,6 +78,16 @@
         }
       }
     }
+
+    #contactBtnViolet {
+      @extend #contactBtn;
+
+      border: 3px solid $main-violet;
+
+      &:hover {
+      background-color: $main-violet;
+    }
+    }
   }
 
   .imageWrapper {
