@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './RtwBtn.module.scss';
-
+import Link from 'next/link';
 import chain from '../../images/chain.svg';
 import facebook from '../../images/facebook.svg';
 import graph from '../../images/graph.svg';
@@ -30,8 +30,8 @@ export default function RtwBtn() {
         id={styles.rtwBtnContainer}
         animate={{
           background: hovered
-            ? 'radial-gradient(25.8% 50% at 50% 50%, rgba(35, 41, 50, 0.4) 0%, rgba(105, 254, 139, 0) 100%)'
-            : 'radial-gradient(25.8% 50% at 50% 50%, rgba(105, 254, 139, 0.4) 0%, rgba(105, 254, 139, 0.8) 100%)',
+            ? 'radial-gradient(500px 50% at center, rgba(35, 41, 50, 0.4) 0%, rgba(105, 254, 139, 0) 100%)'
+            : 'radial-gradient(500px 50% at center, rgba(105, 254, 139, 0.4) 0%, rgba(105, 254, 139, 0.8) 100%)',
         }}
         transition={{
           background: {
@@ -76,7 +76,7 @@ export default function RtwBtn() {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           className="H3">
-          {t('readyToWork')}
+          <Link href={'/services'}>{t('readyToWork')}</Link>
         </motion.button>
       </motion.div>
     </div>

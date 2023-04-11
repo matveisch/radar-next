@@ -44,18 +44,25 @@
     }
   }
   #button {
-    color: $black;
-    border-radius: 16px;
-    background: $main-green;
-    padding: 15px 30px;
     border: none;
     cursor: pointer;
-
+    background: none;
     margin-top: auto;
     transition: 0.3s;
+    background: $main-green;
+    box-sizing: content-box;
+    border-radius: 16px;
+    a {
+      padding: 15px 30px;
+      display: block;
+      color: $black;
+
+      &:hover {
+        box-shadow: 0 3px 16px 0 rgba(105, 254, 139, 0.2);
+      }
+    }
     &:hover {
       scale: 1.1;
-      box-shadow: 0 3px 16px 0 rgba(105, 254, 139, 0.2);
     }
   }
 }

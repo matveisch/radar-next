@@ -4,7 +4,7 @@ import gearWhy from '../../images/gear-why.svg';
 import bulbWhy from '../../images/bulb-why.svg';
 import moneyWhy from '../../images/money-why.svg';
 import WhyBlock from '../../components/WhyBlock/WhyBlock';
-import radarTechGif from '../../images/Radar-tech.gif';
+import radarTechGif from '../../images/Radar-tech-purple.gif';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
