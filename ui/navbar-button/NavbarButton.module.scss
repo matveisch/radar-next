@@ -42,3 +42,11 @@
     }
   }
 }
+
+.navbarButtonLab {
+  @extend .navbarButton;
+
+  &::after {
+    background-color: $main-violet;
+  }
+}
