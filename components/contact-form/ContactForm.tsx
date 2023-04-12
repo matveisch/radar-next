@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import ErrorMessage from '../../ui/error-message/ErrorMessage';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 export interface Values {
   name: string;
   phone: string;
@@ -134,7 +134,7 @@ const ContactForm = ({ messageText }: Props) => {
                 {t('prefer')} {isEmail ? t('phone').toLowerCase() : t('email').toLowerCase()} {t('response')}
               </button>
             </div>
-            <div className={styles.singleInput} style={{ marginBottom: '148px' }}>
+            <div className={styles.singleInput}>
               <Field
                 className={`${styles.contactInput} paragraph`}
                 id="message"

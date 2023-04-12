@@ -18,6 +18,10 @@
       border-bottom: 1.5px solid $off-white;
       resize: none;
     }
+
+    textarea {
+      height: 200px;
+    }
   }
 
   .contactForm {
@@ -51,6 +55,8 @@
       transition: all 0.3s;
       margin-bottom: 24px;
       cursor: pointer;
+      margin-top: 50px;
+
       &:hover {
         background: $main-green;
         scale: 1.05;
