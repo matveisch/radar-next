@@ -35,6 +35,7 @@ export default function Layout({ children }: Props) {
       document.body.style.background = '#232932';
     }
   }, [router.route]);
+
   return (
     <div style={{ overflowX: 'hidden' }}>
       <idContext.Provider value={contextValue}>

@@ -6,7 +6,7 @@
     font-size: 0.8rem;
   }
   position: relative;
-  padding: 10px 0px;
+  padding: 10px 0;
   opacity: 0.6;
 
   background-color: unset;
@@ -22,7 +22,7 @@
     position: absolute;
     background-color: $main-green;
     height: 3px;
-    width: 0px;
+    width: 0;
     left: 50%;
     bottom: -8px;
     transition: 0.3s;
@@ -40,5 +40,13 @@
       width: 100%;
       left: 0;
     }
+  }
+}
+
+.navbarButtonLab {
+  @extend .navbarButton;
+
+  &::after {
+    background-color: $main-violet;
   }
 }
