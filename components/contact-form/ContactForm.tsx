@@ -41,6 +41,22 @@ const ContactForm = ({ messageText }: Props) => {
 
   const contactSchema = Yup.object().shape(validationShape);
 
+  async function sendEmail(data: Values) {
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        body: JSON.stringify(data, null, 2),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      await console.log(res.json());
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <div className={styles.formContainer}>
       <Formik
@@ -48,12 +64,13 @@ const ContactForm = ({ messageText }: Props) => {
           name: '',
           phone: '',
           email: '',
-          message: '',
+          message: messageText?.toString() || '',
         }}
         validationSchema={contactSchema}
         onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
           setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
+            // console.log(JSON.stringify(values, null, 2));
+            sendEmail(values);
             setSubmitting(false);
           }, 500);
         }}>
@@ -66,7 +83,7 @@ const ContactForm = ({ messageText }: Props) => {
                 name="name"
                 placeholder={t('name')}
                 type="text"
-                touched={touched.name}
+                touched={touched.name?.toString()}
                 errors={errors.name}
               />
               {errors.name && touched.name ? <ErrorMessage error={errors.name} /> : null}
@@ -79,7 +96,7 @@ const ContactForm = ({ messageText }: Props) => {
                   name="email"
                   placeholder={t('email')}
                   type="email"
-                  touched={touched.email}
+                  touched={touched.email?.toString()}
                   errors={errors.email}
                 />
                 {errors.email && touched.email ? <ErrorMessage error={errors.email} /> : null}
@@ -91,7 +108,7 @@ const ContactForm = ({ messageText }: Props) => {
                   id="phone"
                   name="phone"
                   placeholder={t('phone')}
-                  touched={touched.phone}
+                  touched={touched.phone?.toString()}
                   errors={errors.phone}
                 />
                 {errors.phone && touched.phone ? <ErrorMessage error={errors.phone} /> : null}
@@ -114,9 +131,8 @@ const ContactForm = ({ messageText }: Props) => {
                 id="message"
                 name="message"
                 placeholder={t('message')}
-                value={messageText}
                 as={'textarea'}
-                touched={touched.message}
+                touched={touched.message?.toString()}
                 errors={errors.message}
               />
               {errors.message && touched.message ? <ErrorMessage error={errors.message} /> : null}

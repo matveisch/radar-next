@@ -16,6 +16,7 @@
       border: none;
       padding: 9px 7px;
       border-bottom: 1.5px solid $off-white;
+      resize: none;
     }
   }
 
@@ -47,6 +48,7 @@
       background-color: unset;
       color: $main-green;
       padding: 16px 0;
+      cursor: pointer;
     }
 
     .contactWithin {
