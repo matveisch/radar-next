@@ -1,13 +1,15 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #contactPage {
   display: flex;
   justify-content: space-between;
   padding: 0 $page-padding;
   flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
 
-  @media (max-width: map-get($breakpoints, "lg")) {
+  @media (max-width: map-get($breakpoints, 'lg')) {
     justify-content: center;
   }
 }
