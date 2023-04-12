@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import ErrorMessage from '../../ui/error-message/ErrorMessage';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-
+import { motion, Variants } from 'framer-motion';
 export interface Values {
   name: string;
   phone: string;
@@ -146,9 +146,12 @@ const ContactForm = ({ messageText }: Props) => {
               />
               {errors.message && touched.message ? <ErrorMessage error={errors.message} /> : null}
             </div>
-            <button className={`${styles.sendButton} paragraph`} type="submit" style={{ marginBottom: '24px' }}>
+            <motion.button
+              className={`${styles.sendButton} paragraph`}
+              type="submit"
+              onClick={() => setSentSuccessfully(true)}>
               {t('send')}
-            </button>
+            </motion.button>
             <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
               <p className={`light-paragraph ${styles.contactWithin}`}>{t('weWillContactYou')}</p>
             </div>

@@ -38,8 +38,9 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
           );
         })}
       </ul>
-      <button id={styles.button} className="paragraph">
+      <button id={styles.button}>
         <Link
+          className="paragraph"
           href={{
             pathname: '/contact',
             query: {

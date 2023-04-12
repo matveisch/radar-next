@@ -15,17 +15,17 @@ import { useRouter } from 'next/router';
 import '../../styles/variables.module.scss';
 const background = {
   open: {
-    height: 'auto',
+    height: '450px',
     boxShadow: '0px 100px 90px 0px rgba(0, 0, 0, 0.5)',
   },
   closed: {
-    height: 0,
+    height: '0',
   },
 };
 
 const navMenu = {
   open: {
-    display: 'block',
+    display: 'flex',
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {

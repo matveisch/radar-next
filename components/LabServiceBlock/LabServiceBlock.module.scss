@@ -11,13 +11,15 @@
 
   padding: 25px 16px;
 
-  h3, p {
-    color: #FFFFFF;
+  h3,
+  p {
+    color: #ffffff;
   }
 
   h3 {
     margin-top: 313px;
     margin-bottom: 36px;
+    text-transform: uppercase;
   }
 
   p {
@@ -38,14 +40,20 @@
     justify-content: space-between;
     align-items: center;
 
-    button {
+    #learnMore {
       display: flex;
       align-items: center;
-      gap: 5px;
-
-      border-style: unset;
-      background-color: unset;
-      cursor: pointer;
+      transition: 0.3s;
+      p {
+        margin: 0 5px;
+        transition: 0.3s;
+      }
+      &:hover {
+        scale: 1.1;
+        p {
+          margin: 0 10px;
+        }
+      }
     }
   }
 }

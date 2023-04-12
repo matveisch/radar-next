@@ -6,11 +6,14 @@ import { cardIdContextType, idContext } from '../../components/Layout';
 import ServicesDropdownMenu from '../../ui/services-dropdown-menu/ServicesDropdownMenu';
 import ServicesDescription from '../services-description/ServicesDescription';
 import useServicesList from '../../data/servicesList';
+import { useRouter } from 'next/router';
 
 export default function ServicesMenuMobile() {
   const [isOpen, setIsOpen] = useState<boolean>(true);
   const servicesArr = useServicesList();
   const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+  const { locale } = useRouter();
+
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
@@ -38,12 +41,18 @@ export default function ServicesMenuMobile() {
                 ? require(`../../images/${servicesArr[cardId].img}.svg`)
                 : require(`../../images/select.svg`)
             }
+            style={
+              locale == 'he' ? { marginLeft: '10px', marginRight: '0px' } : { marginLeft: '0px', marginRight: '10px' }
+            }
             alt={servicesArr[cardId != null ? cardId : 0].name}
           />
           <p className="H4" id={styles.chosenServiceText}>
             {cardId != null ? servicesArr[cardId].name : 'Select a service'}
           </p>
-          <motion.div id={styles.dropDownImg} animate={{ rotate: isOpen ? -180 : 0 }}>
+          <motion.div
+            id={styles.dropDownImg}
+            style={locale == 'he' ? { marginLeft: '0', marginRight: 'auto' } : { marginLeft: 'auto', marginRight: '0' }}
+            animate={{ rotate: isOpen ? -180 : 0 }}>
             <Image src={require(`../../images/drop-down.svg`)} alt="drop down icon" />
           </motion.div>
         </motion.div>

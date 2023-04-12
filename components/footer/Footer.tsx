@@ -38,8 +38,8 @@ export default function Footer() {
       <div id={styles.footerRightContainer}>
         <div id={styles.footerMenu}>
           <NavbarButton buttonName={t('services')} linkTo={'/services'} />
-          <NavbarButton buttonName={t('aboutUs')} linkTo={'/'} />
-          <NavbarButton buttonName={t('research')} linkTo={'/'} />
+          <NavbarButton buttonName={t('aboutUs')} linkTo={'/about-us'} />
+          <NavbarButton buttonName={t('research')} linkTo={'/guides'} />
           <NavbarButton buttonName={t('contact')} linkTo={'/contact'} />
         </div>
         <div id={styles.footerSubmenu}>

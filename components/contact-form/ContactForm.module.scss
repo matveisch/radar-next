@@ -1,9 +1,9 @@
 @import '../../styles/variables.module';
 
 .formContainer {
-  margin-top: 102px;
-  width: 441px;
-
+  margin-top: 100px;
+  width: 440px;
+  overflow: hidden;
   .singleInput {
     display: flex;
     flex-direction: column;
@@ -48,16 +48,17 @@
       background-color: unset;
       color: $main-green;
       padding: 16px 0;
-      transition: 0.3s;
+      transition: all 0.3s;
+      margin-bottom: 24px;
       cursor: pointer;
       &:hover {
         background: $main-green;
         scale: 1.05;
         color: $black;
       }
-      &:active {
-        scale: 0.9;
-      }
+      // &:active {
+      //   scale: 0.9;
+      // }
     }
 
     .contactWithin {
