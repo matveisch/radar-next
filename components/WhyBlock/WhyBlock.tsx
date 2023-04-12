@@ -10,7 +10,7 @@ function WhyBlock({ image, text }: WhyBlockProps) {
   return (
     <div className={styles.whyBlock}>
       <Image src={image} alt="icon" />
-      <h4>{text}</h4>
+      <h4 className="paragraph">{text}</h4>
     </div>
   );
 }

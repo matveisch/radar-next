@@ -1,4 +1,4 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 #icon {
   filter: $main-green-filter;
@@ -64,7 +64,7 @@
     }
   }
 
-  @media (max-width: map-get($breakpoints, "mobileL")) {
+  @media (max-width: map-get($breakpoints, 'mobileL')) {
     #icon {
       width: 32px;
       height: auto;
@@ -90,6 +90,8 @@
     box-shadow: 3px 3px 32px rgba(0, 239, 56, 0.194);
 
     #title {
+      // right: 70px;
+      // top: -60px;
       margin-left: 70px;
       margin-top: -60px;
     }

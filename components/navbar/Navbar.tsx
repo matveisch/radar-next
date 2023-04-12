@@ -12,7 +12,7 @@ import LanguageToggle from '../../ui/language-toggle-desctop';
 import LanguageToggleMobile from '../../ui/language-toggle-mobile';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-
+import '../../styles/variables.module.scss';
 const background = {
   open: {
     height: 'auto',

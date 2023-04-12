@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import styles from './AppSwitcher.module.scss';
+import variables from '../../styles/variables.module.scss';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 

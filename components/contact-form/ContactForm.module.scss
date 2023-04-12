@@ -1,4 +1,4 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 .formContainer {
   margin-top: 102px;
@@ -47,6 +47,16 @@
       background-color: unset;
       color: $main-green;
       padding: 16px 0;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background: $main-green;
+        scale: 1.05;
+        color: $black;
+      }
+      &:active {
+        scale: 0.9;
+      }
     }
 
     .contactWithin {

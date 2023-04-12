@@ -1,22 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
-@import "./breakpoints.module";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap');
+@import './breakpoints.module';
 
 // colors
 $off-white: #eeeeee;
 $off-black: #3a3f47;
 $black: #232932;
 $main-green: #69fe8b;
-$main-violet: #B338FF;
+$main-violet: #b338ff;
 
 //filters
-$off-white-filter: invert(95%) sepia(0%) saturate(79%) hue-rotate(161deg)
-  brightness(92%) contrast(114%);
-$main-green-filter: invert(100%) sepia(48%) saturate(2720%) hue-rotate(58deg)
-  brightness(102%) contrast(98%);
-$black-filter: invert(13%) sepia(11%) saturate(1119%) hue-rotate(177deg)
-  brightness(99%) contrast(92%);
-$off-black-filter: invert(25%) sepia(6%) saturate(961%) hue-rotate(178deg)
-  brightness(93%) contrast(95%);
+$off-white-filter: invert(95%) sepia(0%) saturate(79%) hue-rotate(161deg) brightness(92%) contrast(114%);
+$main-green-filter: invert(100%) sepia(48%) saturate(2720%) hue-rotate(58deg) brightness(102%) contrast(98%);
+$black-filter: invert(13%) sepia(11%) saturate(1119%) hue-rotate(177deg) brightness(99%) contrast(92%);
+$off-black-filter: invert(25%) sepia(6%) saturate(961%) hue-rotate(178deg) brightness(93%) contrast(95%);
 
 // common values
 $page-padding: 10vw;
