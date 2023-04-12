@@ -8,11 +8,11 @@ type EmailPayload = {
 
 // Replace with your SMTP credentials
 const smtpOptions = {
-  host: 'sandbox.smtp.mailtrap.io',
-  port: 2525,
+  host: process.env.SMTP_HOST || 'sandbox.smtp.mailtrap.io',
+  port: parseInt(process.env.SMTP_PORT || '2525'),
   auth: {
-    user: '600138a3b1883d',
-    pass: 'f2306220319316',
+    user: process.env.SMTP_USER || '',
+    pass: process.env.SMTP_PASSWORD || '',
   },
 };
 
