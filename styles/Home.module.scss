@@ -22,6 +22,15 @@
     width: 80vw;
     max-width: 1400px;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 140px;
+
+    @media (max-width: map-get($breakpoints, "mobileL")) {
+      gap: 50px;
+    }
   }
 
   .progressBar {
@@ -32,6 +41,6 @@
     right: 0;
     height: 5px;
     background: $main-green;
-    transform-origin: 0%;
+    transform-origin: 0;
   }
 }
