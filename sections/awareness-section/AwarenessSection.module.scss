@@ -1,8 +1,6 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 #awarenessWrapper {
-  // margin: 140px 0px; // using flex-gap instead of margin (loot at home.module)
-  width: calc(100vw - calc($page-padding * 2));
   margin-bottom: 200px;
 
   h2 {
@@ -15,7 +13,7 @@
     margin-top: 30px;
     margin-bottom: 10px;
     width: 70%;
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       margin-top: 100px;
     }
   }
@@ -28,7 +26,7 @@
       width: 100%;
       position: absolute;
       top: 50%;
-      @media (max-width: map-get($breakpoints, "tablet")) {
+      @media (max-width: map-get($breakpoints, 'tablet')) {
         margin-top: 10px;
         top: 100%;
       }
@@ -37,7 +35,7 @@
 
   .header {
     display: flex;
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       display: block;
     }
   }
@@ -51,7 +49,7 @@
     justify-content: space-evenly;
     gap: 30px;
 
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       grid-template-columns: repeat(2, 1fr);
       margin-top: 50px;
       gap: 30px 15px;

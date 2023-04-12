@@ -5,8 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 48px $page-padding 48px $page-padding;
-  width: calc(100vw - calc($page-padding * 2));
+  padding: 50px $page-padding;
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
   z-index: 6;
   @media (max-width: map-get($breakpoints, 'mobileL')) {

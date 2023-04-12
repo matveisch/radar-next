@@ -1,18 +1,18 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #footerMainWrapper {
   padding: 0 $page-padding;
-  margin: 100px 0px;
+  margin: 100px auto;
   display: flex;
-
-  @media (max-width: map-get($breakpoints, "tablet")) {
+  max-width: 1400px;
+  @media (max-width: map-get($breakpoints, 'tablet')) {
     flex-direction: column;
   }
 
   #footerLeftContainer {
     flex-basis: 50%;
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       display: flex;
       justify-content: center;
       gap: 30px;
@@ -25,8 +25,11 @@
       display: flex;
       align-items: center;
       margin-bottom: 45px;
+      img {
+        filter: $main-green-filter;
+      }
 
-      @media (max-width: map-get($breakpoints, "tablet")) {
+      @media (max-width: map-get($breakpoints, 'tablet')) {
         margin-bottom: 0;
       }
 
@@ -43,7 +46,7 @@
       gap: 5px;
       color: $off-white;
 
-      @media (max-width: map-get($breakpoints, "tablet")) {
+      @media (max-width: map-get($breakpoints, 'tablet')) {
         // flex-direction: row;
         text-align: center;
 
@@ -62,7 +65,7 @@
       #footerSocialIcons {
         display: flex;
         gap: 10px;
-        @media (max-width: map-get($breakpoints, "tablet")) {
+        @media (max-width: map-get($breakpoints, 'tablet')) {
           justify-content: center;
         }
 
@@ -83,7 +86,7 @@
 
   #footerRightContainer {
     flex-basis: 50%;
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: map-get($breakpoints, 'tablet')) {
       display: flex;
       justify-content: center;
       gap: 10%;
@@ -93,8 +96,9 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 45px;
-
-      @media (max-width: map-get($breakpoints, "tablet")) {
+      flex-wrap: wrap;
+      gap: 10px;
+      @media (max-width: map-get($breakpoints, 'tablet')) {
         flex-direction: column;
       }
 
@@ -106,8 +110,9 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 10px;
 
-      @media (max-width: map-get($breakpoints, "tablet")) {
+      @media (max-width: map-get($breakpoints, 'tablet')) {
         flex-direction: column;
       }
 

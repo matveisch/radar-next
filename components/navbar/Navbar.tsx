@@ -62,7 +62,18 @@ export default function Navbar() {
       <div>
         <Link href="/">
           <div id={styles.logo}>
-            <Image src={logo} alt="logo" />
+            <Image
+              src={logo}
+              alt="logo"
+              style={
+                pathname === '/lab'
+                  ? {
+                      filter:
+                        'invert(34%) sepia(87%) saturate(3749%) hue-rotate(261deg) brightness(98%) contrast(107%)',
+                    }
+                  : undefined
+              }
+            />
             <h1 className="H3">radar digitaly</h1>
           </div>
         </Link>

@@ -4,22 +4,33 @@ import useServicesList from '../../data/servicesList';
 import Sublink from '../../ui/sublink/Sublink';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import telegram from 'images/telegram-filled.svg';
 import whatsapp from 'images/whatsapp.svg';
 import { cardIdContextType, idContext } from '../Layout';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 export default function Footer() {
   const servicesList = useServicesList();
   const { setCardId } = useContext(idContext) as cardIdContextType;
   const { t } = useTranslation('header');
-
+  const { pathname } = useRouter();
   return (
     <footer id={styles.footerMainWrapper}>
       <div id={styles.footerLeftContainer}>
         <div id={styles.footerLogo}>
-          <Image src={logo} alt="logo" />
+          <Image
+            src={logo}
+            alt="logo"
+            style={
+              pathname === '/lab'
+                ? {
+                    filter: 'invert(34%) sepia(87%) saturate(3749%) hue-rotate(261deg) brightness(98%) contrast(107%)',
+                  }
+                : undefined
+            }
+          />
           <h1 className="H3">radar digitaly</h1>
         </div>
         <div id={styles.footerContact}>
