@@ -74,7 +74,10 @@ export default function Bubbles() {
   }, [changed]);
 
   const size = useWindowSize();
-
+  useEffect(() => {
+    setBubblesArr([]);
+    setSecondBubblesArr([]);
+  }, [size]);
   return (
     <div ref={ref} id={styles.bubbleWrapper}>
       {bubblesArr}

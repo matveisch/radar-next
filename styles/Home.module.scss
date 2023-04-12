@@ -1,8 +1,7 @@
-@import "variables.module";
-@import "./breakpoints.module";
+@import 'variables.module';
+@import './breakpoints.module';
 
 .MainWrapper {
-  // width: 100vw;
   overflow: hidden;
 
   .App {
@@ -12,17 +11,16 @@
     background-color: $black;
     width: 100vw;
     gap: 140px;
-    // max-width: 1400px;
-    // margin: auto;
     min-width: 100vw;
 
-    @media (max-width: map-get($breakpoints, "mobileL")) {
+    @media (max-width: map-get($breakpoints, 'mobileL')) {
       gap: 50px;
     }
   }
 
   .margin {
     width: 80vw;
+    max-width: 1400px;
     margin: 0 auto;
 
     display: flex;
