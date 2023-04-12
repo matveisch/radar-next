@@ -19,6 +19,10 @@ const phoneRegex = /^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$/;
 
 const ContactForm = ({ messageText }: Props) => {
   const [isEmail, SetIsEmail] = useState(false);
+  // todo: state sentSuccessfully отвечает за статус отправленного письма.
+  //  Как только письмо успешно доходит, принимает значение true.
+  //  Можешь это протестировать, поменяв api route в функции отправки данных (тоже помечу это)
+  const [sentSuccessfully, setSentSuccessfully] = useState<boolean | undefined>(undefined);
   const { t } = useTranslation('contact');
   const { locale } = useRouter();
 
@@ -43,6 +47,7 @@ const ContactForm = ({ messageText }: Props) => {
 
   async function sendEmail(data: Values) {
     try {
+      // todo: чтобы протестировать появление ошибки – просто можешь поменять route ниже (/api/send-email)
       const res = await fetch('/api/send-email', {
         method: 'POST',
         body: JSON.stringify(data, null, 2),
@@ -51,9 +56,13 @@ const ContactForm = ({ messageText }: Props) => {
         },
       });
 
-      await console.log(res.json());
+      if (!res.ok) {
+        setSentSuccessfully(false);
+      } else {
+        setSentSuccessfully(true);
+      }
     } catch (e) {
-      console.log(e);
+      if (e instanceof Error) console.log(e.message);
     }
   }
 
