@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import languageIcon from '../../images/Web.svg';
+import languageIcon from '../../public/images/Web.svg';
 import styles from './index.module.scss';
-import dropDown from '../../images/drop-down.svg';
+import dropDown from '../../public/images/drop-down.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -31,6 +31,8 @@ export default function LanguageToggle() {
       onClick={() => setOpen(!open)}>
       <div id={styles.selected}>
         <Image
+          height="100"
+          width="100"
           src={languageIcon}
           alt="language icon"
           style={
@@ -51,6 +53,8 @@ export default function LanguageToggle() {
             },
           }}>
           <Image
+            height="100"
+            width="100"
             src={dropDown}
             alt="dropDown icon"
             id={styles.dropdown}

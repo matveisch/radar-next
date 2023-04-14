@@ -2,11 +2,11 @@ import TechRectangle from '../../ui/tech-rectangle/TechRectangle';
 import Image from 'next/image';
 import styles from './TechnologySection.module.scss';
 
-import radarTechGif from '../../images/Radar-tech.gif';
-import trandResearch from '../../images/Group 36.svg';
-import marketTracking from '../../images/Group 34.svg';
-import bots from '../../images/Group 39.svg';
-import automaticServices from '../../images/Group 37.svg';
+import radarTechGif from '../../public/images/Radar-tech.gif';
+import trandResearch from '../../public/images/Group 36.svg';
+import marketTracking from '../../public/images/Group 34.svg';
+import bots from '../../public/images/Group 39.svg';
+import automaticServices from '../../public/images/Group 37.svg';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
@@ -33,6 +33,8 @@ export default function TechnologySection() {
         </div>
         <div id={styles.rightContainer}>
           <Image
+            height="100"
+            width="100"
             id={styles.techRadarGif}
             src={radarTechGif}
             alt="Tech radar animation"

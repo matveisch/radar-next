@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './CircleContact.module.scss';
-import telegram from '../../images/telegram-filled.svg';
-import whatsapp from '../../images/whatsapp.svg';
+import telegram from '../../public/images/telegram-filled.svg';
+import whatsapp from '../../public/images/whatsapp.svg';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -70,8 +70,8 @@ const CircleContact = () => {
               delay: 0.2,
             }}
             className={styles.icons}>
-            <Image src={telegram} alt="icon" />
-            <Image src={whatsapp} alt="icon" />
+            <Image src={telegram} alt="icon" width="100" height="100" />
+            <Image src={whatsapp} alt="icon" width="100" height="100" />
           </motion.div>
         </div>
       </div>

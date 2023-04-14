@@ -1,18 +1,17 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
-import chain from "../../images/chain.svg";
-import connection from "../../images/connection.svg";
-import facebook from "../../images/facebook.svg";
-import graph from "../../images/graph.svg";
-import instagram from "../../images/instagram.svg";
-import messenger from "../../images/messenger.svg";
-import radar from "../../images/radar.svg";
-import social from "../../images/social.svg";
-import sound from "../../images/sound.svg";
-import stat from "../../images/stat.svg";
-import telegram from "../../images/telegram.svg";
-import MotionDiv from "../../ui/motion-div/MotionDiv";
-import style from "./TestRadar.module.scss";
+import { motion } from 'framer-motion';
+import chain from '../../public/images/chain.svg';
+import connection from '../../public/images/connection.svg';
+import facebook from '../../public/images/facebook.svg';
+import graph from '../../public/images/graph.svg';
+import instagram from '../../public/images/instagram.svg';
+import messenger from '../../public/images/messenger.svg';
+import radar from '../../public/images/radar.svg';
+import social from '../../public/images/social.svg';
+import sound from '../../public/images/sound.svg';
+import stat from '../../public/images/stat.svg';
+import telegram from '../../public/images/telegram.svg';
+import MotionDiv from '../../ui/motion-div/MotionDiv';
+import style from './TestRadar.module.scss';
 
 export interface motionDivProps {
   source: string;
@@ -70,24 +69,23 @@ export default function TestRadar() {
           }}
           transition={{
             default: {
-              ease: "linear",
+              ease: 'linear',
               repeat: Infinity,
               duration: 8,
               repeatDelay: 1,
             },
             opacity: {
-              ease: "linear",
+              ease: 'linear',
               repeat: Infinity,
               duration: 0.8,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             },
             background: {
               repeat: Infinity,
               duration: 5,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             },
-          }}
-        ></motion.div>
+          }}></motion.div>
       </div>
     </>
   );

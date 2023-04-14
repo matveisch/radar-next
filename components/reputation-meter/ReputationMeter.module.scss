@@ -19,7 +19,7 @@
     border: 1.5px $main-green solid;
     border-radius: 16px;
 
-    background-image: url("../../images/reputationScale.png");
+    background-image: url("/public/images/reputationScale.png");
     background-repeat: no-repeat;
     background-size: contain;
     @media (max-width: map-get($breakpoints, "tablet")) {

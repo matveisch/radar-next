@@ -1,6 +1,6 @@
 import styles from './LabServices.module.scss';
 import LabServiceBlock from '../../components/LabServiceBlock/LabServiceBlock';
-import tvLab from '../../images/tv-lab.svg';
+import tvLab from '../../public/images/tv-lab.svg';
 import { useTranslation } from 'next-i18next';
 
 function LabServices() {

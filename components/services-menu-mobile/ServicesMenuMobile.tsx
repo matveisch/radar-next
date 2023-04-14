@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './ServicesMenuMobile.module.scss';
 import Image from 'next/image';
-import { cardIdContextType, idContext } from '../../components/Layout';
+import { cardIdContextType, idContext } from '../Layout';
 import ServicesDropdownMenu from '../../ui/services-dropdown-menu/ServicesDropdownMenu';
 import ServicesDescription from '../services-description/ServicesDescription';
 import useServicesList from '../../data/servicesList';
@@ -35,11 +35,11 @@ export default function ServicesMenuMobile() {
             cardId == null ? setCardId(0) : {};
           }}>
           <Image
+            height="100"
+            width="100"
             id={styles.chosenServiceImg}
             src={
-              cardId != null
-                ? require(`../../images/${servicesArr[cardId].img}.svg`)
-                : require(`../../images/select.svg`)
+              cardId != null ? `../../public/images/${servicesArr[cardId].img}.svg` : `../../public/images/select.svg`
             }
             style={
               locale == 'he' ? { marginLeft: '10px', marginRight: '0px' } : { marginLeft: '0px', marginRight: '10px' }
@@ -53,7 +53,7 @@ export default function ServicesMenuMobile() {
             id={styles.dropDownImg}
             style={locale == 'he' ? { marginLeft: '0', marginRight: 'auto' } : { marginLeft: 'auto', marginRight: '0' }}
             animate={{ rotate: isOpen ? -180 : 0 }}>
-            <Image src={require(`../../images/drop-down.svg`)} alt="drop down icon" />
+            <Image src={require(`../../public/images/drop-down.svg`)} alt="drop down icon" width="100" height="100" />
           </motion.div>
         </motion.div>
         <ServicesDropdownMenu toggle={() => toggleOpen()} />

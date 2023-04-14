@@ -3,7 +3,7 @@ import NavbarButton from '../../ui/navbar-button/NavbarButton';
 import BurgerMenu from '../../ui/burger-menu-path/BurgerMenu';
 import { motion, useCycle } from 'framer-motion';
 import Image from 'next/image';
-import logo from '../../images/logo.svg';
+import logo from '../../public/images/logo.svg';
 import styles from './Navbar.module.scss';
 import React, { useContext } from 'react';
 import { cardIdContextType, idContext } from '../Layout';
@@ -63,6 +63,8 @@ export default function Navbar() {
         <Link href="/">
           <div id={styles.logo}>
             <Image
+              height="100"
+              width="100"
               src={logo}
               alt="logo"
               style={

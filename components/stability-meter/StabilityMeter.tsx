@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './StabilityMeter.module.scss';
-import stabilityImg from '../../images/stability.svg';
+import stabilityImg from '../../public/images/stability.svg';
 import { useTranslation } from 'next-i18next';
 
 interface Props {
@@ -47,7 +47,7 @@ function StabilityMeter({ value }: Props) {
               ease: 'easeInOut',
               repeat: Infinity,
             }}>
-            <Image src={stabilityImg} alt="stability img" />
+            <Image src={stabilityImg} alt="stability img" width="100" height="100" />
           </motion.div>
         </div>
       </div>

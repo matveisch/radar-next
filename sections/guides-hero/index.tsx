@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import styles from './index.module.scss';
-import Image from 'next/image';
 import GuideBtn from '../../ui/guide-menu-btn';
 import useGuidesList from '../../data/guidesList.js';
 import { guideIdContextType, guideContext } from '../../components/Layout';
+
 function GuidesHero() {
   const servicesArr = useGuidesList();
 

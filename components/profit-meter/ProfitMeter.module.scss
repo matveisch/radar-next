@@ -27,7 +27,7 @@
     #bgImgWrapper {
       height: 100%;
       width: 100%;
-      background-image: url("../../images/profit-bg.png");
+      background-image: url("/public/images/profit-bg.png");
       background-size: contain;
     }
     #bgImgScales {
@@ -35,7 +35,7 @@
       height: 100%;
       position: relative;
       bottom: 100%;
-      background-image: url("../../images/profit-bg-scales.png");
+      background-image: url("/public/images/profit-bg-scales.png");
       background-repeat: no-repeat;
       background-size: contain;
     }

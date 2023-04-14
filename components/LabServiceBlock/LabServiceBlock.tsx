@@ -1,6 +1,6 @@
 import styles from './LabServiceBlock.module.scss';
 import PriceTag from '../../ui/PriceTag/PriceTag';
-import rightArrow from '../../images/right-arrow.svg';
+import rightArrow from '../../public/images/right-arrow.svg';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
@@ -19,7 +19,7 @@ function LabServiceBlock({ title, description, price, image, id }: LabServiceBlo
 
   return (
     <div className={styles.labServiceBlock}>
-      <Image src={image} alt="service-image" className={styles.titleImage} />
+      <Image src={image} alt="service-image" className={styles.titleImage} width="100" height="100" />
       <h3 className="H3">{title}</h3>
       <p className="paragraph">{description}</p>
       <div className={styles.footer}>
@@ -35,7 +35,13 @@ function LabServiceBlock({ title, description, price, image, id }: LabServiceBlo
           id={styles.learnMore}
           className="light-link">
           <p>{t('more')}</p>
-          <Image src={rightArrow} alt="arrow" style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined} />
+          <Image
+            src={rightArrow}
+            alt="arrow"
+            style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined}
+            width="100"
+            height="100"
+          />
         </Link>
       </div>
     </div>

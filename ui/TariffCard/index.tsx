@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styles from './index.module.scss';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import vshape from '../../images/vshape.svg';
+import vshape from '../../public/images/vshape.svg';
 import Link from 'next/link';
 import useServicesList from '../../data/servicesList';
 import { cardIdContextType, idContext } from '../../components/Layout';
@@ -31,7 +31,7 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
         {tariffDescription.map((item, index) => {
           return (
             <li key={index}>
-              <Image className={styles.vshape} src={vshape} alt="vshape" />
+              <Image className={styles.vshape} src={vshape} alt="vshape" width="100" height="100" />
 
               {item}
             </li>

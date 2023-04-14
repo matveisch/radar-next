@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './ProfitMeter.module.scss';
 import Image from 'next/image';
-import needle from '../../images/needle.svg';
+import needle from '../../public/images/needle.svg';
 import { useTranslation } from 'next-i18next';
 
 interface Props {
@@ -35,7 +35,14 @@ function ProfitMeter({ value }: Props) {
               ease: 'easeOut',
               repeat: Infinity,
             }}>
-            <Image style={{ transform: rotateValue }} id={styles.needleImg} src={needle} alt="needle" />
+            <Image
+              style={{ transform: rotateValue }}
+              id={styles.needleImg}
+              src={needle}
+              alt="needle"
+              width="100"
+              height="100"
+            />
           </motion.div>
         </div>
       </div>

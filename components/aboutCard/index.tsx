@@ -28,7 +28,7 @@ export default function AboutCard({ img, name, textArr, job, ltr }: Props) {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ type: 'ease' }}
         className={styles.imgWrapper}>
-        <Image src={require(`../../images/${img}`)} alt="img" />
+        <Image src={require(`../../public/images/${img}`)} alt="img" width="100" height="100" />
       </motion.div>
       <motion.div
         initial={{ y: 0 }}

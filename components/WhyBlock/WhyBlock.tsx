@@ -9,7 +9,7 @@ interface WhyBlockProps {
 function WhyBlock({ image, text }: WhyBlockProps) {
   return (
     <div className={styles.whyBlock}>
-      <Image src={image} alt="icon" />
+      <Image src={image} alt="icon" width="100" height="100" />
       <h4 className="paragraph">{text}</h4>
     </div>
   );

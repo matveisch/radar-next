@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './RtwBtn.module.scss';
 import Link from 'next/link';
-import chain from '../../images/chain.svg';
-import facebook from '../../images/facebook.svg';
-import graph from '../../images/graph.svg';
-import instagram from '../../images/instagram.svg';
-import messenger from '../../images/messenger.svg';
-import radar from '../../images/radar.svg';
-import social from '../../images/social.svg';
-import stat from '../../images/stat.svg';
-import telegram from '../../images/telegram.svg';
+import chain from '../../public/images/chain.svg';
+import facebook from '../../public/images/facebook.svg';
+import graph from '../../public/images/graph.svg';
+import instagram from '../../public/images/instagram.svg';
+import messenger from '../../public/images/messenger.svg';
+import radar from '../../public/images/radar.svg';
+import social from '../../public/images/social.svg';
+import stat from '../../public/images/stat.svg';
+import telegram from '../../public/images/telegram.svg';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
@@ -65,7 +65,7 @@ export default function RtwBtn() {
                 },
               }}
               key={index}>
-              <Image src={item} alt={item} />
+              <Image src={item} alt={item} width="100" height="100" />
             </motion.div>
           );
         })}

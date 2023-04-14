@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 import LabHero from '../../sections/LabHero';
 import WhyRadar from '../../sections/WhyRadar/WhyRadar';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import quoteIcon from '../../images/quote.svg';
+import quoteIcon from '../../public/images/quote.svg';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
@@ -26,14 +26,14 @@ function Lab() {
         <div id={styles.labQuote} style={locale === 'he' ? { marginLeft: 'unset', marginRight: '-10vw' } : undefined}>
           <div id={styles.topDiv}></div>
           <div id={styles.quote}>
-            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} />
+            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} width="100" height="100" />
             <p className="H4">
               {t('quotation')}
               {<br />}
               <span className="paragraph">{t('quoteAuthor')}</span>
             </p>
 
-            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} />
+            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} width="100" height="100" />
           </div>
 
           <div id={styles.bottomDiv}></div>

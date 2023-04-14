@@ -43,8 +43,10 @@ export default function ServicesDropdownItem({ itemId, toggle }: Props) {
       }}
       id={styles.itemLi}>
       <Image
+        height="100"
+        width="100"
         id={styles.menuItemImg}
-        src={require(`../../images/${servicesArr[itemId].img}.svg`)}
+        src={require(`../../public/images/${servicesArr[itemId].img}.svg`)}
         alt={servicesArr[itemId].name}
         style={locale == 'he' ? { marginLeft: '10px', marginRight: '0px' } : { marginLeft: '0px', marginRight: '10px' }}
       />

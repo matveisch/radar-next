@@ -85,8 +85,10 @@ const ServicesBtn: React.FC<Props> = ({ itemId, setOpen, isOpen }: Props) => {
           rotate: hovered && isOpen ? -25 : isOpen ? -15 : 0,
         }}>
         <Image
+          height="100"
+          width="100"
           id={styles.menuItemImg}
-          src={require(`../../images/${servicesArr[itemId != undefined ? itemId : 0].img}.svg`)}
+          src={require(`../../public/images/${servicesArr[itemId != undefined ? itemId : 0].img}.svg`)}
           alt={servicesArr[itemId != undefined ? itemId : 0].name}
         />
       </motion.div>
