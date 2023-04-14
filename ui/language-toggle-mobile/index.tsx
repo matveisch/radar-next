@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-
 import styles from './index.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { colorChooser } from '../language-toggle-desctop';
 
 export default function LanguageToggleMobile() {
-  const [selectedLang, setSelectedLang] = useState('Eng');
   const languagesArr = ['En', 'He', 'Ru'];
-  const router = useRouter();
+  const { pathname, locale } = useRouter();
 
   return (
     <div id={styles.main}>
       {languagesArr.map((item, index) => {
         return (
           <Link
-            href={router.pathname}
+            href={pathname}
             locale={item.toLowerCase()}
             key={index}
-            onClick={() => setSelectedLang(item)}
-            style={{ color: item == selectedLang ? '#69fe8b' : '#eeeeee' }}
+            style={{ color: colorChooser(item.toLowerCase() === locale, pathname) }}
             className={styles.link}>
             {item}
           </Link>

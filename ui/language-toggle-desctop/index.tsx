@@ -100,24 +100,28 @@ interface menuItemProps {
   isSelected: boolean;
 }
 
+export function colorChooser(isSelected: boolean, pathname: string) {
+  if (isSelected) {
+    if (pathname === '/lab') {
+      return '#B338FF';
+    } else {
+      return '#69fe8b';
+    }
+  } else {
+    return '#eeeeee';
+  }
+}
+
 export function MenuItem({ text, isSelected }: menuItemProps) {
   const { pathname } = useRouter();
 
-  function colorChooser() {
-    if (isSelected) {
-      if (pathname === '/lab') {
-        return '#B338FF';
-      } else {
-        return '#69fe8b';
-      }
-    } else {
-      return '#eeeeee';
-    }
-  }
-
   return (
     <motion.div variants={menuItemVariants} className={styles.menuItemWrapper}>
-      <Link className={styles.menuItem} style={{ color: colorChooser() }} href={pathname} locale={text.toLowerCase()}>
+      <Link
+        className={styles.menuItem}
+        style={{ color: colorChooser(isSelected, pathname) }}
+        href={pathname}
+        locale={text.toLowerCase()}>
         {text}
       </Link>
     </motion.div>
