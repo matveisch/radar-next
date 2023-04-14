@@ -13,7 +13,7 @@ export interface LabServiceBlockProps {
   image: string;
   id: string;
 }
-function LabServiceBlock({ title, description, price, image, id }: LabServiceBlockProps) {
+function LabServiceBlock({ title, description, price, image }: LabServiceBlockProps) {
   const { t } = useTranslation('lab');
   const { locale } = useRouter();
 

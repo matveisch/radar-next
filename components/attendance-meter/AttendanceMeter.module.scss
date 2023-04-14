@@ -1,9 +1,11 @@
 @import "../../styles/variables.module";
+
 @property --a {
   syntax: "<angle>";
   inherits: false;
   initial-value: 10deg;
 }
+
 @keyframes a {
   0% {
     --a: 0deg;

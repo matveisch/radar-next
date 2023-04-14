@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import styles from './ServicesBtn.module.scss';
 import Image from 'next/image';
@@ -21,14 +21,14 @@ const wrapperAnim = {
   },
 };
 
-const imgAnim = {
-  open: {
-    x: '0',
-  },
-  closed: {
-    x: '-60px',
-  },
-};
+// const imgAnim = {
+//   open: {
+//     x: '0',
+//   },
+//   closed: {
+//     x: '-60px',
+//   },
+// };
 
 const titleAnim = {
   open: {

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './index.module.scss';
 import Image from 'next/image';
@@ -10,15 +9,16 @@ interface Props {
   job: string;
   ltr: boolean;
 }
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
 
-export default function AboutCard({ img, name, textArr, job, ltr }: Props) {
+// function getWindowDimensions() {
+//   const { innerWidth: width, innerHeight: height } = window;
+//   return {
+//     width,
+//     height,
+//   };
+// }
+
+export default function AboutCard({ img, name, textArr, job }: Props) {
   return (
     <div className={styles.mainWrapper}>
       <motion.div

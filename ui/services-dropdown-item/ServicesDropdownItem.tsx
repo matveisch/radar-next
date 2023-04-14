@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './ServicesDropdownItem.module.scss';
 import useServicesList from '../../data/servicesList';
@@ -31,7 +31,7 @@ const variants = {
 export default function ServicesDropdownItem({ itemId, toggle }: Props) {
   const { locale } = useRouter();
   const servicesArr = useServicesList();
-  const { cardId, setCardId } = useContext(idContext) as cardIdContextType;
+  const { setCardId } = useContext(idContext) as cardIdContextType;
   return (
     <motion.li
       variants={variants}
