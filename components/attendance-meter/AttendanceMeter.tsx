@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './AttendanceMeter.module.scss';
 import { useTranslation } from 'next-i18next';
+import attendanceBg from '../../public/images/attendance-bg.png';
+import chain from '../../public/images/chain.svg';
+import Image from 'next/image';
+
 interface Props {
   value: number;
 }
@@ -13,7 +17,7 @@ function AttendanceMeter({ value }: Props) {
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
-          <div id={styles.bgMarkup}></div>
+          <Image src={attendanceBg} alt="attendance-bg" id={styles.bgMarkup} />
           {/* TRIANGLES */}
           <motion.div
             style={{ left: '10%', top: '40%' }}

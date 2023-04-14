@@ -6,10 +6,12 @@
   width: 100%;
   padding-top: 100%;
   position: relative;
+
   @media (max-width: map-get($breakpoints, "tablet")) {
     border: 1px $main-green solid;
     border-radius: 21px;
   }
+
   #mainWrapper {
     border: 1.5px $main-green solid;
     border-radius: 16px;
@@ -18,27 +20,26 @@
     left: 10px;
     bottom: 10px;
     right: 10px;
+
     @media (max-width: map-get($breakpoints, "tablet")) {
       top: 5px;
       left: 5px;
       bottom: 5px;
       right: 5px;
     }
+
     #bgImgWrapper {
       height: 100%;
       width: 100%;
-      background-image: url("/public/images/profit-bg.png");
-      background-size: contain;
     }
+
     #bgImgScales {
-      width: 100%;
+      width: 50%;
       height: 100%;
       position: relative;
-      bottom: 100%;
-      background-image: url("/public/images/profit-bg-scales.png");
-      background-repeat: no-repeat;
-      background-size: contain;
+      bottom: 102%;
     }
+
     #imgWrapper {
       width: 100%;
       height: 100%;
@@ -49,6 +50,7 @@
       text-align: center;
       transform: rotate(-20deg);
     }
+
     #needleImg {
       height: 80%;
       width: auto;
@@ -57,6 +59,7 @@
     }
   }
 }
+
 #title {
   margin-top: 20px;
   color: $off-white;

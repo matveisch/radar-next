@@ -4,6 +4,7 @@ import styles from './ReputationMeter.module.scss';
 import Image from 'next/image';
 import needle from '../../public/images/needle.svg';
 import { useTranslation } from 'next-i18next';
+import reputationScale from '../../public/images/reputationScale.png';
 
 interface Props {
   value: number;
@@ -21,6 +22,7 @@ function ReputationMeter({ value }: Props) {
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
+          <Image src={reputationScale} className={styles.scaleImg} alt="reputation-bg-scale" width="100" height="100" />
           <motion.div
             id={styles.imgWrapper}
             animate={{ rotate: [1, -1, 1] }}

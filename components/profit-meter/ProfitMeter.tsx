@@ -4,6 +4,8 @@ import styles from './ProfitMeter.module.scss';
 import Image from 'next/image';
 import needle from '../../public/images/needle.svg';
 import { useTranslation } from 'next-i18next';
+import profitBg from '../../public/images/profit-bg.png';
+import profitScales from '../../public/images/profit-bg-scales.png';
 
 interface Props {
   value: number;
@@ -21,12 +23,15 @@ function ProfitMeter({ value }: Props) {
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
-          <div
+          <Image
+            src={profitBg}
+            alt="profit-bg"
             id={styles.bgImgWrapper}
             style={{
               filter: 'hue-rotate(' + -(134 * (100 - value)) / 100 + 'deg)',
-            }}></div>
-          <div id={styles.bgImgScales}></div>
+            }}
+          />
+          <Image src={profitScales} alt="profit-bg-scales" id={styles.bgImgScales} />
           <motion.div
             id={styles.imgWrapper}
             animate={{ rotate: [30, 0, 30] }}

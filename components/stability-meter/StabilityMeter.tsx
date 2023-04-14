@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from './StabilityMeter.module.scss';
 import stabilityImg from '../../public/images/stability.svg';
 import { useTranslation } from 'next-i18next';
+import stabilityBg from '../../public/images/stability-bg.png';
 
 interface Props {
   value: number;
@@ -35,7 +36,9 @@ function StabilityMeter({ value }: Props) {
             // style={{
             //   filter: "hue-rotate(" + -(134 * (100 - value)) / 100 + "deg)",
             // }}
-          ></motion.div>
+          >
+            <Image src={stabilityBg} alt="stability-bg" />
+          </motion.div>
           <motion.div
             ref={rotateRef}
             id={styles.imgWrapper}
