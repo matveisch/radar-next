@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import styles from './AttendanceMeter.module.scss';
 import { useTranslation } from 'next-i18next';
 import attendanceBg from '../../public/images/attendance-bg.png';
-import chain from '../../public/images/chain.svg';
 import Image from 'next/image';
 
 interface Props {
