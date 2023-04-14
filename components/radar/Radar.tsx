@@ -88,6 +88,7 @@ export default function Radar() {
     },
   ];
   const { t } = useTranslation('common');
+
   return (
     <div id={style.crop}>
       <div id={style.radarContainer}>
@@ -138,7 +139,8 @@ export default function Radar() {
                 duration: 5,
                 repeatType: 'reverse',
               },
-            }}></motion.div>
+            }}
+          />
         </div>
       </div>
     </div>
