@@ -196,6 +196,14 @@
       }
     }
   }
+
+  #mobileNavBGLab {
+    @extend #mobileNavBG;
+
+    &::after {
+      background-color: $main-violet;
+    }
+  }
 }
 #languageToggleWrapper {
   position: relative;

@@ -98,7 +98,7 @@ export default function Navbar() {
           onDragStart={() => toggleOpen()}
           dragElastic={0}
           dragMomentum={false}
-          id={styles.mobileNavBG}
+          id={pathname === '/lab' ? styles.mobileNavBGLab : styles.mobileNavBG}
           variants={background}
           style={locale === 'he' ? { right: 'unset', left: '0' } : undefined}
           onClick={() => toggleOpen()}>
