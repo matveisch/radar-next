@@ -35,11 +35,11 @@ export default function ServicesMenuMobile() {
             cardId == null ? setCardId(0) : {};
           }}>
           <Image
-            height="100"
-            width="100"
             id={styles.chosenServiceImg}
             src={
-              cardId != null ? `../../public/images/${servicesArr[cardId].img}.svg` : `../../public/images/select.svg`
+              cardId != null
+                ? require(`../../public/images/${servicesArr[cardId].img}.svg`)
+                : require(`../../public/images/select.svg`)
             }
             style={
               locale == 'he' ? { marginLeft: '10px', marginRight: '0px' } : { marginLeft: '0px', marginRight: '10px' }
@@ -53,7 +53,7 @@ export default function ServicesMenuMobile() {
             id={styles.dropDownImg}
             style={locale == 'he' ? { marginLeft: '0', marginRight: 'auto' } : { marginLeft: 'auto', marginRight: '0' }}
             animate={{ rotate: isOpen ? -180 : 0 }}>
-            <Image src={require(`../../public/images/drop-down.svg`)} alt="drop down icon" width="100" height="100" />
+            <Image src={require(`../../public/images/drop-down.svg`)} alt="drop down icon" />
           </motion.div>
         </motion.div>
         <ServicesDropdownMenu toggle={() => toggleOpen()} />

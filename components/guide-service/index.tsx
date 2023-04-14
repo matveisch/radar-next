@@ -27,7 +27,7 @@ export default function GuideService({ service, highlight }: Props) {
   return (
     <div id={styles.main} style={{ border: highlight ? '#69fe8b 5px solid' : '#006e51 5px solid;' }}>
       <div id={styles.nameImg}>
-        <Image src={require(`../../public/images/${service.img}.svg`)} alt="" width="100" height="100" />
+        <Image src={require(`../../public/images/${service.img}.svg`)} alt="service-img" />
         <p>{service.name}</p>
       </div>
       <ul>
@@ -44,8 +44,6 @@ export default function GuideService({ service, highlight }: Props) {
           {t('learnMore')}
         </p>
         <Image
-          height="100"
-          width="100"
           id={styles.arrow}
           src={arrow}
           alt="Learn more arrow"

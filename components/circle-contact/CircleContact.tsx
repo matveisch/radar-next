@@ -70,8 +70,8 @@ const CircleContact = () => {
               delay: 0.2,
             }}
             className={styles.icons}>
-            <Image src={telegram} alt="icon" width="100" height="100" />
-            <Image src={whatsapp} alt="icon" width="100" height="100" />
+            <Image src={telegram} alt="icon" />
+            <Image src={whatsapp} alt="icon" />
           </motion.div>
         </div>
       </div>

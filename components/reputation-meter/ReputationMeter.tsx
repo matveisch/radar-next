@@ -22,7 +22,7 @@ function ReputationMeter({ value }: Props) {
     <>
       <div id={styles.borderAround}>
         <div id={styles.mainWrapper}>
-          <Image src={reputationScale} className={styles.scaleImg} alt="reputation-bg-scale" width="100" height="100" />
+          <Image src={reputationScale} className={styles.scaleImg} alt="reputation-bg-scale" />
           <motion.div
             id={styles.imgWrapper}
             animate={{ rotate: [1, -1, 1] }}
@@ -32,14 +32,7 @@ function ReputationMeter({ value }: Props) {
 
               repeat: Infinity,
             }}>
-            <Image
-              style={{ transform: rotateValue }}
-              id={styles.needleImg}
-              src={needle}
-              alt="needle"
-              width="100"
-              height="100"
-            />
+            <Image style={{ transform: rotateValue }} id={styles.needleImg} src={needle} alt="needle" />
           </motion.div>
         </div>
       </div>

@@ -40,14 +40,7 @@ function ProfitMeter({ value }: Props) {
               ease: 'easeOut',
               repeat: Infinity,
             }}>
-            <Image
-              style={{ transform: rotateValue }}
-              id={styles.needleImg}
-              src={needle}
-              alt="needle"
-              width="100"
-              height="100"
-            />
+            <Image style={{ transform: rotateValue }} id={styles.needleImg} src={needle} alt="needle" />
           </motion.div>
         </div>
       </div>

@@ -39,10 +39,10 @@ export default function Footer() {
           <a>012-345-6789</a>
           <div id={styles.footerSocialIcons}>
             <a href="">
-              <Image src={telegram} alt="icon" width="100" height="100" />
+              <Image src={telegram} alt="icon" />
             </a>
             <a href="">
-              <Image src={whatsapp} alt="icon" width="100" height="100" />
+              <Image src={whatsapp} alt="icon" />
             </a>
           </div>
         </div>

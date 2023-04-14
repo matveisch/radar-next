@@ -31,8 +31,6 @@ export default function LanguageToggle() {
       onClick={() => setOpen(!open)}>
       <div id={styles.selected}>
         <Image
-          height="100"
-          width="100"
           src={languageIcon}
           alt="language icon"
           style={
@@ -53,8 +51,6 @@ export default function LanguageToggle() {
             },
           }}>
           <Image
-            height="100"
-            width="100"
             src={dropDown}
             alt="dropDown icon"
             id={styles.dropdown}

@@ -31,7 +31,7 @@ export default function TariffCard({ price, tariff, tariffDescription }: Props) 
         {tariffDescription.map((item, index) => {
           return (
             <li key={index}>
-              <Image className={styles.vshape} src={vshape} alt="vshape" width="100" height="100" />
+              <Image className={styles.vshape} src={vshape} alt="vshape" />
 
               {item}
             </li>

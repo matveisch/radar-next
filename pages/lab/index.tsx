@@ -26,14 +26,14 @@ function Lab() {
         <div id={styles.labQuote} style={locale === 'he' ? { marginLeft: 'unset', marginRight: '-10vw' } : undefined}>
           <div id={styles.topDiv}></div>
           <div id={styles.quote}>
-            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} width="100" height="100" />
+            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconLeft} />
             <p className="H4">
               {t('quotation')}
               {<br />}
               <span className="paragraph">{t('quoteAuthor')}</span>
             </p>
 
-            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} width="100" height="100" />
+            <Image src={quoteIcon} alt="quoteIcon" id={styles.quoteIconRight} />
           </div>
 
           <div id={styles.bottomDiv}></div>

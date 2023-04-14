@@ -65,7 +65,7 @@ export default function RtwBtn() {
                 },
               }}
               key={index}>
-              <Image src={item} alt={item} width="100" height="100" />
+              <Image src={item} alt={item} />
             </motion.div>
           );
         })}

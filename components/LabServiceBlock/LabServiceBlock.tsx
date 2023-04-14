@@ -19,7 +19,7 @@ function LabServiceBlock({ title, description, price, image }: LabServiceBlockPr
 
   return (
     <div className={styles.labServiceBlock}>
-      <Image src={image} alt="service-image" className={styles.titleImage} width="100" height="100" />
+      <Image src={image} alt="service-image" className={styles.titleImage} />
       <h3 className="H3">{title}</h3>
       <p className="paragraph">{description}</p>
       <div className={styles.footer}>
@@ -35,13 +35,7 @@ function LabServiceBlock({ title, description, price, image }: LabServiceBlockPr
           id={styles.learnMore}
           className="light-link">
           <p>{t('more')}</p>
-          <Image
-            src={rightArrow}
-            alt="arrow"
-            style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined}
-            width="100"
-            height="100"
-          />
+          <Image src={rightArrow} alt="arrow" style={locale === 'he' ? { transform: 'rotate(180deg)' } : undefined} />
         </Link>
       </div>
     </div>

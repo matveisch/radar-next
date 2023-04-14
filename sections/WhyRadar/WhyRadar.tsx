@@ -58,8 +58,6 @@ function WhyRadar() {
           ))}
         </div>
         <Image
-          height="100"
-          width="100"
           className={styles.techRadarGif}
           src={radarTechGif}
           alt="Tech radar animation"

@@ -16,7 +16,7 @@ export default function MotionDiv({ source, id, coordinates, duration, delay }: 
       }}
       id={id}
       className={style.imageWrapper}>
-      <Image src={source} alt="" width="100" height="100" />
+      <Image src={source} alt="" />
     </motion.div>
   );
 }

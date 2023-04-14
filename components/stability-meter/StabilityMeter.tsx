@@ -50,7 +50,7 @@ function StabilityMeter({ value }: Props) {
               ease: 'easeInOut',
               repeat: Infinity,
             }}>
-            <Image src={stabilityImg} alt="stability img" width="100" height="100" />
+            <Image src={stabilityImg} alt="stability img" />
           </motion.div>
         </div>
       </div>

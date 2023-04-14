@@ -22,13 +22,7 @@ export default function ServiceCard({ id, imageURL, title, description }: Props)
   return (
     <div id={locale === 'he' ? styles.cardParentRtl : styles.cardParent}>
       <div>
-        <Image
-          id={styles.icon}
-          alt="icon"
-          src={require(`../../public/images/${imageURL}.svg`)}
-          width="100"
-          height="100"
-        />
+        <Image id={styles.icon} alt="icon" src={require(`../../public/images/${imageURL}.svg`)} />
         <h4 id={styles.title} className="H4">
           {title}
         </h4>
@@ -49,8 +43,6 @@ export default function ServiceCard({ id, imageURL, title, description }: Props)
             {t('learnMore')}
           </p>
           <Image
-            height="100"
-            width="100"
             id={styles.arrow}
             src={arrow}
             alt="Learn more arrow"

@@ -33,8 +33,6 @@ export default function TechnologySection() {
         </div>
         <div id={styles.rightContainer}>
           <Image
-            height="100"
-            width="100"
             id={styles.techRadarGif}
             src={radarTechGif}
             alt="Tech radar animation"

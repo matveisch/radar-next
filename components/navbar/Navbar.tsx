@@ -63,8 +63,6 @@ export default function Navbar() {
         <Link href="/">
           <div id={styles.logo}>
             <Image
-              height="100"
-              width="100"
               src={logo}
               alt="logo"
               style={
