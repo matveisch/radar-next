@@ -20,7 +20,9 @@ export default function LanguageToggle() {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedLang, setSelectedLang] = useState<string>('Eng');
   const languagesArr = ['En', 'He', 'Ru'];
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
+
+  console.log(locale);
 
   return (
     <motion.div
@@ -65,7 +67,9 @@ export default function LanguageToggle() {
       </div>
 
       {languagesArr.map((item, index) => {
-        return <MenuItem text={item} setSelected={setSelectedLang} key={index} isSelected={item == selectedLang} />;
+        return (
+          <MenuItem text={item} setSelected={setSelectedLang} key={index} isSelected={item.toLowerCase() === locale} />
+        );
       })}
     </motion.div>
   );
@@ -103,15 +107,23 @@ interface menuItemProps {
 }
 
 export function MenuItem({ text, setSelected, isSelected }: menuItemProps) {
-  const router = useRouter();
+  const { pathname } = useRouter();
+
+  function colorChooser() {
+    if (isSelected) {
+      if (pathname === '/lab') {
+        return '#B338FF';
+      } else {
+        return '#69fe8b';
+      }
+    } else {
+      return '#eeeeee';
+    }
+  }
 
   return (
     <motion.div variants={menuItemVariants} onClick={() => setSelected(text)} className={styles.menuItemWrapper}>
-      <Link
-        className={styles.menuItem}
-        style={{ color: isSelected ? '#69fe8b' : '#eeeeee' }}
-        href={router.pathname}
-        locale={text.toLowerCase()}>
+      <Link className={styles.menuItem} style={{ color: colorChooser() }} href={pathname} locale={text.toLowerCase()}>
         {text}
       </Link>
     </motion.div>

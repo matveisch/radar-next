@@ -20,6 +20,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 5px;
+
     img {
       filter: $main-green-filter;
       height: 30px;
@@ -38,8 +40,7 @@
 .menuItem {
   color: $off-white;
   text-align: center;
-  margin: 0 auto;
-  margin-top: 5px;
+  margin: 10px auto;
 }
 .menuItemWrapper {
   display: flex;
