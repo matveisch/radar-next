@@ -60,6 +60,7 @@ const CircleContact = () => {
             }}
             className="paragraph"
             href="tel:0547575594"
+            rel="noreferrer"
             target="_blank">
             054-757-5594
           </motion.a>
@@ -72,10 +73,10 @@ const CircleContact = () => {
               delay: 0.2,
             }}
             className={styles.icons}>
-            <a href="https://t.me/FSMediaDrama" target="_blank">
+            <a href="https://t.me/FSMediaDrama" target="_blank" rel="noreferrer">
               <Image src={telegram} alt="icon" />
             </a>
-            <a href="https://wa.link/djrk8t" target="_blank">
+            <a href="https://wa.link/djrk8t" target="_blank" rel="noreferrer">
               <Image src={whatsapp} alt="icon" />
             </a>
           </motion.div>
