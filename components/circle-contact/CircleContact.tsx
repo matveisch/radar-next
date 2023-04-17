@@ -50,7 +50,7 @@ const CircleContact = () => {
             className="paragraph">
             email@gmail.com
           </motion.p>
-          <motion.p
+          <motion.a
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -58,9 +58,11 @@ const CircleContact = () => {
               duration: 0.9,
               delay: 0.4,
             }}
-            className="paragraph">
-            053-123-4567
-          </motion.p>
+            className="paragraph"
+            href="tel:0547575594"
+            target="_blank">
+            054-757-5594
+          </motion.a>
           <motion.div
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -70,8 +72,12 @@ const CircleContact = () => {
               delay: 0.2,
             }}
             className={styles.icons}>
-            <Image src={telegram} alt="icon" />
-            <Image src={whatsapp} alt="icon" />
+            <a href="https://t.me/FSMediaDrama" target="_blank">
+              <Image src={telegram} alt="icon" />
+            </a>
+            <a href="https://wa.link/djrk8t" target="_blank">
+              <Image src={whatsapp} alt="icon" />
+            </a>
           </motion.div>
         </div>
       </div>

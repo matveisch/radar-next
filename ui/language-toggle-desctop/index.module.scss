@@ -13,14 +13,13 @@
   left: 0;
   border: 3px $main-green solid;
   border-radius: 20px;
-  padding: 3px;
+  padding: 5px;
   background-color: $black;
 
   #selected {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 5px;
 
     img {
       filter: $main-green-filter;

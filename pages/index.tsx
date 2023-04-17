@@ -27,7 +27,7 @@ export default function Home() {
           <TechnologySection />
           <AwarenessSection />
         </div>
-        <CarouselSection />
+        {/* <CarouselSection /> */}
         <RtwBtn />
       </section>
     </div>
