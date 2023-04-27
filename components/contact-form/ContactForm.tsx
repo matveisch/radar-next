@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import * as Yup from 'yup';
@@ -16,7 +16,39 @@ interface Props {
   messageText?: string | undefined | string[];
 }
 const phoneRegex = /^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$/;
-
+const topLidVariants = {
+  open: {
+    top: '-50%',
+    boxShadow: 'inset 0px 10px 15px 7px rgba(35, 41, 50, 0.5)',
+  },
+  close: {
+    top: '0%',
+    boxShadow: 'inset 0px 10px 15px 7px rgba(35, 41, 50, 0.0)',
+  },
+};
+const bottomLidVariants = {
+  open: {
+    bottom: '-50%',
+    boxShadow: 'inset 0px -10px 15px 7px rgba(35, 41, 50, 0.5)',
+  },
+  close: {
+    bottom: '0%',
+    boxShadow: 'inset 0px -10px 15px 7px rgba(35, 41, 50, 0.0)',
+  },
+};
+const checkmarkVariants = {
+  hidden: {
+    strokeDashoffset: -23,
+  },
+  visible: {
+    strokeDashoffset: 0,
+    transition: {
+      ease: 'easeOut',
+      delay: 0.7,
+      duration: 0.5,
+    },
+  },
+};
 const ContactForm = ({ messageText }: Props) => {
   const [isEmail, SetIsEmail] = useState(false);
   // todo: state sentSuccessfully отвечает за статус отправленного письма.
@@ -66,6 +98,8 @@ const ContactForm = ({ messageText }: Props) => {
     }
   }
 
+  const [changeText, setChangeText] = useState<boolean>(false);
+
   return (
     <div className={styles.formContainer}>
       <Formik
@@ -85,72 +119,115 @@ const ContactForm = ({ messageText }: Props) => {
         }}>
         {({ errors, touched }) => (
           <Form className={styles.contactForm}>
-            <div className={styles.singleInput} style={{ marginBottom: '31px' }}>
-              <Field
-                className={`${styles.contactInput} paragraph`}
-                id="name"
-                name="name"
-                placeholder={t('name')}
-                type="text"
-                touched={touched.name?.toString()}
-                errors={errors.name}
-              />
-              {errors.name && touched.name ? <ErrorMessage error={errors.name} /> : null}
-            </div>
-            {isEmail ? (
-              <div className={styles.singleInput} style={{ marginBottom: '6px' }}>
+            <div id={styles.lidWrapper}>
+              <motion.div
+                id={styles.topLid}
+                animate={sentSuccessfully ? 'closed' : 'open'}
+                transition={{
+                  default: { ease: 'easeOut', duration: 0.3, delay: sentSuccessfully ? 0 : 0.7 },
+                  boxShadow: { delay: sentSuccessfully ? 0.5 : 0, duration: 0.5 },
+                }}
+                variants={topLidVariants}></motion.div>
+              <motion.div
+                id={styles.bottomLid}
+                animate={sentSuccessfully ? 'closed' : 'open'}
+                transition={{
+                  default: { ease: 'easeOut', duration: 0.3, delay: sentSuccessfully ? 0 : 0.7 },
+                  boxShadow: { delay: sentSuccessfully ? 0.5 : 0, duration: 0.5 },
+                }}
+                variants={bottomLidVariants}></motion.div>
+
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                enable-background="new 0 0 24 24"
+                id="Layer_1"
+                version="1.0"
+                viewBox="0 0 24 24"
+                xmlSpace="preserve"
+                className={styles.svg}
+                initial="hidden"
+                animate={sentSuccessfully ? 'visible' : 'hidden'}>
+                <motion.polyline
+                  className={styles.path}
+                  fill="none"
+                  points="20,6 9,17 4,12"
+                  stroke="#69fe8b"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                  variants={checkmarkVariants}
+                />
+              </motion.svg>
+
+              <div className={styles.singleInput} style={{ marginBottom: '31px' }}>
                 <Field
                   className={`${styles.contactInput} paragraph`}
-                  id="email"
-                  name="email"
-                  placeholder={t('email')}
-                  type="email"
-                  touched={touched.email?.toString()}
-                  errors={errors.email}
+                  id="name"
+                  name="name"
+                  placeholder={t('name')}
+                  type="text"
+                  touched={touched.name?.toString()}
+                  errors={errors.name}
                 />
-                {errors.email && touched.email ? <ErrorMessage error={errors.email} /> : null}
+                {errors.name && touched.name ? <ErrorMessage error={errors.name} /> : null}
               </div>
-            ) : (
-              <div className={styles.singleInput} style={{ marginBottom: '6px' }}>
+              {isEmail ? (
+                <div className={styles.singleInput} style={{ marginBottom: '6px' }}>
+                  <Field
+                    className={`${styles.contactInput} paragraph`}
+                    id="email"
+                    name="email"
+                    placeholder={t('email')}
+                    type="email"
+                    touched={touched.email?.toString()}
+                    errors={errors.email}
+                  />
+                  {errors.email && touched.email ? <ErrorMessage error={errors.email} /> : null}
+                </div>
+              ) : (
+                <div className={styles.singleInput} style={{ marginBottom: '6px' }}>
+                  <Field
+                    className={`${styles.contactInput} paragraph`}
+                    id="phone"
+                    name="phone"
+                    placeholder={t('phone')}
+                    touched={touched.phone?.toString()}
+                    errors={errors.phone}
+                  />
+                  {errors.phone && touched.phone ? <ErrorMessage error={errors.phone} /> : null}
+                </div>
+              )}
+
+              <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
+                <button
+                  className={`link ${styles.emailButton}`}
+                  style={{ marginBottom: '29px' }}
+                  onClick={e => {
+                    e.preventDefault();
+                    SetIsEmail(!isEmail);
+                  }}>
+                  {t('prefer')} {isEmail ? t('phone').toLowerCase() : t('email').toLowerCase()} {t('response')}
+                </button>
+              </div>
+              <div className={styles.singleInput}>
                 <Field
                   className={`${styles.contactInput} paragraph`}
-                  id="phone"
-                  name="phone"
-                  placeholder={t('phone')}
-                  touched={touched.phone?.toString()}
-                  errors={errors.phone}
+                  id="message"
+                  name="message"
+                  placeholder={t('message')}
+                  as={'textarea'}
+                  touched={touched.message?.toString()}
+                  errors={errors.message}
                 />
-                {errors.phone && touched.phone ? <ErrorMessage error={errors.phone} /> : null}
+                {errors.message && touched.message ? <ErrorMessage error={errors.message} /> : null}
               </div>
-            )}
-            <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
-              <button
-                className={`link ${styles.emailButton}`}
-                style={{ marginBottom: '29px' }}
-                onClick={e => {
-                  e.preventDefault();
-                  SetIsEmail(!isEmail);
-                }}>
-                {t('prefer')} {isEmail ? t('phone').toLowerCase() : t('email').toLowerCase()} {t('response')}
-              </button>
-            </div>
-            <div className={styles.singleInput}>
-              <Field
-                className={`${styles.contactInput} paragraph`}
-                id="message"
-                name="message"
-                placeholder={t('message')}
-                as={'textarea'}
-                touched={touched.message?.toString()}
-                errors={errors.message}
-              />
-              {errors.message && touched.message ? <ErrorMessage error={errors.message} /> : null}
             </div>
             <motion.button
               className={`${styles.sendButton} paragraph`}
               type="submit"
-              onClick={() => setSentSuccessfully(true)}>
-              {t('send')}
+              onClick={() => setSentSuccessfully(!sentSuccessfully)}
+              onHoverEnd={() => (sentSuccessfully ? setChangeText(true) : setChangeText(false))}>
+              {changeText ? t('sendAgain') : t('send')}
             </motion.button>
             <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
               <p className={`light-paragraph ${styles.contactWithin}`}>{t('weWillContactYou')}</p>
