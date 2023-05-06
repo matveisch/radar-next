@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './ContactForm.module.scss';
-import { Formik, Form, FormikHelpers, Field } from 'formik';
+import { Formik, Form, FormikHelpers, Field, FormikState } from 'formik';
 import * as Yup from 'yup';
 import ErrorMessage from '../../ui/error-message/ErrorMessage';
 import { useTranslation } from 'next-i18next';
@@ -51,9 +51,6 @@ const checkmarkVariants = {
 };
 const ContactForm = ({ messageText }: Props) => {
   const [isEmail, SetIsEmail] = useState(false);
-  // todo: state sentSuccessfully отвечает за статус отправленного письма.
-  //  Как только письмо успешно доходит, принимает значение true.
-  //  Можешь это протестировать, поменяв api route в функции отправки данных (тоже помечу это)
   const [sentSuccessfully, setSentSuccessfully] = useState<boolean | undefined>(undefined);
   const { t } = useTranslation('contact');
   const { locale } = useRouter();
@@ -77,9 +74,8 @@ const ContactForm = ({ messageText }: Props) => {
 
   const contactSchema = Yup.object().shape(validationShape);
 
-  async function sendEmail(data: Values) {
+  async function sendEmail(data: Values, resetForm: (nextState?: Partial<FormikState<Values>> | undefined) => void) {
     try {
-      // todo: чтобы протестировать появление ошибки – просто можешь поменять route ниже (/api/send-email)
       const res = await fetch('/api/send-email', {
         method: 'POST',
         body: JSON.stringify(data, null, 2),
@@ -92,13 +88,20 @@ const ContactForm = ({ messageText }: Props) => {
         setSentSuccessfully(false);
       } else {
         setSentSuccessfully(true);
+        resetForm();
       }
     } catch (e) {
       if (e instanceof Error) console.log(e.message);
     }
   }
 
-  const [changeText, setChangeText] = useState<boolean>(false);
+  function handleSubmit(values: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) {
+    if (!sentSuccessfully) {
+      console.log(JSON.stringify(values, null, 2));
+      sendEmail(values, resetForm);
+      setSubmitting(false);
+    }
+  }
 
   return (
     <div className={styles.formContainer}>
@@ -110,13 +113,7 @@ const ContactForm = ({ messageText }: Props) => {
           message: messageText?.toString() || '',
         }}
         validationSchema={contactSchema}
-        onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
-          setTimeout(() => {
-            // console.log(JSON.stringify(values, null, 2));
-            sendEmail(values);
-            setSubmitting(false);
-          }, 500);
-        }}>
+        onSubmit={handleSubmit}>
         {({ errors, touched }) => (
           <Form className={styles.contactForm}>
             <div id={styles.lidWrapper}>
@@ -140,7 +137,7 @@ const ContactForm = ({ messageText }: Props) => {
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                enable-background="new 0 0 24 24"
+                enableBackground="new 0 0 24 24"
                 id="Layer_1"
                 version="1.0"
                 viewBox="0 0 24 24"
@@ -153,8 +150,8 @@ const ContactForm = ({ messageText }: Props) => {
                   fill="none"
                   points="20,6 9,17 4,12"
                   stroke="#69fe8b"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                   variants={checkmarkVariants}
                 />
               </motion.svg>
@@ -224,10 +221,13 @@ const ContactForm = ({ messageText }: Props) => {
             </div>
             <motion.button
               className={`${styles.sendButton} paragraph`}
-              type="submit"
-              onClick={() => setSentSuccessfully(!sentSuccessfully)}
-              onHoverEnd={() => (sentSuccessfully ? setChangeText(true) : setChangeText(false))}>
-              {changeText ? t('sendAgain') : t('send')}
+              type={'submit'}
+              onClick={() => {
+                if (sentSuccessfully) {
+                  setSentSuccessfully(false);
+                }
+              }}>
+              {sentSuccessfully ? t('sendAgain') : t('send')}
             </motion.button>
             <div className={styles.buttonContainer} style={locale === 'he' ? { justifyContent: 'unset' } : undefined}>
               <p className={`light-paragraph ${styles.contactWithin}`}>{t('weWillContactYou')}</p>
