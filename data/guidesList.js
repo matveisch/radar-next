@@ -8,7 +8,7 @@ export default function useGuidesList() {
       id: 0,
       name: t('adsGuide'),
       shortName: t('shortAdsGuide'),
-      img: '',
+      img: 'TESTIMG.jpg',
       serviceId: 0,
       steps: [
         t('defineTargetAudience'),
@@ -39,7 +39,7 @@ export default function useGuidesList() {
       id: 1,
       name: t('tvGuide'),
       shortName: t('shortTvGuide'),
-      img: '',
+      img: 'tvGuide.jpg',
       serviceId: 2,
       steps: [
         t('tvGuide-1'),
@@ -75,7 +75,7 @@ export default function useGuidesList() {
       id: 2,
       name: t('outdoorGuide'),
       shortName: t('shortOutdoorGuide'),
-      img: '',
+      img: 'outdoorGuide.jpg',
       serviceId: 6,
       steps: [
         t('defineTargetAudience'),
