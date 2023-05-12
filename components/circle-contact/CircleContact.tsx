@@ -39,7 +39,7 @@ const CircleContact = () => {
           className={`${styles.upperCircle} ${styles.circle}`}></motion.div>
         <div className={`${styles.lowerCircle} ${styles.circle}`}></div>
         <div className={styles.paragraphs} style={locale === 'he' ? { left: '-20px', right: 'unset' } : undefined}>
-          <motion.p
+          <motion.a
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -47,9 +47,10 @@ const CircleContact = () => {
               duration: 0.9,
               delay: 0.6,
             }}
-            className="paragraph">
-            email@gmail.com
-          </motion.p>
+            className="paragraph"
+            href="mailto: clientoffice@radardigitaly.com">
+            clientoffice@radardigitaly.com
+          </motion.a>
           <motion.a
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

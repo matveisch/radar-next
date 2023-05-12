@@ -35,13 +35,17 @@ export default function Footer() {
           <h1 className="H3">radar digitaly</h1>
         </div>
         <div id={styles.footerContact}>
-          <a className="link">email@radar.com</a>
-          <a>012-345-6789</a>
+          <a className="link" href="mailto: clientoffice@radardigitaly.com">
+            clientoffice@radardigitaly.com
+          </a>
+          <a className="link" href="tel:0547575594" rel="noreferrer" target="_blank">
+            054-757-5594
+          </a>
           <div id={styles.footerSocialIcons}>
-            <a href="">
+            <a href="https://t.me/FSMediaDrama" target="_blank" rel="noreferrer">
               <Image src={telegram} alt="icon" />
             </a>
-            <a href="">
+            <a href="https://wa.link/djrk8t" target="_blank" rel="noreferrer">
               <Image src={whatsapp} alt="icon" />
             </a>
           </div>
