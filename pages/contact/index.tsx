@@ -8,8 +8,8 @@ import { useRouter } from 'next/router';
 
 const Contact = () => {
   const router = useRouter();
-  const myProp = router.query.myProp;
-  console.log(router.query.messageText);
+  // const myProp = router.query.myProp;
+
   return (
     <div>
       <Head>
