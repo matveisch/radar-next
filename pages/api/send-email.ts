@@ -4,7 +4,8 @@ import { sendEmail } from '../../lib/email';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     await sendEmail({
-      to: 'testbeetrade@gmail.com',
+      from: 'clientoffice@radardigitaly.com',
+      to: 'clientoffice@radardigitaly.com',
       subject: 'New Client Message',
       text: `
       name: ${req.body.name},
