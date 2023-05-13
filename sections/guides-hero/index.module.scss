@@ -1,0 +1,45 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+#hero {
+  margin-bottom: 170px;
+}
+#btnWrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+#heroTitle {
+  position: relative;
+  background-color: $main-green;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px 16px 0 16px;
+  #title {
+    color: $black;
+    padding: 40px;
+    height: 50%;
+    @media (max-width: 800px) {
+      padding: 16px;
+      font-size: 10vw;
+    }
+  }
+  #image {
+    width: 100%;
+    height: 300px;
+    border-radius: 0 0 0 16px;
+    margin-bottom: 5px;
+    object-fit: cover;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 30%;
+    background-color: $main-green;
+    bottom: -20px;
+    border-radius: 0 0 16px 16px;
+    right: 0;
+  }
+}

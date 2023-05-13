@@ -1,9 +1,16 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 .formContainer {
-  margin-top: 102px;
-  width: 441px;
-
+  margin-top: 100px;
+  width: 440px;
+  overflow: hidden;
+  background: $off-black;
+  border-radius: 16px;
+  box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
+  padding: 60px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   .singleInput {
     display: flex;
     flex-direction: column;
@@ -16,18 +23,18 @@
       border: none;
       padding: 9px 7px;
       border-bottom: 1.5px solid $off-white;
+      resize: none;
+    }
+
+    textarea {
+      height: 200px;
     }
   }
 
   .contactForm {
-    background: $off-black;
-    box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
-    border-radius: 16px;
-    padding: 67px 33px 34px;
-
     display: flex;
     flex-direction: column;
-
+    width: 100%;
     .buttonContainer {
       display: flex;
       justify-content: flex-end;
@@ -47,10 +54,74 @@
       background-color: unset;
       color: $main-green;
       padding: 16px 0;
+      transition: all 0.3s;
+      margin-bottom: 24px;
+      cursor: pointer;
+      margin-top: 50px;
+
+      &:hover {
+        background: $main-green;
+        scale: 1.05;
+        color: $black;
+      }
+      &:active {
+        scale: 0.9;
+      }
     }
 
     .contactWithin {
       color: $off-white;
     }
+  }
+}
+#lidWrapper {
+  position: relative;
+  overflow: hidden;
+}
+#topLid {
+  position: absolute;
+  background-color: $off-black;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  width: 100%;
+  border: $black solid;
+  box-sizing: border-box;
+  border-width: 0px 2px 0px 2px;
+  box-shadow: inset 0px 10px 15px 7px rgba(35, 41, 50, 0);
+}
+#bottomLid {
+  position: absolute;
+  background-color: $off-black;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  width: 100%;
+  border: $black solid;
+  box-sizing: border-box;
+  border-width: 0px 2px 0px 2px;
+  box-shadow: inset 0px -10px 15px 7px rgba(35, 41, 50, 0);
+}
+
+.svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.path {
+  stroke-linecap: round;
+  stroke-dasharray: 27;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }

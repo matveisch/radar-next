@@ -1,0 +1,20 @@
+{
+  "lets": "Let's",
+  "talk": "Talk",
+
+  "required": "Required",
+  "phoneMustMatch": "Must match format 05[x][-][0-9]{7}",
+  "invalidEmail": "Invalid email",
+  "messageTooLong": "Message is too long",
+  "fieldRequired": "Field is required",
+
+  "name": "Name",
+  "email": "Email",
+  "phone": "Phone",
+  "message": "Message",
+  "send": "Send message",
+  "sendAgain": "Send another message",
+  "weWillContactYou": "We will contact you within 24 hours",
+  "prefer": "Prefer",
+  "response": "response"
+}

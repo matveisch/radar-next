@@ -1,15 +1,16 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 48px $page-padding 48px $page-padding;
-  width: calc(100vw - calc($page-padding * 2));
+  padding: 50px $page-padding;
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
-
-  @media (max-width: map-get($breakpoints, "mobileL")) {
+  z-index: 6;
+  @media (max-width: map-get($breakpoints, 'mobileL')) {
     padding: 24px $page-padding 24px $page-padding;
   }
 
@@ -17,6 +18,11 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    img {
+      height: 40px;
+      width: auto;
+      filter: $main-green-filter;
+    }
 
     h1 {
       text-transform: uppercase;
@@ -25,13 +31,14 @@
   }
 
   #navbarLinks {
-    @media (max-width: map-get($breakpoints, "tablet")) {
+    @media (max-width: 1160px) {
       display: none;
     }
 
     width: 50%;
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
 
     #contactBtn {
       display: flex;
@@ -40,12 +47,12 @@
       border: 3px solid $main-green;
       transition: 0.3s;
       a {
-        @media (max-width: map-get($breakpoints, "lg")) {
+        @media (max-width: map-get($breakpoints, 'lg')) {
           padding: 5px 17.5px;
         }
         padding: 10px 35px;
         &::after {
-          content: "";
+          content: '';
           position: absolute;
           background-color: $main-green;
           height: 100%;
@@ -64,7 +71,7 @@
           font-weight: 800;
 
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             background-color: $main-green;
             height: 3px;
@@ -77,10 +84,20 @@
         }
       }
     }
+
+    #contactBtnViolet {
+      @extend #contactBtn;
+
+      border: 3px solid $main-violet;
+
+      &:hover {
+        background-color: $main-violet;
+      }
+    }
   }
 
   .imageWrapper {
-    @media (min-width: map-get($breakpoints, "tablet")) {
+    @media (min-width: map-get($breakpoints, 'tablet')) {
       display: none;
     }
     width: 43px;
@@ -94,11 +111,11 @@
   }
 
   .menuOptions {
-    @media (min-width: map-get($breakpoints, "tablet")) {
+    @media (min-width: map-get($breakpoints, 'tablet')) {
       display: none;
     }
 
-    @media (max-width: map-get($breakpoints, "mobileL")) {
+    @media (max-width: map-get($breakpoints, 'mobileL')) {
       width: 100%;
       border-radius: 0;
       top: 0;
@@ -130,7 +147,8 @@
   top: 0;
   right: 0;
   z-index: 3;
-  @media (min-width: map-get($breakpoints, "tablet")) {
+
+  @media (min-width: 1160px) {
     display: none;
   }
   #mobileNavBG {
@@ -146,7 +164,7 @@
     align-items: center;
     justify-content: space-around;
     &::after {
-      content: "";
+      content: '';
       width: 30%;
       height: 3px;
       background-color: $main-green;
@@ -160,7 +178,7 @@
     }
     #mobileNavUl {
       list-style-type: none;
-      margin: 100px 0;
+
       padding: 0;
       display: flex;
       flex-direction: column;
@@ -178,4 +196,18 @@
       }
     }
   }
+
+  #mobileNavBGLab {
+    @extend #mobileNavBG;
+
+    &::after {
+      background-color: $main-violet;
+    }
+  }
+}
+#languageToggleWrapper {
+  position: relative;
+  width: 67px;
+
+  height: auto;
 }

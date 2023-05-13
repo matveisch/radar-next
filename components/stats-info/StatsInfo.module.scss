@@ -1,9 +1,9 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #statsParent {
   padding: 20px $stats-padding;
-
+  direction: ltr;
   background-color: $main-green;
   position: relative;
   width: calc(100vw - calc($stats-padding * 2));
@@ -22,7 +22,7 @@
     margin: auto;
     max-width: 1400px;
 
-    @media (max-width: map-get($breakpoints, "laptop")) {
+    @media (max-width: map-get($breakpoints, 'laptop')) {
       display: none;
     }
 
@@ -55,7 +55,7 @@
 }
 
 #statsParent {
-  @media (max-width: map-get($breakpoints, "laptop")) {
+  @media (max-width: map-get($breakpoints, 'laptop')) {
     padding: 10px $stats-padding;
   }
 }
@@ -63,7 +63,7 @@
 .statsContainerMobile {
   display: flex;
 
-  @media (min-width: map-get($breakpoints, "laptop")) {
+  @media (min-width: map-get($breakpoints, 'laptop')) {
     display: none;
   }
 

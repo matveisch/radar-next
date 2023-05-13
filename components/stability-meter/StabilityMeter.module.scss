@@ -26,10 +26,12 @@
     #bgImg {
       height: 100%;
       width: 100%;
-      background-image: url("../../images/stability-bg.png");
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: contain;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-top: 58%;
+      }
     }
     #imgWrapper {
       width: 100%;

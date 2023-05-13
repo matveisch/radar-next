@@ -1,0 +1,22 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+
+#wrapper {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: $off-black;
+  transition: 0.3s;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #text {
+    color: $off-white;
+  }
+  &:hover {
+    scale: 1.05;
+    box-shadow: 0px 3px 16px 0px rgba(105, 254, 139, 0.2);
+  }
+}

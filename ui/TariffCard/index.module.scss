@@ -1,0 +1,72 @@
+@import '../../styles/variables.module';
+
+#mainWrapper {
+  border: 3px $main-green solid;
+  border-radius: 16px;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  #topWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    #tariff {
+      color: $off-white;
+      padding: 15px 30px;
+      background: $off-black;
+
+      border-radius: 100px;
+    }
+    #price {
+      color: $off-white;
+      // padding: 15px 30px;
+      // background: $off-black;
+      // border-radius: 16px;
+      line-height: 100%;
+      align-self: center;
+    }
+  }
+  ul {
+    color: $off-white;
+    margin-bottom: 30px;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 10px 0;
+    }
+  }
+  #button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin-top: auto;
+    transition: 0.3s;
+    background: $main-green;
+    box-sizing: content-box;
+    border-radius: 16px;
+    a {
+      padding: 15px 30px;
+      display: block;
+      color: $black;
+
+      &:hover {
+        box-shadow: 0 3px 16px 0 rgba(105, 254, 139, 0.2);
+      }
+    }
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+.vshape {
+  filter: $main-green-filter;
+  margin-right: 10px;
+}

@@ -1,4 +1,4 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 #servicesMenuWrapper {
   #servicesGrid {
@@ -24,8 +24,11 @@
 
         #contactLink {
           height: 100%;
-          display: block;
+          display: flex;
+          align-items: center;
           text-align: center;
+          justify-content: center;
+          width: 100%;
           color: $off-white;
           text-decoration: none;
         }

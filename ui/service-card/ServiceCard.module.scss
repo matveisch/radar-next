@@ -1,4 +1,4 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 #icon {
   filter: $main-green-filter;
@@ -13,9 +13,6 @@
   padding: 20px;
   box-shadow: 4px 9px 17px rgba(18, 23, 31, 0.28);
   transition: 0.3s;
-  // @media (max-width: map-get($breakpoints, "tablet")) {
-  //   padding: 10px;
-  // }
 
   #title {
     color: $main-green;
@@ -43,10 +40,12 @@
       #listItem#{$j} {
         opacity: 0;
         visibility: hidden;
+
         transition: 0.3s;
       }
     }
   }
+
   #learnMoreParent {
     position: absolute;
     display: flex;
@@ -55,14 +54,15 @@
     align-items: flex-end;
     text-align: right;
     transition: 0.3s;
+    gap: 8px;
 
     #learnMore {
       margin-left: auto;
       color: $main-green;
-      margin-right: 8px;
     }
   }
-  @media (max-width: map-get($breakpoints, "mobileL")) {
+
+  @media (max-width: map-get($breakpoints, 'mobileL')) {
     #icon {
       width: 32px;
       height: auto;
@@ -77,19 +77,24 @@
           margin-bottom: 5px;
           color: $main-green;
           opacity: 1;
+
           visibility: visible;
         }
       }
     }
   }
+
   &:hover {
     scale: 1.06;
     box-shadow: 3px 3px 32px rgba(0, 239, 56, 0.194);
 
     #title {
+      // right: 70px;
+      // top: -60px;
       margin-left: 70px;
       margin-top: -60px;
     }
+
     ul {
       @for $i from 3 through 10 {
         #listItem#{$i} {
@@ -105,6 +110,17 @@
       margin-top: 70px;
       margin-right: 20px;
       scale: 1.2;
+    }
+  }
+}
+
+#cardParentRtl {
+  @extend #cardParent;
+
+  &:hover {
+    #title {
+      margin-left: unset;
+      margin-right: 70px;
     }
   }
 }

@@ -1,14 +1,47 @@
 .whyRadar {
-  margin-top: 200px;
-
+  margin: 200px 0;
+  overflow: visible;
   h2 {
-    color: #EEEEEE;
+    color: #eeeeee;
     margin-bottom: 200px;
   }
 
   .blocks {
     display: grid;
-    grid-template-columns: repeat(2, 253px);
+    grid-template-columns: repeat(auto-fit, minmax(253px, 1fr));
     gap: 30px;
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(2, 253px);
+    }
+  }
+
+  .mainContainer {
+    display: flex;
+    position: relative;
+
+    .techRadarGif {
+      width: 810px;
+      height: 810px;
+
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media (max-width: 1000px) {
+        position: relative;
+        left: unset;
+        top: unset;
+        transform: unset;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
 }

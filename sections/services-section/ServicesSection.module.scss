@@ -1,10 +1,8 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 #mainWrapperServicesSection {
   z-index: 1;
-  // margin-top: 180px; // using flex-gap instead of margin (loot at home.module)
-  width: calc(100vw - calc($page-padding * 2));
-
+  margin: 0 auto;
   #servicesTitle {
     color: $off-white;
     margin-bottom: 60px;
@@ -12,7 +10,7 @@
   #servicesWrapper {
     .servicesParagraphSmaller {
       color: $off-white;
-
+      margin-bottom: 50px;
       @media (min-width: 1365px) {
         display: none;
       }
@@ -21,6 +19,7 @@
     .serviceCardsContainer {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-auto-rows: 300px;
       grid-gap: 30px;
 
       .servicesParagraphBigger {

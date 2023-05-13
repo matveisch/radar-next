@@ -1,0 +1,19 @@
+@import '../../styles/variables.module';
+
+// #labhero {
+//   pointer-events: none;
+// }
+#titles {
+  position: relative;
+  pointer-events: none;
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  color: $off-white;
+  padding-top: 10%;
+  z-index: 2;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}

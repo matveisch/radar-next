@@ -1,4 +1,4 @@
-@import "../../styles/variables.module";
+@import '../../styles/variables.module';
 
 .circleContact {
   .circle {
@@ -19,11 +19,7 @@
     align-items: center;
 
     .upperCircle {
-      background: conic-gradient(
-        from 180deg at 50% 50%,
-        #69fe8b 0deg,
-        rgba(58, 63, 71, 0) 360deg
-      );
+      background: conic-gradient(from 180deg at 50% 50%, #69fe8b 0deg, rgba(58, 63, 71, 0) 360deg);
       width: 428px;
       height: 428px;
 
@@ -34,11 +30,7 @@
     }
 
     .lowerCircle {
-      background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(35, 41, 50, 0) 0%,
-        #232932 100%
-      );
+      background: radial-gradient(50% 50% at 50% 50%, rgba(35, 41, 50, 0) 0%, #232932 100%);
       position: absolute;
     }
   }
@@ -63,6 +55,16 @@
     flex-direction: column;
     gap: 25px;
 
+    a {
+      color: $off-white;
+      transition: 0.3s;
+      &:hover {
+        color: $main-green;
+        img {
+          filter: $main-green-filter;
+        }
+      }
+    }
     .icons {
       display: flex;
       gap: 16px;
@@ -71,7 +73,6 @@
         height: 25px;
         filter: $off-white-filter;
         &:hover {
-          filter: $main-green-filter;
         }
       }
     }

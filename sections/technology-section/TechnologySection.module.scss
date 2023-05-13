@@ -1,10 +1,7 @@
-@import "../../styles/variables.module";
-@import "../../styles/breakpoints.module";
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
 
 #mainContainer {
-  // margin-top: 180px; // using flex-gap instead of margin (loot at home.module)
-  width: calc(100vw - calc($page-padding * 2));
-
   #techTitle {
     color: $off-white;
     margin-bottom: 60px;
@@ -74,6 +71,7 @@
         // width: 100%;
         position: relative;
         right: 25%;
+
         @media (max-width: 600px) {
           margin-top: -30%;
           width: 100%;

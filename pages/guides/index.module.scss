@@ -1,0 +1,44 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+
+.squaresBg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: 0 auto;
+  background: conic-gradient(from 90deg at 3px 3px, $black 90deg, #242f3a 0) -3px -3px/70px 70px;
+}
+.guide {
+  padding: 0 $page-padding;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+.also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  div {
+    text-align: center;
+    width: calc(50% - 47px);
+  }
+}
+#alsoTitle {
+  margin-top: 170px;
+  margin-bottom: 65px;
+  color: $off-white;
+}
+#servicesWrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  // @media (max-width: 800px) {
+  //   flex-direction: column;
+  // }
+}

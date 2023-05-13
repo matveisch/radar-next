@@ -1,0 +1,13 @@
+@import '../../styles/variables.module';
+@import '../../styles/breakpoints.module';
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .link {
+    &:hover {
+      color: $main-green;
+    }
+  }
+}

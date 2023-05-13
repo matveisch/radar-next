@@ -1,19 +1,22 @@
 import { useRouter } from 'next/router';
 import styles from './AppSwitcher.module.scss';
+import variables from '../../styles/variables.module.scss';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 function AppSwitcher() {
   const router = useRouter();
   const { pathname } = router;
+  const { t } = useTranslation('header');
 
   return (
     <div className={styles.appSwitcher}>
       <Link href="/" style={pathname === '/lab' ? undefined : { color: '#69FE8B' }}>
-        ORIGINAL
+        {t('original')}
       </Link>
       <div className={styles.separator} />
       <Link href="/lab" style={pathname === '/lab' ? { color: '#B338FF' } : undefined}>
-        LAB
+        {t('lab')}
       </Link>
     </div>
   );
