@@ -25,10 +25,10 @@ export default function TechnologySection() {
             {t('proposition')}
           </p>
           <div id={styles.techCardsWrapper}>
-            <TechRectangle img={marketTracking} title={t('marketTracking')} />
-            <TechRectangle img={trandResearch} title={t('trendResearch')} />
-            <TechRectangle img={bots} title={t('bots')} />
-            <TechRectangle img={automaticServices} title={t('automaticServices')} />
+            <TechRectangle img={marketTracking} title={t('marketTracking') || ''} />
+            <TechRectangle img={trandResearch} title={t('trendResearch') || ''} />
+            <TechRectangle img={bots} title={t('bots') || ''} />
+            <TechRectangle img={automaticServices} title={t('automaticServices') || ''} />
           </div>
         </div>
         <div id={styles.rightContainer}>
