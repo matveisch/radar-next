@@ -47,16 +47,11 @@
       text-align: center;
       padding: 30px 100px;
       color: $main-green;
-
       display: block;
-    }
-    // &:hover {
-    //   scale: 1.05;
-    // }
-    @media (max-width: map-get($breakpoints, 'tablet')) {
-      padding: 30px 0;
-      border-radius: 100px;
-      width: 90vw;
+      @media (max-width: 400px) {
+        width: 90vw;
+        padding: 20px 0px;
+      }
     }
 
     #rtwBtnText {
