@@ -17,7 +17,7 @@ export default function Home() {
       <Head>
         <title>Radar</title>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <section className={`${styles.App}`}>
         <motion.div className={styles.progressBar} style={{ scaleX: scrollYProgress }} />

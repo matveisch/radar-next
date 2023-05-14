@@ -19,7 +19,7 @@ function Lab() {
       <Head>
         <title>Lab</title>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/labfavicon.svg" />
       </Head>
       <div className={styles.lab}>
         <LabHero />

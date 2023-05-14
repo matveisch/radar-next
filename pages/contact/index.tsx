@@ -15,7 +15,7 @@ const Contact = () => {
       <Head>
         <title>Contact</title>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <div id={styles.contactPage}>
         <CircleContact />

@@ -64,7 +64,7 @@ const AboutUs = () => {
       <Head>
         <title>{t('aboutUs')}</title>
         <meta name="viewport" content="width=device-width, user-scalable=no" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <div id={styles.main}>
         <h2>{t('aboutUs')}</h2>
