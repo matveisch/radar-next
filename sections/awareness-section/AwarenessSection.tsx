@@ -7,19 +7,22 @@ import AttendanceMeter from '../../components/attendance-meter/AttendanceMeter';
 import ReactSlider from 'react-slider';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { useScroll } from 'framer-motion';
 
 function AwarenessSection() {
   // new sliders value – accepts from 0 to 100
   const sectionWrapper = useRef<HTMLDivElement>(null);
   const [sliderValue, setSliderValue] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [sectionVisible, setSectionVisible] = useState(false);
   const { t } = useTranslation('common');
   const { locale } = useRouter();
+  const { scrollYProgress } = useScroll({
+    target: sectionWrapper,
+    offset: ['start end', 'end end'],
+  });
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
+    setSliderValue(Math.floor(scrollYProgress.get() * 100));
   };
 
   useEffect(() => {
@@ -47,15 +50,6 @@ function AwarenessSection() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [sectionVisible]);
-
-  useEffect(() => {
-    // change it! no hard coded numbers
-    let position = Math.floor(scrollPosition / 10 - 240);
-
-    if (position > 0 && position < 100) {
-      setSliderValue(position);
-    }
-  }, [scrollPosition]);
 
   return (
     <div id={styles.awarenessWrapper} ref={sectionWrapper}>
