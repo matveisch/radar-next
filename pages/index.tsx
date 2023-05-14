@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RtwBtn from '../components/rtw-btn/RtwBtn';
-import CarouselSection from '../sections/carousel-section/CarouselSection';
 import RadarSection from '../sections/radar-section/RadarSection';
 import ServicesSection from '../sections/services-section/ServicesSection';
 import TechnologySection from '../sections/technology-section/TechnologySection';
